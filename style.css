@@ -101,10 +101,19 @@ main{
 .content {
   margin: 1.5em;
   text-align: center;
+}  
+
+
+/* Footer */
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .newsletter{
   padding-left: 20px;
-  font-size: 20px;
+  font-size: 15px;
 }
 #newsletter , #submit{
   font-size: 20px;
