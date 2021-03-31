@@ -1,0 +1,111 @@
+@font-face {
+  font-family: Halant;
+  src: url(fonts/Halant-Regular.ttf);
+}
+
+@font-face {
+  font-family: Halant;
+  src: url(fonts/Halant-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: NunitoSans;
+  src: url(fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: NunitoSans;
+  src: url(fonts/NunitoSans-Bold.ttf);
+  font-weight: bold;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header, footer{
+  font-family: "Halant", serif;
+}
+
+.column {
+  float: left;
+  display: inline-block;
+  width: 50%;
+}
+
+/*HEADER */
+header{
+  overflow: hidden;
+  padding: 1em 0em;
+  background-color: black;
+}
+
+#logo{
+  display: inline;
+  height: 5em;
+}
+
+.navbar{
+  overflow: hidden;
+  margin: auto 5em;
+}
+
+.navbar h1{
+  color: white;
+  display: inline-block;
+}
+
+.navbar ul{
+  list-style-type: none;
+  text-align: right;
+  padding: 0.5em;
+}
+
+.navbar li{
+  align-items: center;
+  display:inline;
+}
+
+.navbar a{
+  color: white;
+  font-size: 1.4em;
+  padding: 0.5em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover{
+  color: #b5b5b5;
+}
+
+/* Main */
+
+main{
+  font-family: NunitoSans, sans-serif;
+}
+
+.content {
+  margin: 1.5em;
+  text-align: center;
+}
+
+/* .container {
+    /* background-color: blue; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+    height: 112px;
+} */
+
+/* Footer */
+footer{
+    background-color: rgba(0, 0, 0, 0.637);
+
+}
+
+.copyright{
+    text-align: center;
+
+}
