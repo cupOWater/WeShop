@@ -1,22 +1,23 @@
 @font-face {
   font-family: Halant;
-  src: url(fonts/Halant-Regular.ttf);
+  src: url(fonts/Halant-Regular.ttf) format("truefont");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Halant;
-  src: url(fonts/Halant-Bold.ttf);
+  src: url(fonts/Halant-Bold.ttf) format("truefont");
   font-weight: bold;
 }
 
 @font-face {
   font-family: NunitoSans;
-  src: url(fonts/NunitoSans-Regular.ttf);
+  src: url(fonts/NunitoSans-Regular.ttf) format("truefont");
 }
 
 @font-face {
   font-family: NunitoSans;
-  src: url(fonts/NunitoSans-Bold.ttf);
+  src: url(fonts/NunitoSans-Bold.ttf) format("truefont");
   font-weight: bold;
 }
 
@@ -37,9 +38,14 @@ header, footer{
 
 /*HEADER */
 header{
+  color: white;
+  background-color: black;
   overflow: hidden;
   padding: 1em 0em;
-  background-color: black;
+}
+
+header a{
+  color: white;
 }
 
 #logo{
@@ -53,7 +59,6 @@ header{
 }
 
 .navbar h1{
-  color: white;
   display: inline-block;
 }
 
@@ -63,13 +68,20 @@ header{
   padding: 0.5em;
 }
 
+footer a{
+
+}
+
+footer .navbar ul{
+  text-align: center;
+}
+
 .navbar li{
   align-items: center;
   display:inline;
 }
 
 .navbar a{
-  color: white;
   font-size: 1.4em;
   padding: 0.5em;
   text-decoration: none;
@@ -92,20 +104,14 @@ main{
 }
 
 /* .container {
-    /* background-color: blue; */
+    background-color: blue;
     margin-left: auto;
     margin-right: auto;
     width: 1024px;
     height: 112px;
 } */
 
-/* Footer */
-footer{
-    background-color: rgba(0, 0, 0, 0.637);
-
-}
-
 .copyright{
-    text-align: center;
-
+  padding: 0.5em;
+  text-align: center;
 }
