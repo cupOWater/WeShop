@@ -47,7 +47,9 @@ header{
 header a{
   color: white;
 }
-
+header .navbar .column h1 a {
+  font-size: 32px;
+}
 #logo{
   display: inline;
   height: 5em;
