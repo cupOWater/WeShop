@@ -32,7 +32,7 @@ header, footer{
 
 .column {
   float: left;
-  display: inline-block;
+  /* display: inline-block; */
   width: 50%;
 }
 
@@ -68,9 +68,9 @@ header a{
   padding: 0.5em;
 }
 
-footer a{
+/* footer a{
 
-}
+} */
 
 footer .navbar ul{
   text-align: center;
