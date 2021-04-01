@@ -89,6 +89,8 @@ header h1, a{
 /* Main */
 
 main{
+  width: 80%;
+  margin: auto;
   font-family: "NunitoSans", sans-serif;
 }
 
@@ -99,27 +101,34 @@ main{
 }
 
 .content h2{
-  margin-bottom: 1em;
+  margin-bottom: 6px;
 }
 
 .login {
-  margin: 5em 40em;
+  width: 30%;
+  margin: auto;
+  margin-top: 10%;
   padding: 3em;
   text-align: left;
 }
 
-form p{
-  padding: 0.5em 0em;
-  font-size: 1.2em;
-  font-family: "NunitoSans";
+.login p{
+  margin: 5px 0px;
+}
+
+.login a{
+  color: #141414;
+}
+
+.login a:hover{
+  color: #858585;
 }
 
 input{
-  margin: 0.5em 0em;
-}
-
-.login input[type="submit"]{
-  padding: 5px;
+  width: %100;
+  padding: 1px 6px;
+  margin: 8px 0px;
+  font-size: 16px;
 }
 
 /* Footer */
@@ -152,16 +161,6 @@ footer .row{
   font-size: 16px;
   font-weight: normal;
 }
-
-
-
-/* .container {
-    background-color: blue;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1024px;
-    height: 112px;
-} */
 
 .copyright{
   font-size: 18px;
