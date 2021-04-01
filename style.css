@@ -28,6 +28,12 @@
 
 header, footer{
   font-family: "Halant", serif;
+  padding: 1em 0em;
+}
+
+.row {
+  overflow: hidden;
+  margin: 0em 5em;
 }
 
 .column {
@@ -41,7 +47,6 @@ header{
   color: white;
   background-color: black;
   overflow: hidden;
-  padding: 1em 0em;
 }
 
 header a{
@@ -55,27 +60,15 @@ header .navbar .column h1 a {
   height: 5em;
 }
 
-.navbar{
-  overflow: hidden;
-  margin: auto 5em;
-}
-
-.navbar h1{
-  display: inline-block;
+header h1, a{
+  display: inline;
+  text-decoration: none;
 }
 
 .navbar ul{
   list-style-type: none;
   text-align: right;
   padding: 0.5em;
-}
-
-/* footer a{
-
-} */
-
-footer .navbar ul{
-  text-align: center;
 }
 
 .navbar li{
@@ -103,7 +96,7 @@ main{
 .content {
   margin: 1.5em;
   text-align: center;
-}  
+}
 
 
 /* Footer */
@@ -113,11 +106,25 @@ footer{
   left: 0;
   right: 0;
 }
+
+footer a{
+  color:black;
+}
+
+footer .row{
+  padding: 1em 0em;
+}
+
+/* footer .navbar ul{
+  text-align: center;
+} */
+
 .newsletter{
   padding-left: 20px;
   font-size: 15px;
 }
 #newsletter , #submit{
+  font-family: Halant, serif;
   font-size: 20px;
 }
 
@@ -133,6 +140,5 @@ footer{
 
 .copyright{
   font-size: 18px;
-  padding: 1em;
   text-align: center;
 }
