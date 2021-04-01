@@ -1,23 +1,22 @@
 @font-face {
-  font-family: Halant;
-  src: url(fonts/Halant-Regular.ttf) format("truefont");
-  font-display: swap;
+  font-family: "Halant";
+  src: url(fonts/Halant-Regular.ttf);
 }
 
 @font-face {
-  font-family: Halant;
-  src: url(fonts/Halant-Bold.ttf) format("truefont");
+  font-family: "Halant";
+  src: url(fonts/Halant-Bold.ttf);
   font-weight: bold;
 }
 
 @font-face {
-  font-family: NunitoSans;
-  src: url(fonts/NunitoSans-Regular.ttf) format("truefont");
+  font-family: "NunitoSans";
+  src: url(fonts/NunitoSans-Regular.ttf);
 }
 
 @font-face {
-  font-family: NunitoSans;
-  src: url(fonts/NunitoSans-Bold.ttf) format("truefont");
+  font-family: "NunitoSans";
+  src: url(fonts/NunitoSans-Bold.ttf);
   font-weight: bold;
 }
 
@@ -90,14 +89,38 @@ header h1, a{
 /* Main */
 
 main{
-  font-family: NunitoSans, sans-serif;
+  font-family: "NunitoSans", sans-serif;
 }
 
 .content {
   margin: 1.5em;
   text-align: center;
+  border: 1px solid hsl(0, 0%, 80%);
 }
 
+.content h2{
+  margin-bottom: 1em;
+}
+
+.login {
+  margin: 5em 40em;
+  padding: 3em;
+  text-align: left;
+}
+
+form p{
+  padding: 0.5em 0em;
+  font-size: 1.2em;
+  font-family: "NunitoSans";
+}
+
+input{
+  margin: 0.5em 0em;
+}
+
+.login input[type="submit"]{
+  padding: 5px;
+}
 
 /* Footer */
 footer{
@@ -108,7 +131,7 @@ footer{
 }
 
 footer a{
-  color:black;
+  color:black
 }
 
 footer .row{
@@ -121,11 +144,13 @@ footer .row{
 
 .newsletter{
   padding-left: 20px;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: bold;
 }
 #newsletter , #submit{
-  font-family: Halant, serif;
-  font-size: 20px;
+  font-family: "NunitoSans", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 
