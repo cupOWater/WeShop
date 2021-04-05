@@ -96,8 +96,13 @@ main{
 
 .content {
   margin: 1.5em;
+  padding: 20px;
   text-align: center;
   border: 1px solid hsl(0, 0%, 80%);
+}
+
+.content form{
+  text-align: left;
 }
 
 .content h2{
