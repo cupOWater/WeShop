@@ -55,7 +55,8 @@ header .navbar .column h1 a {
   font-size: 32px;
 }
 #logo{
-  display: inline;
+  padding-right: 80px;
+  /* display: inline; */
   height: 5em;
 }
 
@@ -67,7 +68,7 @@ header h1, a{
 .navbar ul{
   list-style-type: none;
   text-align: right;
-  padding: 0.5em;
+  padding: 2em;
 }
 
 .navbar li{
