@@ -9,14 +9,52 @@
 </head>
 <body>
   <div class="container">
-      <header>
-        <div class="navbar">
-          <!-- Logo (154 x 112) -->
+    <header>
+      <div class="row">
+        <!-- Logo (154 x 112) -->
+        <div class="column">
+          <a href="index.html"><img id="logo" src="Pics/logo.png" alt="Logo of dinosaur"></a>
+          <!-- <h1><a href="index.html">Shopping Mall</a></h1> -->
+        </div>
+        <div class="column">
+          <nav class="navbar">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about_us.html">About</a></li>
+              <li><a href="fees.html">Fees</a></li>
+              <li><a href="my_account.html">Account</a></li>
+              <li><a href="browse.html">Browse</a></li>
+              <li><a href="faqs.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+      <main>
+          <div class="content"><h2>New Stories</h2></div>
+          <div class="content"><h2>New Products</h2></div>
+          <div class="content"><h2>Featured Stories</h2></div>
+          <div class="content"><h2>Featured Products</h2></div>
+
+      </main>
+
+      <footer>
+        <hr>
+        <div class="row">
+
           <div class="column">
-            <h1>Shopping Mall</h1>
+            <div class="newsletter">
+              <form action="success.html">
+                <label for="section3">RECEIVE OUR NEWSLETTER:</label><br>
+                <input type="email" name="signup" id="newsletter">
+                <input type="submit" value="Sign Up" id="submit">
+              </form>
+            </div>
           </div>
           <div class="column">
-            <nav class="menu">
+            <nav class="navbar">
               <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about_us.html">About</a></li>
@@ -29,30 +67,6 @@
             </nav>
           </div>
         </div>
-      </header>
-
-      <main>
-          <div class="content"><h2>New Stories</h2></div>
-          <div class="content"><h2>New Products</h2></div>
-          <div class="content"><h2>Featured Stories</h2></div>
-          <div class="content"><h2>Featured Products</h2></div>
-
-      </main>
-
-      <footer>
-        <hr>
-        <nav class="navbar">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about_us.html">About</a></li>
-            <li><a href="fees.html">Fees</a></li>
-            <li><a href="my_account.html">Account</a></li>
-            <li><a href="browse.html">Browse</a></li>
-            <li><a href="faqs.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
         <div class="copyright">
           <p>Copyright © 2021 by group 4. All Rights Reserved | <a href="#">Term of Service</a> </p>
         </div>
