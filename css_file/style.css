@@ -1,22 +1,22 @@
 @font-face {
   font-family: "Halant";
-  src: url("fonts/Halant-Regular.ttf");
+  src: url("./fonts/Halant-Regular.ttf");
 }
 
 @font-face {
   font-family: "Halant";
-  src: url("fonts/Halant-Bold.ttf");
+  src: url("./fonts/Halant-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "NunitoSans";
-  src: url("fonts/NunitoSans-Regular.ttf");
+  src: url("./fonts/NunitoSans-Regular.ttf");
 }
 
 @font-face {
   font-family: "NunitoSans";
-  src: url("fonts/NunitoSans-Bold.ttf");
+  src: url("./fonts/NunitoSans-Bold.ttf");
   font-weight: bold;
 }
 
