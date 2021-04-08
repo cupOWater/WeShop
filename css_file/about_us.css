@@ -1,0 +1,13 @@
+
+.as_header{
+  margin: 1.5em;
+  padding: 20px;
+  text-align: center;
+  /* border: 1px solid hsl(0, 0%, 80%); */
+}
+.as_content{
+    margin: 1.5em;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid hsl(0, 0%, 80%);
+  }
