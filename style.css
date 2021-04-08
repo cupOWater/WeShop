@@ -48,16 +48,14 @@ header{
   overflow: hidden;
 }
 
-header a{
+header .navbar a{
   color: white;
 }
-header .navbar .column h1 a {
-  font-size: 32px;
-}
+
 #logo{
   padding-right: 80px;
-  /* display: inline; */
-  height: 5em;
+  vertical-align: middle;
+  height: 100px;
 }
 
 header h1, a{
