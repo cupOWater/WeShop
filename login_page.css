@@ -1,0 +1,20 @@
+.login {
+  width: 30%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding: 3em;
+  text-align: left;
+}
+
+.login p{
+  margin: 5px 0px;
+}
+
+.login a{
+  color: #141414;
+}
+
+.login a:hover{
+  color: #858585;
+}
