@@ -53,6 +53,12 @@
                   <p>
                   <label>Profile picture</label> <br>
                   <input type="file"></p>
+                  <p>
+                  <label>Account type</label><br>
+                  <input type="radio" name="account" value="owner" id="owner">
+                    <label for="owner">Store owner</label>
+                  <input type="radio" name="account" value="shopper" id="shopper">
+                    <label for="shopper">Shopper</label></p>
                 </div>
                 <div class="column" id="personal">
                   <h2> Personal Info </h2>
@@ -71,18 +77,22 @@
                   <p>
                   <label for="zipcode">Zip code</label> <br>
                   <input type="number" min="1000" max="999999" id="zipcode" name="zipcode"></p>
+                  <p>
+                    <label for="country">Country</label><br>
+                    <select id="country" name="country">
+                      <option value="AU">Australia</option>
+                      <option value="CN">China</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="US">United State</option>
+                      <option value="VN">Vietnam</option>
+                    </select>
+                  </p>
                 </div>
-              </div>
-              <div class="row">
-                <label>Account type: </label>
-                <input type="radio" name="account" value="owner" id="owner">
-                  <label for="owner">Store owner</label>
-                <input type="radio" name="account" value="shopper" id="shopper">
-                  <label for="shopper">Shopper</label>
               </div>
 
               <!-- TODO: Disable this if store owner is not chosen as acc type -->
               <div class="row" id="owner_info">
+                <hr>
                 <h2> Store Owner Profile </h2>
                 <p>
                 <label for="business">Business name</label> <br>
