@@ -18,3 +18,25 @@
 .login a:hover{
   color: #858585;
 }
+
+.register{
+  margin: 20px 20%;
+}
+
+@media only screen and (max-width:1400px){
+  .register .column{
+    width: 100%;
+  }
+
+  #personal{
+    padding-top: 20px;
+  }
+}
+
+.register .row{
+  margin-top: 20px;
+}
+
+.register input[type="radio"]{
+  margin-left: 5px;
+}
