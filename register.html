@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Shop | Home Page</title>
+    <link rel="stylesheet" href="css_file/style.css" type="text/css">
+    <link rel="stylesheet" href="css_file/login_page.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <header>
+          <div class="row">
+            <!-- Logo (154 x 112) -->
+            <div class="column">
+              <a href="index.html"><img id="logo" src="Pics/logo1.png"></a>
+            </div>
+            <div class="column">
+              <nav class="navbar">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about_us.html">About</a></li>
+                  <li><a href="fees.html">Fees</a></li>
+                  <li><a href="my_account.html">Account</a></li>
+                  <li><a href="browse.html">Browse</a></li>
+                  <li><a href="faqs.html">FAQ</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <div class="content register">
+            <form action="#" method="post">
+              <div class="row">
+                <div class="column">
+                  <h2> Profile Info </h2>
+                  <p>
+                  <label for="uemail">Email</label> <br>
+                  <input type="email" id="uemail" name="uemail"></p>
+                  <p>
+                  <label for="uphone">Phone number</label> <br>
+                  <input type="number" id="uphone" name="uphone"></p>
+                  <p>
+                  <label for="upassword">Password</label> <br>
+                  <input type="password" id="upassword" name="upassword"></p>
+                  <p>
+                  <label for="reupassword">Re-type password</label> <br>
+                  <input type="password" id="reupassword" name="reupassword"></p>
+                  <p>
+                  <label>Profile picture</label> <br>
+                  <input type="file"></p>
+                  <p>
+                  <label>Account type</label><br>
+                  <input type="radio" name="account" value="owner" id="owner">
+                    <label for="owner">Store owner</label>
+                  <input type="radio" name="account" value="shopper" id="shopper">
+                    <label for="shopper">Shopper</label></p>
+                </div>
+                <div class="column" id="personal">
+                  <h2> Personal Info </h2>
+                  <p>
+                  <label for="fname">First name</label> <br>
+                  <input type="text" id="fname" name="fname"></p>
+                  <p>
+                  <label for="lname">Last name</label> <br>
+                  <input type="text" id="lname" name="lname"></p>
+                  <p>
+                  <label for="address">Address</label> <br>
+                  <input type="text" id="address" name="address"></p>
+                  <p>
+                  <label for="city">City</label> <br>
+                  <input type="text" id="city" name="city"></p>
+                  <p>
+                  <label for="zipcode">Zip code</label> <br>
+                  <input type="number" min="1000" max="999999" id="zipcode" name="zipcode"></p>
+                  <p>
+                    <label for="country">Country</label><br>
+                    <select id="country" name="country">
+                      <option value="AU">Australia</option>
+                      <option value="CN">China</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="US">United State</option>
+                      <option value="VN">Vietnam</option>
+                    </select>
+                  </p>
+                </div>
+              </div>
+
+              <!-- TODO: Disable this if store owner is not chosen as acc type -->
+              <div class="row" id="owner_info">
+                <hr>
+                <h2> Store Owner Profile </h2>
+                <p>
+                <label for="business">Business name</label> <br>
+                <input type="text" id="business" name="business"></p>
+                <p>
+                <label for="store">Store name</label> <br>
+                <input type="text" id="store" name="store"></p>
+                <p>
+                  <label>Store Type: </label>
+                  <select id="store_type" name="store_type">
+                    <option value="dep">Department</option>
+                    <option value="groc">Grocery</option>
+                    <option value="rest">Restaurant</option>
+                    <option value="acces">Accessory</option>
+                    <option value="pharm">Pharmacy</option>
+                    <option value="tech">Technology</option>
+                    <option value="pet">Pet</option>
+                    <option value="toy">Toy</option>
+                    <option value="special">Specialty</option>
+                    <option value="thrift">Thrift</option>
+                    <option value="serv">Services</option>
+                    <option value="kio">Kiosk</option>
+                    <option value="clothe">Clothing</option>
+                  </select>
+                </p>
+              </div>
+                <div class="row">
+                  <input type="submit">
+                  <input type="reset">
+                </div>
+            </form>
+
+          </div>
+        </main>
+
+        <footer>
+          <hr>
+          <div class="row">
+
+            <div class="column">
+              <div class="newsletter">
+                <form action="success.html">
+                  <label for="section3">RECEIVE OUR NEWSLETTER:</label><br>
+                  <input type="email" name="signup" id="newsletter">
+                  <input type="submit" value="Sign Up" id="submit">
+                </form>
+              </div>
+            </div>
+            <div class="column">
+              <nav class="navbar">
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about_us.html">About</a></li>
+                  <li><a href="fees.html">Fees</a></li>
+                  <li><a href="my_account.html">Account</a></li>
+                  <li><a href="browse.html">Browse</a></li>
+                  <li><a href="faqs.html">FAQ</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>Copyright © 2021 by group 4. All Rights Reserved | <a href="#">Term of Service</a> </p>
+          </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

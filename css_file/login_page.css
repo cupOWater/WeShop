@@ -1,0 +1,46 @@
+.login {
+  width: 30%;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding: 3em;
+  text-align: left;
+}
+
+.login p{
+  margin: 5px 0px;
+}
+
+.login a{
+  color: #141414;
+}
+
+.login a:hover{
+  color: #858585;
+}
+
+.register{
+  margin: 20px 20%;
+}
+
+@media only screen and (max-width:1400px){
+  .register .column{
+    width: 100%;
+  }
+
+  #personal{
+    padding-top: 20px;
+  }
+}
+
+.register .row{
+  margin-top: 20px;
+}
+
+.register input[type="radio"]{
+  margin-left: 5px;
+}
+
+.register h2{
+  margin-top: 10px;
+}

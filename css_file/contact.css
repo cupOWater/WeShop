@@ -1,0 +1,16 @@
+.contact_header{
+    margin: 1.5em;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid hsl(0, 0%, 80%);
+}
+.contact_box{
+    text-align: left;
+}
+.aboutyou, .day, #box{
+    border: .5px solid hsl(0, 0%, 80%);
+}
+
+textarea[name="textbox"]{
+  width: 75%
+}

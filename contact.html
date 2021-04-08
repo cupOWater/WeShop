@@ -4,19 +4,99 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css_file/style.css">
+    <link rel="stylesheet" href="css_file/contact.css">
 </head>
 <body>
   <div class="container">
-      <header>
-        <div class="navbar">
-          <!-- Logo (154 x 112) -->
+    <header>
+      <div class="row">
+        <!-- Logo (154 x 112) -->
+        <div class="column">
+          <a href="index.html"><img id="logo" src="Pics/logo1.png"></a>
+        </div>
+        <div class="column">
+          <nav class="navbar">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about_us.html">About</a></li>
+              <li><a href="fees.html">Fees</a></li>
+              <li><a href="my_account.html">Account</a></li>
+              <li><a href="browse.html">Browse</a></li>
+              <li><a href="faqs.html">FAQ</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+      <main>
+        <div class="contact_header">
+          <h1>Contact Us</h1>
+          <h2>How can we help you?</h2>
+          <p>Fill out this form to request support</p>
+          <div class="contact_box">
+            <form action="#" method="contact">
+              <label for="contact">Contact Purpose:</label>
+              <select name="Contact_purpose" id="contact">
+                  <option value="">Please Select</option>
+                  <option value="b">Business</option>
+                  <option value="p">Personal</option>
+              </select><br>
+              <fieldset class="aboutyou">
+                <legend><label for="aboutyou">About You</label></legend>
+                <p>Fullname: <br>
+                <input type="text" maxlength="50" id="aboutyou"></p>
+                <p>Email: <br>
+                <input type="email" id="aboutyou"></p>
+                <p>Phone: <br>
+                <input type="text" id="aboutyou"></p>
+                <label for="contacttype">Choose contact type:</label>
+                <input type="radio" name="contact_method" value="email" id="contacttype"> Email
+                <input type="radio" name="contact_method" value="phone" id="contacttype"> Phone
+              </fieldset><br>
+              <fieldset class="day">
+                <legend><label for="day">Select contact day</label></legend>
+                <p><br>
+                <input type="checkbox" name="contact_day" id="day">Monday
+                <input type="checkbox" name="contact_day" id="day">Tuesday
+                <input type="checkbox" name="contact_day" id="day">Wednesday
+                <input type="checkbox" name="contact_day" id="day">Thursday
+                <input type="checkbox" name="contact_day" id="day">Friday
+                <input type="checkbox" name="contact_day" id="day">Saturday
+                <input type="checkbox" name="contact_day" id="day">Sunday
+                </p>
+              </fieldset><br>
+              <label for="box"><p>Write your questions</p></label>
+              <textarea name="textbox" id="box" cols="101" rows="10">Delete and Enter your message here...</textarea><br>
+              <div class="submit">
+                <input type="submit" value="Submit">
+                <button type='reset' id="reset">
+                    <strong class="reset">Reset</strong><br>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <footer class="contact_footer">
+        <hr>
+        <div class="row">
+
           <div class="column">
-            <h1>Shopping Mall</h1>
+            <div class="newsletter">
+              <form action="success.html">
+                <label for="section3">RECEIVE OUR NEWSLETTER:</label><br>
+                <input type="email" name="signup" id="newsletter">
+                <input type="submit" value="Sign Up" id="submit">
+              </form>
+            </div>
           </div>
           <div class="column">
-            <nav class="menu">
+            <nav class="navbar">
               <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about_us.html">About</a></li>
@@ -29,35 +109,10 @@
             </nav>
           </div>
         </div>
-      </header>
-
-      <main>
-          <div class="content"><h2>New Stories</h2></div>
-          <div class="content"><h2>New Products</h2></div>
-          <div class="content"><h2>Featured Stories</h2></div>
-          <div class="content"><h2>Featured Products</h2></div>
-
-      </main>
-
-      <footer>
-        <hr>
-        <nav class="navbar">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about_us.html">About</a></li>
-            <li><a href="fees.html">Fees</a></li>
-            <li><a href="my_account.html">Account</a></li>
-            <li><a href="browse.html">Browse</a></li>
-            <li><a href="faqs.html">FAQ</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-
         <div class="copyright">
           <p>Copyright © 2021 by group 4. All Rights Reserved | <a href="#">Term of Service</a> </p>
         </div>
       </footer>
-
   </div>
 
 </body>
