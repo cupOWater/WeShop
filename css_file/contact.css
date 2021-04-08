@@ -14,3 +14,7 @@
 textarea[name="textbox"]{
   width: 75%
 }
+.reset{
+    text-decoration: none;
+    font-size: 18px;
+}
