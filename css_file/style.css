@@ -1,3 +1,4 @@
+<<<<<<< HEAD:css_file/style.css
 @font-face {
   font-family: "Halant";
   src: url(fonts/Halant-Regular.ttf);
@@ -150,3 +151,174 @@ footer .row{
   font-size: 18px;
   text-align: center;
 }
+=======
+@font-face {
+  font-family: "Halant";
+  src: url(fonts/Halant-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Halant";
+  src: url(fonts/Halant-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: url(fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: "NunitoSans";
+  src: url(fonts/NunitoSans-Bold.ttf);
+  font-weight: bold;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header, footer{
+  font-family: "Halant", serif;
+  padding: 1em 0em;
+}
+
+.row {
+  overflow: hidden;
+  margin: 0em 5em;
+}
+
+.column {
+  float: left;
+  /* display: inline-block; */
+  width: 50%;
+}
+
+/*HEADER */
+header{
+  color: white;
+  background-color: black;
+  overflow: hidden;
+}
+
+header a{
+  color: white;
+}
+header .navbar .column h1 a {
+  font-size: 32px;
+}
+#logo{
+  display: inline;
+  height: 5em;
+}
+
+header h1, a{
+  display: inline;
+  text-decoration: none;
+}
+
+.navbar ul{
+  list-style-type: none;
+  text-align: right;
+  padding: 0.5em;
+}
+
+.navbar li{
+  align-items: center;
+  display:inline;
+}
+
+.navbar a{
+  font-size: 1.4em;
+  padding: 0.5em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navbar a:hover{
+  color: #b5b5b5;
+}
+
+/* Main */
+
+main{
+  font-family: "NunitoSans", sans-serif;
+}
+
+.content {
+  margin: 1.5em;
+  text-align: center;
+  border: 1px solid hsl(0, 0%, 80%);
+}
+
+.content h2{
+  margin-bottom: 1em;
+}
+
+.login {
+  margin: 5em 40em;
+  padding: 3em;
+  text-align: left;
+}
+
+form p{
+  padding: 0.5em 0em;
+  font-size: 1.2em;
+  font-family: "NunitoSans";
+}
+
+input{
+  margin: 0.5em 0em;
+}
+
+.login input[type="submit"]{
+  padding: 5px;
+}
+
+/* Footer */
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer a{
+  color:black
+}
+
+footer .row{
+  padding: 1em 0em;
+}
+
+/* footer .navbar ul{
+  text-align: center;
+} */
+
+.newsletter{
+  padding-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+#newsletter , #submit{
+  font-family: "NunitoSans", sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+
+
+/* .container {
+    background-color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+    height: 112px;
+} */
+
+.copyright{
+  font-size: 18px;
+  text-align: center;
+}
+>>>>>>> main:style.css
