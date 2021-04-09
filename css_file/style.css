@@ -84,6 +84,19 @@ header h1, a{
 .navbar a:hover{
   color: #b5b5b5;
 }
+.sub-menu{
+  display: none;
+}
+.navbar ul li:hover .sub-menu{
+  display: block;
+  position:absolute;
+  color: #b5b5b5;
+  margin-left: 25px;
+}
+.navbar ul li:hover .sub-menu ul{
+   display: block;
+   margin:10px;
+}
 
 /* Main */
 
