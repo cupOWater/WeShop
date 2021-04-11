@@ -1,22 +1,22 @@
 @font-face {
   font-family: "Halant";
-  src: url("./fonts/Halant-Regular.ttf");
+  src: url("../fonts/Halant-Regular.ttf");
 }
 
 @font-face {
   font-family: "Halant";
-  src: url("./fonts/Halant-Bold.ttf");
+  src: url("../fonts/Halant-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: "NunitoSans";
-  src: url("./fonts/NunitoSans-Regular.ttf");
+  src: url("../fonts/NunitoSans-Regular.ttf");
 }
 
 @font-face {
   font-family: "NunitoSans";
-  src: url("./fonts/NunitoSans-Bold.ttf");
+  src: url("../fonts/NunitoSans-Bold.ttf");
   font-weight: bold;
 }
 
@@ -98,6 +98,7 @@ header h1, a{
   background-color: black;
   position: absolute;
   right: 100px;
+  z-index: 1;
 }
 
 footer .sub-menu{
@@ -178,6 +179,13 @@ footer a{
 
 footer .row{
   padding: 1em 0em;
+}
+
+@media only screen and (max-width: 650px){
+  footer .column{
+    width: 100%;
+  }
+
 }
 
 .newsletter{
