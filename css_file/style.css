@@ -159,10 +159,14 @@ main{
 }
 
 input{
-  width: %100;
   padding: 1px 6px;
   margin: 8px 0px;
   font-size: 16px;
+}
+
+input[type="email"], input[type="text"], input[type="password"], input[type="number"]{
+  width: 45%;
+  min-width: 100px;
 }
 
 /* Footer */
@@ -186,6 +190,10 @@ footer .row{
     width: 100%;
   }
 
+  footer .sub-container{
+    border: 1px solid gray;
+  }
+
 }
 
 .newsletter{
@@ -197,6 +205,10 @@ footer .row{
   font-family: "NunitoSans", sans-serif;
   font-size: 16px;
   font-weight: normal;
+}
+
+#newsletter{
+  max-width: 200px;
 }
 
 .copyright{

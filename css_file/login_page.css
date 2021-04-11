@@ -19,6 +19,19 @@
   color: #858585;
 }
 
+.login input[type="button"]{
+  border: 0px;
+  background: black;
+  color: white;
+  font-size: 18px;
+}
+
+.login input[type="button"]:hover{
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 50%);
+}
+
+
 .register{
   margin: 20px 20%;
 }
@@ -26,6 +39,14 @@
 @media only screen and (max-width:1400px){
   .register .column{
     width: 100%;
+  }
+
+  .register{
+    margin: 20px 3px;
+  }
+
+  .register .row{
+    margin: 0em 2em;
   }
 
   #personal{
@@ -45,6 +66,10 @@
   margin-top: 10px;
 }
 
+.register input{
+  max-width: 200px;
+}
+
 .profile {
   text-align: left;
 }
@@ -52,6 +77,11 @@
 .profile p{
   font-size: 16px;
   margin-bottom: 16px;
+}
+
+.profile #pf{
+  width: 30%;
+  min-width: 130px;
 }
 
 @media only screen and (max-width: 800px){
