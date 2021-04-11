@@ -63,14 +63,17 @@ header h1, a{
   text-decoration: none;
 }
 
-.navbar ul{
+.navbar {
+  height: 100px;
+}
+
+.navbar > ul{
   list-style-type: none;
   text-align: right;
   padding: 2em;
 }
 
-.navbar li{
-  align-items: center;
+.navbar > ul > li{
   display:inline;
 }
 
@@ -84,18 +87,51 @@ header h1, a{
 .navbar a:hover{
   color: #b5b5b5;
 }
+
+.sub-container a{
+  display:none;
+  text-align: right;
+}
+
 .sub-menu{
   display: none;
+  background-color: black;
+  position: absolute;
+  right: 100px;
 }
-.navbar ul li:hover .sub-menu{
+
+footer .sub-menu{
+  background-color: white;
+  bottom: 140px;
+}
+
+.sub-menu a{
+  float: none;
+  border-bottom: 1px solid white;
   display: block;
-  position:absolute;
-  color: #b5b5b5;
-  margin-left: 25px;
+  font-size: 20px;
+  min-width: 200px;
 }
-.navbar ul li:hover .sub-menu ul{
-   display: block;
-   margin:10px;
+
+footer .sub-menu a{
+  border-bottom: 1px solid black;
+}
+
+.sub-container:hover .sub-menu{
+  display: block;
+  color: #b5b5b5;
+}
+
+@media only screen and (max-width: 1470px){
+  .navbar > ul{
+    padding: 20px;
+  }
+  .navbar ul li > a{
+    display: none;
+  }
+  .sub-container a{
+    display: block;
+  }
 }
 
 /* Main */
