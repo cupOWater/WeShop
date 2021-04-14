@@ -88,9 +88,18 @@ header h1, a{
   color: #b5b5b5;
 }
 
-.sub-container a{
-  display:none;
-  text-align: right;
+.sub-container input{
+  display: none;
+}
+
+.sub-container label{
+  display: none;
+  font-size: 1.4em;
+}
+
+.sub-container label:hover{
+  color: #b5b5b5;
+  cursor: pointer;
 }
 
 .sub-menu{
@@ -101,9 +110,8 @@ header h1, a{
   z-index: 1;
 }
 
-footer .sub-menu{
-  background-color: white;
-  bottom: 140px;
+.sub-container #menu-top:checked ~ .sub-menu{
+  display: block;
 }
 
 .sub-menu a{
@@ -114,26 +122,28 @@ footer .sub-menu{
   min-width: 200px;
 }
 
+.sub-container #menu-bot:checked ~ .sub-menu{
+  display: block;
+}
+
+footer .sub-menu{
+  background-color: white;
+  bottom: 140px;
+}
+
 footer .sub-menu a{
   border-bottom: 1px solid black;
 }
 
-.sub-container:hover .sub-menu{
-  display: block;
-  color: #b5b5b5;
-}
-
 @media only screen and (max-width: 1470px){
-  .navbar > ul{
-    padding: 20px;
-  }
   .navbar ul li > a{
     display: none;
   }
-  .sub-container a{
+  .sub-container label{
     display: block;
   }
 }
+
 
 /* Main */
 
