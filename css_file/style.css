@@ -143,6 +143,12 @@ main{
   font-family: "NunitoSans", sans-serif;
 }
 
+@media only screen and (max-width: 600px){
+  main{
+    width: 100%;
+  }
+}
+
 .content {
   margin: 1.5em;
   padding: 20px;
