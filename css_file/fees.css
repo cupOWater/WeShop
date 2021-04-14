@@ -1,31 +1,35 @@
 .header {
-    margin: 1.5em;
+    width: 80%;
+    margin: auto;
     padding: 20px;
-    text-align: left;   
+    text-align: left;
 }
+
 .header h2{
     color: rgb(9, 66, 221);
     text-decoration-line: underline;
 }
 .monthly_fee, .member_fee{
-    margin: 1.5em;
+    overflow-x: scroll;
+    margin: auto;
     padding: 10px;
     /* border: 1px solid hsl(0, 0%, 80%); */
-    
+
 }
 .table1,.table2{
     width: 100%;
+    min-width: 670px;
 }
 
-.table1,th,td,.table2{
+.table1, th, td, .table2{
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
-    font-size: 20px;  
+    font-size: 20px;
 }
 .header .member_fee .table2 .level{
     text-decoration-line:underline ;
-} 
+}
 td{
     font-size: 18px;
 }
