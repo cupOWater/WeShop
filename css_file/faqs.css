@@ -48,9 +48,13 @@
     transition: max-height 500ms;
 }
 
-.answer p{
+.answer p, .ans{
     background-color: rgb(250, 227, 198);
     padding: 2rem;
+}
+.ans li{ 
+    
+    padding: .3rem;
 }
 
 .answer::before{
