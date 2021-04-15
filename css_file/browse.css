@@ -2,6 +2,8 @@
   display: none;
 }
 
+
+
 .browsing label{
   padding: 10px;
   margin: 0px 5px;
@@ -58,4 +60,10 @@
 
 #catbrowse:checked ~ .catbrowsing{
   display: block;
+}
+.browse_footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
