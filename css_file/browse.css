@@ -1,2 +1,60 @@
+#namebrowse, #catbrowse{
+  display: none;
+}
 
+.browsing{
+  font-size: 25px;
+}
 
+.browsing label{
+  display: inline-block;
+  font-weight: bold;
+}
+
+.browsing label:hover{
+  color: grey;
+  cursor: pointer;
+}
+
+.namebrowsing, .catbrowsing{
+  display: none;
+  border-bottom: 1px solid gray;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.namebrowsing{
+  font-size: 20px;
+  padding: 16px;
+  white-space: nowrap;
+}
+
+.catbrowsing{
+  text-align: left;
+  padding: 16px;
+}
+
+#store_type{
+  font-size: 20px;
+  width: 100%;
+}
+
+.browsing h3{
+  border-top: 1px solid grey;
+  margin-top: 25px;
+}
+
+@media only screen and (max-width: 1350px){
+  .namebrowsing{
+    overflow-x: scroll;
+  }
+}
+
+#namebrowse:checked ~ .namebrowsing{
+  display: block;
+}
+
+#catbrowse:checked ~ .catbrowsing{
+  display: block;
+}
