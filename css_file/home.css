@@ -2,6 +2,11 @@
   margin: 0em 0em;
 }
 
+.scroll {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
 .column4 {
   text-align: center;
   display: inline-block;
