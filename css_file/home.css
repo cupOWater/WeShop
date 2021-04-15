@@ -11,6 +11,15 @@
   padding: 5em 0em;
 }
 
+.column2 {
+  text-align: center;
+  display: inline-block;
+  border: 1px solid grey;
+  width: 40%;
+  margin: 13px;
+  padding: 5em 0em;
+}
+
 @media only screen and (max-width: 1000px){
   .column4{
     width: 40%
