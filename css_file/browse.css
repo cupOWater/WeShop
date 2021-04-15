@@ -2,13 +2,13 @@
   display: none;
 }
 
-.browsing{
-  font-size: 25px;
-}
-
 .browsing label{
+  padding: 10px;
+  margin: 0px 5px;
+  font-size: 25px;
   display: inline-block;
   font-weight: bold;
+  border: 1px solid grey;
 }
 
 .browsing label:hover{
@@ -38,6 +38,7 @@
 #store_type{
   font-size: 20px;
   width: 100%;
+  background-color: #dedede;
 }
 
 .browsing h3{
