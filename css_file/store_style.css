@@ -25,6 +25,10 @@
   padding: 0px;
 }
 
+html{
+  min-height: 100%;
+}
+
 header, footer{
   font-family: "Halant", serif;
   padding: 1em 0em;
@@ -61,6 +65,46 @@ header a{
   padding: 16px 15px;
 }
 
+li ~ .hidden_menu {
+  padding: 0px;
+  display: none;
+}
+
+.hidden_menu input[type="checkbox"]{
+  display: none;
+}
+
+.hidden_menu label:hover{
+  cursor: pointer;
+}
+
+.hidden_menu img:hover{
+  filter: opacity(0.7);
+}
+
+.menu_box{
+  display: none;
+  position: absolute;
+  right: 90px;
+  z-index: 1;
+}
+
+.menu_box a{
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1.5px solid black;
+  display: block;
+}
+
+.menu_box a:hover{
+  background-color: lightyellow;
+}
+
+.hidden_menu input[type="checkbox"]:checked ~ .menu_box{
+  display: block;
+}
+
 @media only screen and (max-width: 1250px){
   .navbar{
     font-size: 23px;
@@ -70,9 +114,24 @@ header a{
   }
 }
 
+@media only screen and (max-width: 1000px){
+  .navbar ul li > a{
+    display: none;
+  }
+
+  .navbar li{
+    padding: 0px;
+  }
+  li ~ .hidden_menu {
+    display: inline-block;
+    padding: 16px 15px;
+  }
+}
+
 @media only screen and (max-width: 700px){
   header h1{
     font-size: 30px;
+    padding: 10px 0px;
   }
 }
 
@@ -109,19 +168,43 @@ main{
     width: 100%;
   }
 
+  .subsec h1{
+    font-size: 25px;
+  }
+
   .row{
     margin: 0em 1em;
+  }
+
+  .menu_box{
+    right: 30px;
   }
 }
 
 /* Footer */
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 footer .navbar{
-  margin: 0em 2.5em;
+  margin: 0em 3.5em;
+}
+
+@media only screen and (max-width: 600px){
+  footer .navbar{
+    margin: 0em 0.5em;
+  }
 }
 
 footer a{
   text-decoration: none;
   color: black;
+}
+
+footer .menu_box{
+  bottom: 95px;
 }
 
 #copyright {
