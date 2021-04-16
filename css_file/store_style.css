@@ -35,7 +35,15 @@ header, footer{
 }
 
 header {
-  background-color: #e6ba29;
+  /* background-color: #e6ba29; */
+  background-color: 4cb5f5;
+  
+}
+.img_logo{
+    padding-right: 80px;
+    vertical-align: middle;
+    width: 125px;
+    height: 125px;
 }
 
 header h1{
@@ -144,6 +152,7 @@ li input[type="checkbox"]:checked ~ .menu_box{
   }
 
   .navbar li{
+    
     padding: 0px;
   }
   li ~ .hidden_menu {
@@ -199,6 +208,7 @@ main{
     margin: 0em 1em;
   }
 }
+
 
 /* Footer */
 footer{
