@@ -28,6 +28,9 @@
 .description , .price{
     font-size: 20px;
 }
+.price{
+    font-weight: bold;
+}
 .add_button, .buy_button{
     display: inline;
     border: black;
