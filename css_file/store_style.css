@@ -61,6 +61,7 @@ header a{
 }
 
 .navbar li{
+  position: relative;
   display: inline-block;
   padding: 16px 15px;
 }
@@ -74,6 +75,19 @@ li ~ .hidden_menu {
   display: none;
 }
 
+.navbar label{
+  color: #361807;
+}
+
+.navbar label:hover{
+  color: #5c534f;
+  cursor: pointer;
+}
+
+#product_sub, #product_sub_bot{
+  display: none;
+}
+
 .hidden_menu label:hover{
   cursor: pointer;
 }
@@ -83,16 +97,26 @@ li ~ .hidden_menu {
 }
 
 .menu_box{
+  background-color: white;
+  min-width: 100px;
+  text-align: center;
   display: none;
   position: absolute;
-  right: 90px;
+  right: 0px;
   z-index: 1;
+  padding: 5px;
+}
+
+#product_sub ~ .menu_box, #product_sub_bot ~ .menu_box{
+  right: 20px;
 }
 
 .menu_box a{
-  background-color: white;
-  text-align: center;
-  padding: 5px;
+  border-bottom: 1.5px solid black;
+  display: block;
+}
+
+.menu_box label{
   border-bottom: 1.5px solid black;
   display: block;
 }
@@ -101,7 +125,7 @@ li ~ .hidden_menu {
   background-color: lightyellow;
 }
 
-.hidden_menu input[type="checkbox"]:checked ~ .menu_box{
+li input[type="checkbox"]:checked ~ .menu_box{
   display: block;
 }
 
@@ -115,7 +139,7 @@ li ~ .hidden_menu {
 }
 
 @media only screen and (max-width: 1000px){
-  .navbar ul li > a{
+  .navbar ul li > a, .navbar ul li > label[for="product_sub"], .navbar ul li > label[for="product_sub_bot"]{
     display: none;
   }
 
@@ -154,13 +178,12 @@ main{
 }
 
 .row {
-  overflow: hidden;
   margin: 0em 5em;
 }
 
 .column {
-  float: left;
-  width: 50%;
+  display: inline-block;
+  width: 49%;
 }
 
 @media only screen and (max-width: 600px){
@@ -174,10 +197,6 @@ main{
 
   .row{
     margin: 0em 1em;
-  }
-
-  .menu_box{
-    right: 30px;
   }
 }
 
@@ -198,13 +217,13 @@ footer .navbar{
   }
 }
 
-footer a{
+footer a, footer label{
   text-decoration: none;
   color: black;
 }
 
 footer .menu_box{
-  bottom: 100px;
+  bottom: 55px;
 }
 
 #copyright {
