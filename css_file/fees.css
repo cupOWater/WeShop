@@ -33,3 +33,14 @@
 td{
     font-size: 18px;
 }
+
+.note{
+    font: 20px;
+}
+
+.fees_footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
