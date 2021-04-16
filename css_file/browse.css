@@ -9,10 +9,24 @@
   margin-top: 20px;
 }
 
+h2{
+  text-align: left;
+  margin: 20px 0px;
+}
+
+/* BROWSE BY NAME */
 .namebrowsing{
-  font-size: 20px;
   padding: 16px;
   white-space: nowrap;
+}
+
+.namebrowsing label{
+  font-size: 20px;
+}
+
+.namebrowsing label:hover{
+  color: grey;
+  cursor: pointer;
 }
 
 
@@ -20,11 +34,6 @@
 .catbrowsing{
   text-align: left;
   padding: 16px;
-}
-
-.catbrowsing h2{
-  text-align: left;
-  margin: 20px 0px;
 }
 
 .catbrowsing label{
