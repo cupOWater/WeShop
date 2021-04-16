@@ -217,7 +217,7 @@ footer .navbar{
   }
 }
 
-footer a, footer label{
+footer a, footer .navbar label{
   text-decoration: none;
   color: black;
 }
