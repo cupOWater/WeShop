@@ -17,8 +17,14 @@
   border: 1px solid grey;
   width: 20%;
   margin: 13px;
-  padding: 5em 0em;
+  padding: 2em 0em;
   min-width: 200px;
+}
+
+.column4 img{
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
 }
 
 .column2 {
@@ -28,7 +34,7 @@
   width: 40%;
   min-width: 200px;
   margin: 13px;
-  padding: 5em 0em;
+  padding: 2em 0em;
 }
 
 @media only screen and (max-width: 1300px){
