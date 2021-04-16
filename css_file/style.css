@@ -85,9 +85,16 @@ header h1, a{
   display: none;
 }
 
-#browse_top_small ~ .sub-menu, #browse_bot_small ~ .sub-menu{
+#browse_top_small ~ .sub-menu{
+  border-right: 1px solid white;
   right: 100px;
   bottom: 53px;
+}
+
+#browse_bot_small ~ .sub-menu{
+  border-right: 1px solid black;
+  right: 100px;
+  bottom: 54px;
 }
 
 .navbar li, .sub-container{
