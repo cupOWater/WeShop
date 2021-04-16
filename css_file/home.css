@@ -25,6 +25,11 @@
   width: 200px;
   height: 200px;
   object-fit: fill;
+  display: inline-block;
+}
+
+.column4 ul{
+  display: inline-block;
 }
 
 .column2 {
