@@ -31,20 +31,18 @@ header, footer{
 }
 
 .row {
-  overflow: hidden;
   margin: 0em 5em;
 }
 
 .column {
-  float: left;
-  width: 50%;
+  display: inline-block;
+  width: 49%;
 }
 
 /*HEADER */
 header{
   color: white;
   background-color: black;
-  overflow: hidden;
 }
 
 header .navbar a{
@@ -62,38 +60,46 @@ header h1, a{
   text-decoration: none;
 }
 
-.navbar {
-  height: 100px;
-}
-
 .navbar > ul{
   list-style-type: none;
-  text-align: right;
-  padding: 2em;
+  padding: 1.5em 0em;
 }
 
-.navbar > ul > li{
+.navbar li{
+  padding-left: 15px;
   display:inline;
 }
 
-.navbar a{
+.navbar {
   font-size: 1.4em;
-  padding: 0.5em;
   text-decoration: none;
-  text-align: center;
+  text-align: right;
 }
 
-.navbar a:hover{
+.navbar a:hover, .navbar label:hover{
   color: #b5b5b5;
+  cursor: pointer;
+}
+
+#browse_sub_top, #browse_sub_bot, #browse_top_small, #browse_bot_small{
+  display: none;
+}
+
+#browse_top_small ~ .sub-menu, #browse_bot_small ~ .sub-menu{
+  right: 100px;
+  bottom: 53px;
+}
+
+.navbar li, .sub-container{
+  position: relative;
 }
 
 .sub-container input{
   display: none;
 }
 
-.sub-container label{
+.navbar .sub-container{
   display: none;
-  font-size: 1.4em;
 }
 
 .sub-container label:hover{
@@ -105,41 +111,46 @@ header h1, a{
   display: none;
   background-color: black;
   position: absolute;
-  right: 100px;
+  right: 10px;
   z-index: 1;
 }
 
-.sub-container #menu-top:checked ~ .sub-menu{
+.sub-container input[type="checkbox"]:checked ~ .sub-menu{
   display: block;
 }
 
-.sub-menu a{
+li input[type="checkbox"]:checked ~ .sub-menu{
+  display: block;
+}
+
+.sub-menu a, .sub-menu label{
   float: none;
-  border-bottom: 1px solid white;
+  padding: 10px;
+  border-top: 1px solid white;
   display: block;
   font-size: 20px;
-  min-width: 200px;
-}
-
-.sub-container #menu-bot:checked ~ .sub-menu{
-  display: block;
+  min-width: 150px;
 }
 
 footer .sub-menu{
   background-color: white;
-  bottom: 140px;
+  bottom: 50px;
 }
 
-footer .sub-menu a{
+footer .sub-menu a, footer .sub-menu label{
   border-bottom: 1px solid black;
 }
 
 @media only screen and (max-width: 1470px){
-  .navbar ul li > a{
+  .navbar ul li > a, .navbar ul li > label[for="browse_sub_top"], .navbar ul li > label[for="browse_sub_bot"]{
     display: none;
   }
-  .sub-container label{
-    display: block;
+  .navbar li{
+    padding-left: 0px;
+  }
+
+  .navbar .sub-container {
+    display: inline-block;
   }
 }
 
