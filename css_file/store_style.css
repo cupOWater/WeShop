@@ -37,7 +37,7 @@ header, footer{
 header {
   /* background-color: #e6ba29; */
   background-color: 4cb5f5;
-  
+
 }
 .img_logo{
     padding-right: 80px;
@@ -152,7 +152,7 @@ li input[type="checkbox"]:checked ~ .menu_box{
   }
 
   .navbar li{
-    
+
     padding: 0px;
   }
   li ~ .hidden_menu {
@@ -212,7 +212,7 @@ main{
 
 /* Footer */
 footer{
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 }
