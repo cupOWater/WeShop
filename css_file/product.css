@@ -10,13 +10,12 @@
     text-align: left;
     border: 1px solid hsl(0, 0%, 80%);
 }
-.product_pic{
+.product_pic img{
     text-align: center;
     display: inline-block;
     border: 1px solid grey;
     width: 20%;
     margin: 13px;
-    padding: 5em 0em;
     min-width: 200px;
 }
 @media only screen and (max-width: 1300px){
@@ -25,20 +24,22 @@
     }
   }
 
-.description , .price{
+.description {
     font-size: 20px;
+    margin: 16px;
 }
+
+.description li{
+  border-bottom: 1px solid lightgray;
+}
+
 .price{
     font-weight: bold;
 }
-.add_button, .buy_button{
-    display: inline;
-    border: black;
-    padding: 20px;
 
-}
 #add_to_cart, #buy_now{
     color: white;
+    padding: 10px;
     background-color: red;
     font-size: 25px;
 }
