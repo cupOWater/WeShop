@@ -11,10 +11,41 @@
     text-align: left;
     border: 1px solid hsl(0, 0%, 80%);
   }
+
 /* Store */
-  .footer_store{
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
+.footer_store{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.as_content h2{
+  margin-bottom: 16px;
+}
+
+.as_content img{
+  display: inline-block;
+  vertical-align: middle;
+  height: 200px;
+}
+
+.as_content ul{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 660px){
+  .as_content img, .as_content ul{
+    display: block;
+    margin: auto;
+    text-align: center;
+    list-style: none;
   }
+
+  .as_content h2{
+    text-align: center;
+  }
+}
