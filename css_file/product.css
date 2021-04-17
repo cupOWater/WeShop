@@ -10,7 +10,7 @@
     text-align: left;
     border: 1px solid hsl(0, 0%, 80%);
 }
-.product_pic, .product_pics{
+.product_pic{
     text-align: center;
     display: inline-block;
     border: 1px solid grey;
@@ -20,7 +20,7 @@
     min-width: 200px;
 }
 @media only screen and (max-width: 1300px){
-    .product_pic, .product_pics{
+    .product_pic{
       width: 40%
     }
   }
@@ -35,11 +35,10 @@
     display: inline;
     border: black;
     padding: 20px;
-    
+
 }
 #add_to_cart, #buy_now{
     color: white;
     background-color: red;
     font-size: 25px;
 }
-
