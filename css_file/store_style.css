@@ -145,7 +145,7 @@ li input[type="checkbox"]:checked ~ .menu_box{
   }
 }
 
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 1100px){
   .navbar ul li > a, .navbar ul li > label[for="product_sub"], .navbar ul li > label[for="product_sub_bot"]{
     display: none;
   }
@@ -156,13 +156,6 @@ li input[type="checkbox"]:checked ~ .menu_box{
   li ~ .hidden_menu {
     display: inline-block;
     padding: 16px 15px;
-  }
-}
-
-@media only screen and (max-width: 700px){
-  header h1{
-    font-size: 30px;
-    padding: 10px 0px;
   }
 }
 
@@ -233,7 +226,7 @@ main{
   }
 
   .row{
-    margin: 1em 1.5em;
+    margin: 0em 1.5em;
   }
 }
 
