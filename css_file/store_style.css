@@ -188,6 +188,11 @@ main{
   margin: 0em 5em;
 }
 
+.scroll{
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
 .column {
   display: inline-block;
   width: 49%;
@@ -201,6 +206,21 @@ main{
   margin: 13px;
   padding: 2em 0em;
   min-width: 200px;
+}
+
+.column4 a{
+  color: black;
+}
+
+.column4 a:hover{
+  color: grey;
+}
+
+.column4 img{
+  width: 200px;
+  height: 200px;
+  object-fit: fill;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 600px){
