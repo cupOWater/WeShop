@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interitor | Contact</title>
     <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
+    <link rel="stylesheet" href="../css_file/contact.css" type="text/css">
+    
 </head>
 <body>
   <header>
@@ -55,14 +57,42 @@
   </header>
 
   <main>
-    <div class="subsec">
-      <h1>New Products</h1>
-      <hr>
+    <h1 class="contact_str_header">Contact Us</h1>
+    <div class="contact_header">
+      <h2>The Interitor would like to hear from you?</h2>
+      <div class="contact_box">
+        <form action="#" method="contact">
+          <fieldset class="aboutyou">
+            <legend><label for="aboutyou">About You</label></legend>
+            <p>Fullname: <br>
+            <input type="text" maxlength="50" id="aboutyou"></p>
+            <p>Email: <br>
+            <input type="email" id="aboutyou"></p>
+            <p>Phone: <br>
+            <input type="text" id="aboutyou"></p>
+            <label for="contacttype">Choose contact type:</label>
+            <input type="radio" name="contact_method" value="email" id="contacttype"> Email
+            <input type="radio" name="contact_method" value="phone" id="contacttype"> Phone
+          </fieldset><br>
+          <fieldset class="day">
+            <legend><label for="day">Services:</label></legend>
+            <input type="radio" id="delivery" value="Delivery" name="delivery_type"> Delivery
+            <br/>
+            <input type="radio" id="payment" value="Payment" name="payment_type"> Payment
+            <br/>
+            <input type="radio" id="returnAndRefund" value="Return and Refund" name="return_and_refund_type"> Return and Refund
+            <br/>
+          </fieldset><br>
+          <label for="box"><p>Write your questions</p></label>
+          <textarea name="textbox" id="box" cols="101" rows="10">Delete and Enter your message here...</textarea><br><br>
+          <div class="submit">
+            <input type="submit" value="Submit" class="submit_button">
+            <input type="reset" value="Reset" class="reset_button">
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="subsec">
-      <h1>Featured Products</h1>
-      <hr>
-    </div>
+
   </main>
 
   <footer>
