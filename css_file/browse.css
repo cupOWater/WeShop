@@ -112,3 +112,9 @@ h2{
   left: 0;
   right: 0;
 }
+
+.subsec{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
