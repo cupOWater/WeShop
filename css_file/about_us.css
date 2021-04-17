@@ -23,8 +23,11 @@
 .as_content h2{
   margin-bottom: 16px;
 }
-
-.as_content img{
+.as_content, .profile{
+  position: relative;
+  display: inline-block;
+}
+/* .as_content img{
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
@@ -53,4 +56,4 @@
   .as_content h2{
     text-align: center;
   }
-}
+} */
