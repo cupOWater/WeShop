@@ -5,6 +5,10 @@
   text-align: center;
   /* border: 1px solid hsl(0, 0%, 80%); */
 }
+.as_container{
+  margin: auto;
+  text-align: center;
+}
 .as_content{
     margin: 1.5em;
     padding: 20px;
