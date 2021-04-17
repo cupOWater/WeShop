@@ -37,12 +37,16 @@
   font-size: 20px;
 }
 
-@media only screen and (max-width: 660px){
+@media only screen and (max-width: 840px){
   .as_content img, .as_content ul{
     display: block;
     margin: auto;
     text-align: center;
     list-style: none;
+  }
+
+  .as_content ul{
+    margin-top: 16px;
   }
 
   .as_content h2{
