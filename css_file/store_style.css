@@ -168,7 +168,7 @@ li input[type="checkbox"]:checked ~ .menu_box{
 
 /* BODY */
 main{
-  width: 80%;
+  width: 100%;
   margin: auto;
   font-family: "NunitoSans", sans-serif;
 }
@@ -213,7 +213,7 @@ main{
   }
 
   .row{
-    margin: 0em 1em;
+    margin: 1em 1.5em;
   }
 }
 
