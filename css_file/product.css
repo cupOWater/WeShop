@@ -37,9 +37,15 @@
     font-weight: bold;
 }
 
-#add_to_cart, #buy_now{
+.order{
     color: white;
     padding: 10px;
-    background-color: red;
+    background-color: #eb4034;
     font-size: 25px;
+    text-decoration: none;
+}
+
+.order:hover{
+  color: lightgray;
+  background-color: #b5362d;
 }
