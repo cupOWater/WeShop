@@ -15,6 +15,7 @@ h2{
   text-align: center;
   padding: 16px;
   white-space: nowrap;
+
 }
 
 .namebrowsing label{
@@ -58,7 +59,35 @@ h2{
 }
 
 .store_list{
+  margin-left: auto;
   display: none;
+  text-align: center;
+  font-size: 20px;
+}
+
+.store_list li{
+  padding-top: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.store_list ul{
+  list-style: none;
+}
+
+.store_list img{
+  display: block;
+  margin: auto;
+  width: 200px;
+  vertical-align: middle;
+}
+
+.store_list a{
+  color: black;
+  vertical-align: middle;
+}
+
+.store_list a:hover{
+  color: gray;
 }
 
 #search:checked ~ .store_list{
