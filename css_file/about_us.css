@@ -24,6 +24,12 @@
   right: 0;
 }
 
+.profile img {
+  width: 300px;
+  height: 300px;
+  object-fit: fill;
+}
+
 .as_content h2{
   margin-bottom: 16px;
 }

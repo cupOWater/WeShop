@@ -59,7 +59,7 @@ h2{
 }
 
 .store_list{
-  margin-left: auto;
+  margin: auto;
   display: none;
   text-align: center;
   font-size: 20px;
@@ -90,7 +90,31 @@ h2{
   color: gray;
 }
 
-#search:checked ~ .store_list{
+.product_list{
+  margin-left: 10px;
+  display: none;
+  font-size: 20px;
+}
+
+.product_list img{
+  width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.product_list > ul > li{
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid lightgray;
+}
+
+.product_list ul{
+  vertical-align: middle;
+  display: inline-block;
+  list-style: none;
+}
+
+#search:checked ~ .store_list, #search:checked ~ .product_list{
   display: block;
 }
 
@@ -111,4 +135,10 @@ h2{
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.subsec{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
 }
