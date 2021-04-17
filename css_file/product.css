@@ -38,6 +38,8 @@
 }
 
 .order{
+    display: inline-block;
+    border: 1px solid white;
     color: white;
     padding: 10px;
     background-color: #eb4034;
