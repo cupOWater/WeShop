@@ -13,4 +13,6 @@ Tang Hue Thy|s3697323 |@huethytang
   http://cupOWater.github.io
 
   References:
+  * Vivo. (n.d). Term Of Service.
+    https://shop.vivo.com/in/agreement/condition
   

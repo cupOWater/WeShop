@@ -1,0 +1,9 @@
+.tos_container{
+    margin: 1.5em;
+    padding: 20px;
+    text-align: left;
+    border: 3px solid hsl(0, 0%, 80%);
+}
+.tos_container h2{
+    text-align: center;
+}
