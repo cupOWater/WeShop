@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreeStore | Home Page</title>
     <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
+    <link rel="stylesheet" href="../css_file/browse.css" type="text/css">
 </head>
 <body>
   <header>
@@ -56,12 +57,33 @@
 
   <main>
     <div class="subsec">
-      <h1>New Products</h1>
-      <hr>
-    </div>
-    <div class="subsec">
-      <h1>Featured Products</h1>
-      <hr>
+      <h1>Browse Products By Category</h1>
+
+      <div class="catbrowsing">
+
+        <select id="store_type" name="store_type">
+          <option>Chair</option>
+          <option>Table</option>
+          <option>Lamp</option>
+          <option>Kitchen Ware</option>
+          <option>Chandelier</option>
+          <option>Desk</option>
+          <option>Bed</option>
+          <option>Toy</option>
+          <option>Technology</option>
+          <option>Hobby</option>
+        </select>
+        <label for="search">Search</label>
+        <input type="checkbox" id="search">
+
+        <h2>Product List:</h2>
+        <div class="store_list">
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
 
