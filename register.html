@@ -7,6 +7,7 @@
     <title>Registration</title>
     <link rel="stylesheet" href="./css_file/style.css" type="text/css">
     <link rel="stylesheet" href="./css_file/login_page.css" type="text/css">
+    <script src="./scripts/register.js"></script>
 </head>
 <body>
     <div class="container">
@@ -80,6 +81,8 @@
                   <p>
                   <label for="reupassword">Re-type password</label> <br>
                   <input type="password" id="reupassword" name="reupassword"></p>
+                  <div class="alert" id="alert"></div>
+                  <input type="submit" value="Verify" onclick="verify_pass()">
                   <p>
                   <label>Profile picture</label> <br>
                   <input type="file"></p>

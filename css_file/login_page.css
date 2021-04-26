@@ -90,8 +90,16 @@
   min-width: 130px;
 }
 
+
+.alert{
+  /* display: none; */
+  color: red;
+}
+
+
 @media only screen and (max-width: 800px){
   .profile .column{
     width: 100%;
   }
 }
+
