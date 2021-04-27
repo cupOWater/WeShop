@@ -72,6 +72,7 @@
                   <p>
                   <label for="uemail">Email</label> <br>
                   <input type="email" id="uemail" name="uemail"></p>
+                  <p class="alert_email" id="alert_email"></p>
                   <p>
                   <label for="uphone">Phone number</label> <br>
                   <input type="number" id="uphone" name="uphone"></p>
@@ -81,8 +82,8 @@
                   <p>
                   <label for="reupassword">Re-type password</label> <br>
                   <input type="password" id="reupassword" name="reupassword"></p>
-                  <div class="alert" id="alert"></div>
-                  <input type="submit" value="Verify" onclick="verify_pass()">
+                  <p class="alert" id="alert"></p>
+                  <input type="submit" value="Verify" id="verify" onclick="validateEmail(); return false;">
                   <p>
                   <label>Profile picture</label> <br>
                   <input type="file"></p>
