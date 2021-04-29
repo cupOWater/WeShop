@@ -32,12 +32,25 @@ function validateEmail(){
         // domain_pattern = new RegExp(/^@[]$/)
     })
 }
-function personalinfo(){
-    button = document.querySelector();
-    button.addEventListener("click", function(ev){
-        pattern_name = new RegExp(/^[A-Z][a-z]{2,}$/);
-        pattern_address = new RegExp(/^[1-9][A-Z][a-z]{2,}/);
-        value1 = document.querySelector("#fname,#lname").value;
+function personalInfo(){
+    button = document.querySelector("#verify_inf");
+    button.addEventListener("click", function(ev) {
+        pattern_name = new RegExp(/^[A-Z]|[a-z]{2,}$/);
+        pattern_address = new RegExp(/^[1-9][A-Z]|[a-z]{2,}$/);
+        value1 = document.querySelector("#fname, #lname").value;
         value2 = document.querySelector("#address").value;
+            // Test Name
+        if(pattern_name.test(value1)){
+            qs("#alert_name").innerHTML = "Valid name"  
+        }else{
+            qs("#alert_name").innerHTML =  "Invalid name"
+        }
+
+        // Test Address
+        if(pattern_address.test(value2)){
+            qs("#alert_address").innerHTML = "Valid address"
+        }else{
+            qs("#alert_address").innerHTML ="Invalid address"
+        }
     })
 }

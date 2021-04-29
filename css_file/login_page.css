@@ -91,7 +91,7 @@
 }
 
 
-.alert,.alert_email{
+.alert,.alert_email,#alert_name,#alert_address{
   /* display: none; */
   color: red;
 }
