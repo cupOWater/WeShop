@@ -19,13 +19,13 @@
     margin: auto;
     padding-top: 20px;
     padding-bottom: 20px;
-    text-align: center;
 }
 
 .order_container h2{
     color: black;
     text-decoration-line: underline;
     margin-bottom: 16px;
+    text-align: center;
 }
 .cart{
   width: 80%;
@@ -33,9 +33,22 @@
   margin: auto;
   padding: 10px;
 }
+
+.cart input{
+  font-size: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.cart label, p{
+  font-size: 20px;
+  margin-right: 10px;
+}
+
 .cart_table{
     width: 100%;
     min-width: 670px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 .cart_table input{
   width: 50px;
@@ -70,7 +83,7 @@ td{
 
 @media only screen and (max-width: 700px){
   .order_container{
-    width: 100%;
+    width: 95%;
   }
   .cart_table th{
     font-size: 16px;

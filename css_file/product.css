@@ -50,4 +50,5 @@
 .order:hover{
   color: lightgray;
   background-color: #b5362d;
+  cursor: pointer;
 }
