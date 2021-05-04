@@ -21,7 +21,7 @@ function passwordValidation(){
 function validateEmail(){
     button = document.querySelector("#verify");
     button.addEventListener("click", function(ev) {
-        pattern = new RegExp(/^[1-9]|[A-Za-z]|[-_,;^*&].?(?=.){3,}@[1-9A-Za-z]{1,}.?(?=.)[1-9A-Za-z]{3,}$/)
+        pattern = new RegExp(/^[1-9]|[A-Za-z]|[-_,;^*&].?(?=.){3,}@[1-9A-Za-z]{1,}.?(^?=.)[1-9A-Za-z]{3,}$/)
         value = document.querySelector("#uemail").value;
         if (pattern.test(value)){
             qs("#alert_email").innerHTML = "Valid Email"
