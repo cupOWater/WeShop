@@ -35,7 +35,18 @@ function get_total(){
   total_field.innerHTML = numberWithCommas(total) + " VND";
 }
 
+function clear_table(){
+  for (let r = 0; r <= cart_table.rows.length - 1; r++){
+    cart_table.deleteRow(1);
+  }
+}
+
 function fill_table(){
+  if(cart_table.rows.length > 1) {
+    clear_table();
+  }
+  
+
   for(let i = 0; i <= products.length - 1; i++){
     if (products[i].quantity > 0){
       let name = products[i].name;
@@ -45,13 +56,32 @@ function fill_table(){
       
       row.innerHTML = `<tr>
       <td>${name}</td>
-      <td><input type="number" value="${quant}"</td>
+      <td><input type="number" value="${quant}" onchange="get_quant()"</td>
       <td>${price}</td>
       </tr>`
 
       get_total()
     }
   }
+}
+
+
+function get_quant(){
+  let new_prod = [];
+  for (let r = 1; r <= cart_table.rows.length - 1; r++){
+    new_prod.push({
+      "name": cart_table.rows[r].cells[0].innerHTML,
+      "quantity": parseInt(cart_table.rows[r].cells[1].childNodes[0].value)
+    })
+  }
+  
+  for (let i = 0; i <= new_prod.length - 1; i++){
+    if(products[i].name == new_prod[i].name){
+      products[i].quantity = new_prod[i].quantity;
+    }
+  }
+
+  fill_table();
 }
 
 cart_table.addEventListener("DOMContentLoaded", fill_table())
