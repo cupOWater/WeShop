@@ -6,7 +6,7 @@
   color: black;
 }
 
-.scroll {
+.scroll,.scroll1 {
   overflow-x: scroll;
   white-space: nowrap;
 }

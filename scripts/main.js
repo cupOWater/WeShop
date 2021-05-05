@@ -1,10 +1,9 @@
-auto_scroll = document.querySelector(".content .row");
-flavoursScrollWidth = auto_scroll.scrollWidth;
+setInterval(function(){
+  auto_scroll = document.querySelector(".scroll");
+  auto_scroll.scrollBy(2,0);
+},10);
 
-window.addEventListener('load', () => {
-  self.setInterval(() => {
-    if (auto_scroll.scrollLeft !== flavoursScrollWidth) {
-        auto_scroll.scrollTo(auto_scroll.scrollLeft + 1, 0);
-    }
-  }, 15);
-});
+setInterval(function(){
+  auto_scroll = document.querySelector(".scroll1");
+  auto_scroll.scrollBy(2,0);
+},10);
