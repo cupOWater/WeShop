@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <script src="../scripts/ordering.js" type="text/javascript"></script>
   <header>
     <div class="row">
       <div class="column">
@@ -59,7 +58,7 @@
 
   <main>
     <div class="product_content">
-        <h1>Oak Wood Table</h1>
+        <h1 id="product_name">Oak Wood Table</h1>
         <div class="product_pic">
             <img src="../Pics/products/nathan-oakley-table-unsplash.jpg" alt="Wooden table with 4 chairs">
         </div>
@@ -68,10 +67,11 @@
             <li>Manufacture: WoodWork Ltd.</li>
             <li>Status: Available</li>
             <li>Warranty: 2 years</li>
-            <li class="price">Price: 500.000 VND</li>
+            <li class="price">Price: <span id="product_price">500.000</span> VND</li>
         </ul>
         <a href="./order_placement.html" class="order">Buy Now</a>
         <input type="button" value="Add" class="order" id="add_cart">
+        <span id="add_msg"></span>
       </div>
 
       <div class="recomended_products">

@@ -24,6 +24,13 @@
     }
   }
 
+#add_msg{
+  display: none;
+  vertical-align: middle;
+  padding: 5px;
+  color: #c94b4b;
+}
+
 .description {
     font-size: 20px;
     margin: 16px;
@@ -45,6 +52,7 @@
     background-color: #eb4034;
     font-size: 25px;
     text-decoration: none;
+    vertical-align: middle;
 }
 
 .order:hover{
