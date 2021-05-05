@@ -181,7 +181,7 @@ main{
   margin: 0em 5em;
 }
 
-.scroll{
+.scroll,.scroll1{
   overflow-x: scroll;
   white-space: nowrap;
 }
