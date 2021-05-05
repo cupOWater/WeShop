@@ -11,18 +11,7 @@ function numberWithCommas(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-var products = [
-  {
-    "name": "Oak Wood Table",
-    "quantity": 2,
-    "price": 500000
-  },
-  {
-    "name": "Bookshelf",
-    "quantity": 1,
-    "price": 850000
-  }
-]
+var products = []
 
 var cart_table = qs(".cart_table");
 var total_field = qs("#total");
@@ -46,7 +35,7 @@ function fill_table(){
   if(cart_table.rows.length > 1) {
     clear_table();
   }
-  
+  update_products();
 
   for(let i = 0; i <= products.length - 1; i++){
     if (products[i].quantity > 0){
@@ -66,6 +55,10 @@ function fill_table(){
   }
 }
 
+function update_products(){
+  let temp_product = JSON.parse(localStorage.product);
+  products = temp_product;
+}
 
 function update_quant(){
   let new_prod = [];
@@ -75,13 +68,15 @@ function update_quant(){
       "quantity": parseInt(cart_table.rows[r].cells[1].childNodes[0].value)
     })
   }
-  
+  let items = JSON.parse(localStorage.product);
   for (let i = 0; i <= new_prod.length - 1; i++){
-    if(products[i].name == new_prod[i].name){
-      products[i].quantity = new_prod[i].quantity;
+    for (item of items){
+      if (item.name == new_prod[i].name){
+        item.quantity = new_prod[i].quantity;
+      }
     }
   }
-
+  localStorage.product = JSON.stringify(items);
   fill_table();
 }
 
@@ -108,7 +103,7 @@ if(add_button != null) {
         if(!contain){
           items.push({
             "name": prod_name,
-            "quantity": 0,
+            "quantity": 1,
             "price": prod_price
           })
         }
@@ -118,7 +113,7 @@ if(add_button != null) {
         let items = [];
         items.push({
           "name": prod_name,
-          "quantity": 0,
+          "quantity": 1,
           "price": prod_price
         })
         localStorage.product = JSON.stringify(items);
