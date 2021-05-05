@@ -3,6 +3,7 @@ function qs(selector){
 }
 
 var add_button = qs("#add_cart");
+var buy_now = qs("#buy_now")
 var add_msg = qs("#add_msg");
 
 // code snippet by Elias Zamaria
@@ -85,6 +86,30 @@ if(cart_table != null) {
 }
 
 if(add_button != null) {
+  buy_now.addEventListener("click", function buy_one(){
+    let prod_name = qs("#product_name").innerHTML;
+    let prod_price = qs("#product_price").innerHTML.replaceAll(".", "");
+    if (localStorage.product) {
+      let items = JSON.parse(localStorage.product);
+      let contain = false;
+      for (item of items){
+        if (item.name == prod_name){
+          item.quantity++;
+          contain = true;
+          break;
+        }
+      }
+      if(!contain){
+        items.push({
+          "name": prod_name,
+          "quantity": 1,
+          "price": prod_price
+        })
+      }
+      localStorage.product = JSON.stringify(items);
+    }
+  })
+
   // This is the timer for the status msg after clicking add
   var blink;
   add_button.addEventListener("click", function add_cart(){
