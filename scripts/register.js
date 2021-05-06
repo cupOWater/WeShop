@@ -21,22 +21,26 @@ function passwordValidation(){
         }
     })
 }
-
     // Emailll validation
 function emailValidation(){
     button = document.querySelector("#verify");
     button.addEventListener("click", function(ev){
-        name_pattern = 
-
-
+        // Enter email pattern
+        email_pattern = /^$/; 
+        value = document.querySelector("#uemail").value;
+        // email conditions
     })
 }
-
-
-
-
-
-
+// phone validation
+function phoneValidation(){
+    button = document.querySelector("#uphone");
+    button.addEventListener("click", function(ev){
+        phone_pattern = /^$/
+        value = document.querySelector("#uphone").value;
+        // phone conditions
+    })
+}
+// personal info validation
 function personalInfo(){
     button = document.querySelector("#verify_inf");
     button.addEventListener("click", function(ev) {
@@ -50,7 +54,6 @@ function personalInfo(){
         }else{
             qs("#alert_name").innerHTML =  "Invalid name"
         }
-
         // Test Address
         if(pattern_address.test(value2)){
             qs("#alert_address").innerHTML = "Valid address"
