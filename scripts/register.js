@@ -62,12 +62,12 @@ function personalInfo(){
         }
     })
 }
-function store_owner(){
-    var str_owner = qs("#owner_info");
-    if (str_owner.style.display === "none"){
-        str_owner.style.display = "block";
+function show_hide(x){
+    if(x==0){
+        document.querySelector("#owner_info").style.display = "block";
     }else{
-        str_owner.style.display = "none";
+        document.querySelector("#owner_info").style.display = "none";
+        return;
     }
 
 }
