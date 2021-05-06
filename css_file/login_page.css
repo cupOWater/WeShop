@@ -89,6 +89,9 @@
   width: 30%;
   min-width: 130px;
 }
+#owner_info{
+  display: none;
+}
 
 
 .alert,.alert_email,#alert_name,#alert_address{

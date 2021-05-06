@@ -21,7 +21,7 @@ function passwordValidation(){
         }
     })
 }
-    // Emailll validation
+    // Email validation
 function emailValidation(){
     button = document.querySelector("#verify");
     button.addEventListener("click", function(ev){
@@ -62,5 +62,16 @@ function personalInfo(){
         }
     })
 }
+function store_owner(){
+    var str_owner = qs("#owner_info");
+    if (str_owner.style.display === "none"){
+        str_owner.style.display = "block";
+    }else{
+        str_owner.style.display = "none";
+    }
+
+}
+
+
 
 

@@ -87,12 +87,12 @@
                   <p>
                   <label>Profile picture</label> <br>
                   <input type="file"></p>
-                  <p>
+                  <div>
                   <label>Account type</label><br>
-                  <input type="radio" name="account" value="owner" id="owner">
+                  <input type="radio" name="account" value="owner" id="owner" onclick="store_owner()">
                     <label for="owner">Store owner</label>
-                  <input type="radio" name="account" value="shopper" id="shopper">
-                    <label for="shopper">Shopper</label></p>
+                  <input type="radio" name="account" value="shopper" id="shopper" onclick="store_owner()">
+                    <label for="shopper">Shopper</label></div>
                 </div>
                 <div class="column" id="personal">
                   <h2> Personal Info </h2>
