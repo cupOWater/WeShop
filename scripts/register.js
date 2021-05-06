@@ -7,9 +7,14 @@ function passwordValidation(){
     var pass = qs("#upassword").value;
     button = document.querySelector("#verify");
     button.addEventListener("click", function(ev){
-        pattern = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+        pass_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
         value = document.querySelector("#upassword").value;
-        if(pattern.test(value)|| rePass == pass){
+        if(pass_pattern.test(value)){
+            qs("#alert").innerHTML = "Valid passsword"
+        }else{
+            qs("#alert").innerHTML= "Invalid Password"
+        }
+        if(repass == pass){
             qs("#alert").innerHTML = "Valid passsword"
         }else{
             qs("#alert").innerHTML= "Invalid Password"
@@ -17,21 +22,21 @@ function passwordValidation(){
     })
 }
 
-    // Emailll
-function validateEmail(){
+    // Emailll validation
+function emailValidation(){
     button = document.querySelector("#verify");
-    button.addEventListener("click", function(ev) {
-        pattern = new RegExp(/^[1-9]|[A-Za-z]|[-_,;^*&].?(?=.){3,}@[1-9A-Za-z]{1,}.?(^?=.)[1-9A-Za-z]{3,}$/)
-        value = document.querySelector("#uemail").value;
-        if (pattern.test(value)){
-            qs("#alert_email").innerHTML = "Valid Email"
-        }else{
-            qs("#alert_email").innerHTML = "Invalid Email"
-        }
-        // name_pattern = new RegExp(/^[1-9]|[A-Z]|[a-z][1-9][A-Z][a-z][^<>()[\]\\,;:\s@\"]|[.]?{3,}$/);
-        // domain_pattern = new RegExp(/^@[]$/)
+    button.addEventListener("click", function(ev){
+        name_pattern = 
+
+
     })
 }
+
+
+
+
+
+
 function personalInfo(){
     button = document.querySelector("#verify_inf");
     button.addEventListener("click", function(ev) {
@@ -54,3 +59,5 @@ function personalInfo(){
         }
     })
 }
+
+
