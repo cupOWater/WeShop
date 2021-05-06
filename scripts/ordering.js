@@ -17,10 +17,69 @@ var products = []
 var cart_table = qs(".cart_table");
 var total_field = qs("#total");
 var coupon_field = qs("#coupon");
+var coupon_msg = qs("#coupon_msg");
+var coupon_amount = 1;
+var coupon_applied = false;
+
+var hide_timer;
+function apply_coupon(){
+  clearTimeout(hide_timer);
+  var coupon_20 = ["COSC2430-HD"]
+  var coupon_10 = ["COSC2430-DI"]
+  coupon_msg.style.display = "block";
+  if (coupon_applied == false){
+    if (coupon_20.includes(coupon_field.value)){
+      coupon_applied = true;
+      coupon_msg.innerHTML  = "-20% to order";
+      coupon_amount= 0.8;
+    }
+    else if (coupon_10.includes(coupon_field.value)){
+      coupon_applied = true
+      coupon_msg.innerHTML = "-10% to order";
+      coupon_amount = 0.9;
+    }
+    else{
+      coupon_msg.innerHTML = "Coupon code invalid";
+      hide_timer = setTimeout(function(){
+        coupon_msg.innerHTML = "";
+        coupon_msg.style.display = "";
+      }, 2000)
+    }
+  }
+  else{
+    temp = coupon_msg.innerHTML;
+    coupon_msg.innerHTML = "Already apply a coupon";
+    hide_timer = setTimeout(function(){
+      coupon_msg.innerHTML = temp;
+    }, 2000)
+  }
+  fill_table()
+}
+
+function reset_coupon(){
+  clearTimeout(hide_timer);
+  if (coupon_applied == true) {
+    coupon_field.value = "";
+    coupon_msg.innerHTML = "";
+    coupon_msg.style.display = "";
+    coupon_applied = false;
+    coupon_amount = 1;
+  }
+  else {
+    coupon_msg.style.display = "block";
+    coupon_msg.innerHTML = "No active coupon";
+    hide_timer = setTimeout(function(){
+      coupon_msg.innerHTML = "";
+      coupon_msg.style.display = "";
+    }, 2000)
+  }
+  fill_table();
+
+}
 
 function get_total(){
   let total = 0;
-  
+
   if (localStorage.product){
     let items = JSON.parse(localStorage.product);
     for (item of items){
@@ -30,8 +89,8 @@ function get_total(){
   } else {
     total = 0;
   }
-  console.log(total);
-  total_field.innerHTML = numberWithCommas(total) + " VND";
+
+  return total * coupon_amount;
 }
 
 function clear_table(){
@@ -45,15 +104,16 @@ function fill_table(){
     clear_table();
   }
   update_products();
-  get_total()
-  
+  let total = get_total()
+  total_field.innerHTML = numberWithCommas(total) + " VND";
+
   for(let i = 0; i <= products.length - 1; i++){
     if (products[i].quantity > 0){
       let name = products[i].name;
       let quant = products[i].quantity;
       let price = numberWithCommas(products[i].price * quant) + " VND";
       let row = cart_table.insertRow(-1);
-      
+
       row.innerHTML = `<tr>
       <td>${name}</td>
       <td><input type="number" value="${quant}" onchange="update_quant()"</td>

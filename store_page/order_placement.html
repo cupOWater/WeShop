@@ -69,6 +69,11 @@
           </table>
           <label for="coupon"><b>Coupon Code</b></label>
           <input type="text" id="coupon">
+          <span id="coupon_setting">
+            <input type="button" value="Apply" onclick="apply_coupon()">
+            <input type="button" value="Reset" onclick="reset_coupon()">
+          </span>
+          <p id="coupon_msg"></p>
           <p><b>Total:</b> <span id="total">0 VND</span></p>
         </div><br>
 

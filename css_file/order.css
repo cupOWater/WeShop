@@ -62,6 +62,29 @@
     font-size: 20px;
 }
 
+#coupon_msg{
+  font-size: 18px;
+  color: rgb(80, 80, 80);
+  display: none;
+}
+
+#coupon{
+  vertical-align: middle;
+}
+
+#coupon_setting{
+  vertical-align: middle;
+  display: inline-block;
+}
+#coupon_setting input{
+  background-color: white;
+  padding: 2px;
+  font-size: 16px;
+}
+
+#coupon_setting input:hover{
+  background-color: rgb(156, 156, 156);
+}
 
 td{
     font-size: 18px;
