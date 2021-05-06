@@ -20,9 +20,17 @@ var coupon_field = qs("#coupon");
 
 function get_total(){
   let total = 0;
-  for (let items of products){
-    total += items.price * items.quantity;
+  
+  if (localStorage.product){
+    let items = JSON.parse(localStorage.product);
+    for (item of items){
+      total += item.price * item.quantity;
+      console.log(item.price * item.quantity)
+    }
+  } else {
+    total = 0;
   }
+  console.log(total);
   total_field.innerHTML = numberWithCommas(total) + " VND";
 }
 
@@ -37,7 +45,8 @@ function fill_table(){
     clear_table();
   }
   update_products();
-
+  get_total()
+  
   for(let i = 0; i <= products.length - 1; i++){
     if (products[i].quantity > 0){
       let name = products[i].name;
@@ -50,8 +59,6 @@ function fill_table(){
       <td><input type="number" value="${quant}" onchange="update_quant()"</td>
       <td>${price}</td>
       </tr>`
-
-      get_total()
     }
   }
 }
