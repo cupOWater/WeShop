@@ -31,6 +31,10 @@
   color: #c94b4b;
 }
 
+#add_cart{
+  -webkit-appearance: none;
+}
+
 .description {
     font-size: 20px;
     margin: 16px;
