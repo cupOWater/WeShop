@@ -94,7 +94,7 @@
 }
 
 
-.alert,.alert_email,#alert_name,#alert_address{
+.alert,.alert_email,#alert_name,#alert_address,.alert_city{
   /* display: none; */
   color: red;
 }
