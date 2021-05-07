@@ -68,6 +68,11 @@
   display: none;
 }
 
+label[for="coupon"]{
+  font-size: 20px;
+  vertical-align: middle;
+}
+
 #coupon{
   vertical-align: middle;
 }
