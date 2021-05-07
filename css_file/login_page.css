@@ -94,9 +94,12 @@
 }
 
 
-.alert,.alert_email,#alert_name,#alert_address,.alert_city{
+.alert,.alert_email,#alert_name,#alert_address,#alert_city,#alert_phone{
   /* display: none; */
   color: red;
+}
+.submit{
+  display: none;
 }
 
 
