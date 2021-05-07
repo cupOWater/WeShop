@@ -76,9 +76,9 @@ function qs(selector){
 function validation(){
     var rePass = qs("#reupassword").value;
     var pass = qs("#upassword").value;
-    button = document.querySelector("#test");
-    button.addEventListener("click", function(ev){
-
+    let button = document.getElementById("test");
+    console.log("clicked!");
+    console.log("clicked!!");
         // profile pattern
         pass_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
         email_pattern = /^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)+[^\.]\.[A-Za-z]{2,5}$/;
@@ -110,17 +110,39 @@ function validation(){
             &&pattern_name.test(value)&&pattern_address.test(value2)
             &&pattern_city.test(value3)
         ){
-            document.querySelector("#submit").style.display = "block";
+            document.querySelector("#submit0").style.display = "block";
             qs("#alert_email").innerHTML = "Valid Email"
             qs("#alert_phone").innerHTML = "Valid Phone"
             qs("#alert").innerHTML = "Valid Password"
             qs("#alert_name").innerHTML = "Valid Name"
             qs("#alert_address").innerHTML = "Valid Address"
             qs("#alert_city").innerHTML = "Valid City"
-           
+        }
+        if(!pass_pattern.test(value_pass)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert").innerHTML = "Invalid Password"
+        }
+        if(!email_pattern.test(value_email)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_email").innerHTML = "Invalid Email"
+        }
+        if(!phone_pattern.test(value_phone)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_phone").innerHTML = "Invalid Phone"
+        }
+        if(!pattern_name.test(value1)&&!pattern_name.test(value)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_name").innerHTML = "Invalid Name"
+        }
+        if(!pattern_address.test(value2)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_address").innerHTML = "Invalid Address"
+        }
+        if(!pattern_city.test(value3)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_city").innerHTML = "Invalid City"
         }
 
-    })
 }
 
 
