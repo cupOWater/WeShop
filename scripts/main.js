@@ -42,4 +42,13 @@ for (let i = 0; i < auto_scroll.length; i++){
       scroll_item(i);
     }, 1000);
   })
+  auto_scroll[i].addEventListener("touchstart", function(){
+    clearInterval(scroll_time[i])
+  })
+  auto_scroll[i].addEventListener("touchend", function(){
+    clearTimeout(scroll_again[i])
+    scroll_again[i] = setTimeout(function(){
+      scroll_item(i);
+    }, 1000);
+  })
 }
