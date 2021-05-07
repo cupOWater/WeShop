@@ -81,7 +81,7 @@ function validation(){
     console.log("clicked!!");
         // profile pattern
         pass_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
-        email_pattern = /^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)+[^\.]\.[A-Za-z]{2,5}$/;
+        email_pattern = /^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)*[^\.]\.[A-Za-z]{2,5}$/;
         phone_pattern = /^([0-9]+[\.\-]?){8,11}[^\.\-]$/;
 
         //personal pattern

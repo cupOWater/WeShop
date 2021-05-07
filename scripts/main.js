@@ -52,3 +52,9 @@ for (let i = 0; i < auto_scroll.length; i++){
     }, 1000);
   })
 }
+
+
+account_href = qs("#account_href");
+if(localStorage.loginStat == "true"){
+  account_href.href = "profile.html";
+}

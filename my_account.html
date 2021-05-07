@@ -22,7 +22,7 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="about_us.html">About</a></li>
               <li><a href="fees.html">Fees</a></li>
-              <li><a href="my_account.html">Account</a></li>
+              <li><a href="my_account.html" id="account_href">Account</a></li>
 
               <li>
                 <label for="browse_sub_top">Browse</label>
@@ -71,11 +71,11 @@
               <br>
               <label for="u_password">Password</label> <br>
               <input type="password" id="u_password" name="user_password"></br>
-              <a href="profile.html">
-                <input type="button" value="Login">
-              </a>
+              <input type="button" value="Login" id="login_button" onclick="validate_user()">
+              <!-- <p>Invalid user</p> -->
               <br>
             </form>
+            <p id="error_msg">Invalid User</p>
             <p><a href="register.html">Register Here!</a></p>
             <p><a href="forgot_password.html">Forgot Password?</a></p>
           </div>
@@ -143,6 +143,7 @@
       </footer>
 
   </div>
-
+  <script src="./scripts/account.js" type="text/javascript"></script>
+  <script src="./scripts/main.js" type="text/javascript"></script>
 </body>
 </html>

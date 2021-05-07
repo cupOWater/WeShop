@@ -37,6 +37,10 @@
   background-color: rgba(0, 0, 0, 50%);
 }
 
+#error_msg{
+  display: none;
+  color: red;
+}
 
 .register{
   margin: 20px 20%;
