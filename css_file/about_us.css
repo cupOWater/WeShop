@@ -62,14 +62,18 @@ main{
   cursor: pointer;
 }
 .text{
+  padding: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 50px;
-  color: yellow;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(211, 180, 78);
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
+
+.text ul{list-style: none;}
 /* .as_content img{
   border-radius: 50%;
   display: inline-block;
