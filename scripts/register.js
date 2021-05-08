@@ -32,6 +32,8 @@ function validation(){
 
 
         // Condition
+
+        // If every is correct, display a submit button
         if(
             pass_pattern.test(value_pass)&&email_pattern.test(value_email)
             &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
@@ -46,6 +48,8 @@ function validation(){
             qs("#alert_address").innerHTML = "Valid Address"
             qs("#alert_city").innerHTML = "Valid City"
         }
+
+        // If password is correct or incorrect
         if(pass_pattern.test(value_pass)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Valid Password"
@@ -54,6 +58,8 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Invalid Password"
         }
+
+        // If email is correct or incorrect
         if(email_pattern.test(value_email)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_email").innerHTML = "Valid Email"
@@ -62,6 +68,8 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_email").innerHTML = "Invalid Email"
         }
+
+        // If phone is correct or incorrect
         if(phone_pattern.test(value_phone)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_phone").innerHTML = "Valid Phone"
@@ -70,6 +78,8 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_phone").innerHTML = "Invalid Phone"
         }
+
+        // If name is correct or incorrect
         if(pattern_name.test(value1)&&!pattern_name.test(value)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_name").innerHTML = "Valid Name"
@@ -78,6 +88,8 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_name").innerHTML = "Invalid Name"
         }
+        
+        // If address is correct or incorrect
         if(pattern_address.test(value2)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_address").innerHTML = "Valid Address"
@@ -86,6 +98,8 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_address").innerHTML = "Invalid Address"
         }
+
+        // If city is correct or incorrect
         if(pattern_city.test(value3)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_city").innerHTML = "Valid City"
@@ -94,6 +108,8 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_city").innerHTML = "Invalid City"
         }
+
+        // If zipcode is correct or incorrect
         if(pattern_zipcode.test(value4)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_zipcode").innerHTML = "Valid ZipCode";
@@ -105,7 +121,7 @@ function validation(){
 
 }
 
-
+// Show and hide store owner
 function show_hide(x){
     if(x==0){
         document.querySelector("#owner_info").style.display = "block";
