@@ -19,6 +19,12 @@ Tang Hue Thy|s3697323 |@huethytang
   **References**:
   * Vivo. (n.d). Term Of Service.
     https://shop.vivo.com/in/agreement/condition
+  
+    **Divided Section**:
+  * **Le Trung Tin:**  02, 03, 06
+  * **Huynh Ky Thanh:** 07, 08, 09
+  * **Doan Duong Minh Anh:** Withdrawn From Course
+  * **Tang Hue Thy:** 01, 04, 05
 
   **Group Contribution**:
   * **Le Trung Tin:**  02, 03, 04, 06
