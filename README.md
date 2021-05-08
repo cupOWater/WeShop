@@ -13,6 +13,15 @@ Tang Hue Thy|s3697323 |@huethytang
   http://cupOWater.github.io
   https://github.com/cupOWater/cupOWater.github.io
   
-  References:
+  **Note**:
+  * Second product page can be accessed via Recommended Product section of first product page
+
+  **References**:
   * Vivo. (n.d). Term Of Service.
     https://shop.vivo.com/in/agreement/condition
+
+  **Group Contribution**:
+  * **Le Trung Tin:**  03, 04, 06
+  * **Huynh Ky Thanh:** 01, 02, 05, 07, 08, 09
+  * **Doan Duong Minh Anh:** Withdrawn From Course
+  * **Tang Hue Thy:** 03
