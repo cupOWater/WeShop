@@ -51,7 +51,6 @@ function validation(){
         }
 
         // If password is correct or incorrect
-        
         if(pass_pattern.test(value_pass)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Valid Password"
