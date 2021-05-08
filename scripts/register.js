@@ -5,8 +5,6 @@ function validation(){
     var rePass = qs("#reupassword").value;
     var pass = qs("#upassword").value;
     let button = document.getElementById("test");
-    console.log("clicked!");
-    console.log("clicked!!");
         // profile pattern
         pass_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
         email_pattern = /^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)*[^\.]\.[A-Za-z]{2,5}$/;
@@ -16,6 +14,7 @@ function validation(){
         pattern_name = /^[a-zA-Z\s]{2,}$/;
         pattern_address = /^[a-zA-Z0-9\s]{2,}$/;
         pattern_city = /^[a-zA-Z\s]{2,}$/
+        pattern_zipcode = /^[0-9]{3,6}$/
 
         //------------- assign variables to each value --------
 
@@ -29,6 +28,7 @@ function validation(){
         value = document.querySelector("#lname").value;
         value2 = document.querySelector("#address").value;
         value3 = document.querySelector("#city").value;
+        value4 = document.querySelector("#zipcode").value;
 
 
         // Condition
@@ -36,7 +36,7 @@ function validation(){
             pass_pattern.test(value_pass)&&email_pattern.test(value_email)
             &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
             &&pattern_name.test(value)&&pattern_address.test(value2)
-            &&pattern_city.test(value3)
+            &&pattern_city.test(value3)&&pattern_zipcode.test(value4)
         ){
             document.querySelector("#submit0").style.display = "block";
             qs("#alert_email").innerHTML = "Valid Email"
@@ -46,29 +46,61 @@ function validation(){
             qs("#alert_address").innerHTML = "Valid Address"
             qs("#alert_city").innerHTML = "Valid City"
         }
+        if(pass_pattern.test(value_pass)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert").innerHTML = "Valid Password"
+        }
         if(!pass_pattern.test(value_pass)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Invalid Password"
+        }
+        if(email_pattern.test(value_email)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_email").innerHTML = "Valid Email"
         }
         if(!email_pattern.test(value_email)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_email").innerHTML = "Invalid Email"
         }
+        if(phone_pattern.test(value_phone)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_phone").innerHTML = "Valid Phone"
+        }
         if(!phone_pattern.test(value_phone)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_phone").innerHTML = "Invalid Phone"
+        }
+        if(pattern_name.test(value1)&&!pattern_name.test(value)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_name").innerHTML = "Valid Name"
         }
         if(!pattern_name.test(value1)&&!pattern_name.test(value)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_name").innerHTML = "Invalid Name"
         }
+        if(pattern_address.test(value2)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_address").innerHTML = "Valid Address"
+        }
         if(!pattern_address.test(value2)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_address").innerHTML = "Invalid Address"
         }
+        if(pattern_city.test(value3)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_city").innerHTML = "Valid City"
+        }
         if(!pattern_city.test(value3)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_city").innerHTML = "Invalid City"
+        }
+        if(pattern_zipcode.test(value4)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_zipcode").innerHTML = "Valid ZipCode";
+        }
+        if(!pattern_zipcode.test(value4)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert_zipcode").innerHTML = "Please Enter Zip Code";
         }
 
 }

@@ -98,7 +98,7 @@
 }
 
 
-.alert,.alert_email,#alert_name,#alert_address,#alert_city,#alert_phone{
+.alert,.alert_email,#alert_name,#alert_address,#alert_city,#alert_phone,.alert_zipcode{
   /* display: none; */
   color: red;
 }
