@@ -6,6 +6,14 @@ var add_button = qs("#add_cart");
 var buy_now = qs("#buy_now")
 var add_msg = qs("#add_msg");
 
+if (add_button != null){
+  if(localStorage.loginStat != "true"){
+    add_button.style.display = "none";
+  } else{
+    add_button.style.display = "";
+  }
+}
+
 // code snippet by Elias Zamaria
 // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript/2901298#2901298
 function numberWithCommas(num) {
