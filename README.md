@@ -12,7 +12,7 @@ Tang Hue Thy|s3697323 |@huethytang
   This is a simple mall website that allow shoppers to browse for stores and products available within the mall. It also allows store owner to register for their store in the mall and set category for them. Additionally, an example store page is made to demonstrate the redirection from mall site to store site, which contains general web store functionalities.
   http://cupOWater.github.io
   https://github.com/cupOWater/cupOWater.github.io
-  
+
   **Note**:
   * Second product page can be accessed via Recommended Product section of first product page
 
@@ -21,7 +21,7 @@ Tang Hue Thy|s3697323 |@huethytang
     https://shop.vivo.com/in/agreement/condition
 
   **Group Contribution**:
-  * **Le Trung Tin:**  03, 04, 06
+  * **Le Trung Tin:**  02, 03, 04, 06
   * **Huynh Ky Thanh:** 01, 02, 05, 07, 08, 09
   * **Doan Duong Minh Anh:** Withdrawn From Course
   * **Tang Hue Thy:** 03
