@@ -27,7 +27,7 @@ Tang Hue Thy|s3697323 |@huethytang
   * **Tang Hue Thy:** 01, 04, 05
 
   **Group Contribution**:
-  * **Le Trung Tin:**  02, 03, 04, 06
-  * **Huynh Ky Thanh:** 01, 02, 05, 07, 08, 09
+  * **Le Trung Tin:**  02, 03, 06
+  * **Huynh Ky Thanh:** 01, 02, 05, 07, 08, 09, 04
   * **Doan Duong Minh Anh:** Withdrawn From Course
   * **Tang Hue Thy:** 04
