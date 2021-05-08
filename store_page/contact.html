@@ -61,30 +61,32 @@
     <div class="contact_header">
       <h2>The Interitor would like to hear from you?</h2>
       <div class="contact_box">
-        <form action="#">
+        <form action="#" onsubmit="return validation()">
           <fieldset class="aboutyou">
-            <legend><label for="aboutyou">About You</label></legend>
+            <legend><label>About You</label></legend>
             <p>Fullname: <br>
-            <input type="text" maxlength="50" id="aboutyou"></p>
+            <input type="text" maxlength="50" id="fullName"></p>
             <p>Email: <br>
-            <input type="email" id="aboutyou"></p>
+            <input type="email" id="userEmail"></p>
             <p>Phone: <br>
-            <input type="text" id="aboutyou"></p>
+            <input type="text" id="userPhone"></p>
             <label for="contacttype">Choose contact type:</label>
-            <input type="radio" name="contact_method" value="email" id="contacttype"> Email
-            <input type="radio" name="contact_method" value="phone" id="contacttype"> Phone
+            <input type="radio" name="contact_method" value="email"> Email
+            <input type="radio" name="contact_method" value="phone"> Phone
           </fieldset><br>
           <fieldset class="day">
             <legend><label for="day">Services:</label></legend>
-            <input type="radio" id="delivery" value="Delivery" name="delivery_type"> Delivery
+            <input type="checkbox" id="delivery" value="Delivery" name="service_type"> Delivery
             <br/>
-            <input type="radio" id="payment" value="Payment" name="payment_type"> Payment
+            <input type="checkbox" id="payment" value="Payment" name="service_type"> Payment
             <br/>
-            <input type="radio" id="returnAndRefund" value="Return and Refund" name="return_and_refund_type"> Return and Refund
+            <input type="checkbox" id="returnAndRefund" value="Return and Refund" name="service_type"> Return and Refund
             <br/>
           </fieldset><br>
           <label for="box"><p>Write your questions</p></label>
+          <p id="text_box_msg"></p>
           <textarea name="textbox" id="box" cols="101" rows="10">Delete and Enter your message here...</textarea><br><br>
+          
           <div class="submit">
             <input type="submit" value="Submit" class="submit_button">
             <input type="reset" value="Reset" class="reset_button">
@@ -139,5 +141,6 @@
     <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="../others_file/tos_copyright.html" target="_blank">Term of Service</a> </p>
   </footer>
   <script src="../scripts/main.js" type="text/javascript"></script>
+  <script src="../scripts/contact.js" type="text/javascript"></script>
 </body>
 </html>
