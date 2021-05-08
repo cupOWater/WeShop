@@ -12,7 +12,7 @@ for (let s of auto_scroll){
 
 function scroll_bar(){
   for (let i = 0; i < auto_scroll.length; i++){
-    scroll_item(i);  
+    scroll_item(i);
   }
 }
 
@@ -53,8 +53,9 @@ for (let i = 0; i < auto_scroll.length; i++){
   })
 }
 
-
-account_href = qs("#account_href");
+account_href = document.querySelectorAll(".account_href");
 if(localStorage.loginStat == "true"){
-  account_href.href = "profile.html";
+  for (let l of account_href){
+    l.href = "profile.html";
+  }
 }
