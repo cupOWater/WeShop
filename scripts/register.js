@@ -33,7 +33,7 @@ function validation(){
 
         // Condition
 
-        // If every is correct, display a submit button
+        // If everything is correct, display a submit button
         if(
             pass_pattern.test(value_pass)&&email_pattern.test(value_email)
             &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
