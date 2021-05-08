@@ -4,7 +4,7 @@ function qs(selector){
 function validation(){
     var rePass = qs("#reupassword").value;
     var pass = qs("#upassword").value;
-    let button = document.getElementById("test");
+    // let button = document.getElementById("test");
         // profile pattern
         pass_pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
         email_pattern = /^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)*[^\.]\.[A-Za-z]{2,5}$/;
@@ -39,6 +39,7 @@ function validation(){
             &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
             &&pattern_name.test(value)&&pattern_address.test(value2)
             &&pattern_city.test(value3)&&pattern_zipcode.test(value4)
+            &&pass==rePass
         ){
             document.querySelector("#submit0").style.display = "block";
             qs("#alert_email").innerHTML = "Valid Email"
@@ -50,11 +51,20 @@ function validation(){
         }
 
         // If password is correct or incorrect
+        
         if(pass_pattern.test(value_pass)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Valid Password"
         }
         if(!pass_pattern.test(value_pass)){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert").innerHTML = "Invalid Password"
+        }
+        if(pass==rePass){
+            document.querySelector("#submit0").style.display = "none";
+            qs("#alert").innerHTML = "Valid Password";
+        }
+        if(pass!=rePass){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Invalid Password"
         }
