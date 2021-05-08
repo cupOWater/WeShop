@@ -54,8 +54,24 @@ for (let i = 0; i < auto_scroll.length; i++){
 }
 
 account_href = document.querySelectorAll(".account_href");
-if(localStorage.loginStat == "true"){
-  for (let l of account_href){
-    l.href = "profile.html";
+if (account_href.length > 0) {
+  if(localStorage.loginStat == "true"){
+    for (let l of account_href){
+      l.href = "profile.html";
+    }
   }
+}
+
+var cookie_accept = qs("#cookie_accept");
+var cookie_window = qs("#cookie");
+if (cookie_window != null){
+  cookie_accept.addEventListener("click", function(){
+    localStorage.setItem("cookieConsent", "true")
+    cookie_window.style.display = "none";
+  })
+  window.addEventListener("DOMContentLoaded", function(){
+    if(localStorage.cookieConsent == "true"){
+      cookie_window.style.display = "none";
+    }
+  })
 }
