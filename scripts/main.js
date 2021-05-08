@@ -28,7 +28,7 @@ function scroll_item(i){
         }, 1000);
       }
       auto_scroll[i].scrollLeft += 1;
-      }, 15)}, 1000)
+      }, 15)}, 500)
 }
 
 window.addEventListener("DOMContentLoaded", scroll_bar())
@@ -40,7 +40,7 @@ for (let i = 0; i < auto_scroll.length; i++){
     clearTimeout(scroll_again[i])
     scroll_again[i] = setTimeout(function(){
       scroll_item(i);
-    }, 1000);
+    }, 500);
   })
   auto_scroll[i].addEventListener("touchstart", function(){
     clearInterval(scroll_time[i])
@@ -49,7 +49,7 @@ for (let i = 0; i < auto_scroll.length; i++){
     clearTimeout(scroll_again[i])
     scroll_again[i] = setTimeout(function(){
       scroll_item(i);
-    }, 1000);
+    }, 500);
   })
 }
 
