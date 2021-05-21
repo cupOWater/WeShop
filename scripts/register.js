@@ -11,7 +11,8 @@ function validation(){
         phone_pattern = /^([0-9]+[\.\-]?){8,11}[^\.\-]$/;
 
         //personal pattern
-        pattern_name = /^[a-zA-Z\s]{2,}$/;
+        pattern_name1 = /^[a-zA-Z\s]{2,}$/;
+        pattern_name2 = /^[a-zA-Z\s]{2,}$/;
         pattern_address = /^[a-zA-Z0-9\s]{2,}$/;
         pattern_city = /^[a-zA-Z\s]{2,}$/
         pattern_zipcode = /^[0-9]{3,6}$/
@@ -36,12 +37,11 @@ function validation(){
         // If everything is correct, display a submit button
         if(
             pass_pattern.test(value_pass)&&email_pattern.test(value_email)
-            &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
-            &&pattern_name.test(value)&&pattern_address.test(value2)
+            &&phone_pattern.test(value_phone)&&pattern_address.test(value2)
             &&pattern_city.test(value3)&&pattern_zipcode.test(value4)
-            &&pass==rePass
+            &&pass==rePass&&pattern_name1.test(value1)&&pattern_name2.test(value)
         ){
-            document.querySelector("#submit0").style.display = "block";
+            document.querySelector("#submit").style.display = "block";
             qs("#alert_email").innerHTML = "Valid Email"
             qs("#alert_phone").innerHTML = "Valid Phone"
             qs("#alert").innerHTML = "Valid Password"
@@ -52,79 +52,79 @@ function validation(){
 
         // If password is correct or incorrect
         if(pass_pattern.test(value_pass)){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "";
             qs("#alert").innerHTML = "Valid Password"
         }
         if(!pass_pattern.test(value_pass)){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert").innerHTML = "Invalid Password"
         }
         if(pass==rePass){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Valid Password";
         }
         if(pass!=rePass){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert").innerHTML = "Invalid Password"
         }
 
         // If email is correct or incorrect
         if(email_pattern.test(value_email)){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert_email").innerHTML = "Valid Email"
         }
         if(!email_pattern.test(value_email)){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert_email").innerHTML = "Invalid Email"
         }
 
         // If phone is correct or incorrect
         if(phone_pattern.test(value_phone)){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert_phone").innerHTML = "Valid Phone"
         }
         if(!phone_pattern.test(value_phone)){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert_phone").innerHTML = "Invalid Phone"
         }
 
         // If name is correct or incorrect
-        if(pattern_name.test(value1)&&!pattern_name.test(value)){
-            document.querySelector("#submit0").style.display = "none";
+        if(pattern_name1.test(value1)&&pattern_name2.test(value)){
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert_name").innerHTML = "Valid Name"
         }
-        if(!pattern_name.test(value1)&&!pattern_name.test(value)){
-            document.querySelector("#submit0").style.display = "none";
+        if(!pattern_name1.test(value1)&&!pattern_name2.test(value)){
+            document.querySelector("#submit").style.display = "none";
             qs("#alert_name").innerHTML = "Invalid Name"
         }
         
         // If address is correct or incorrect
         if(pattern_address.test(value2)){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert_address").innerHTML = "Valid Address"
         }
         if(!pattern_address.test(value2)){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert_address").innerHTML = "Invalid Address"
         }
 
         // If city is correct or incorrect
         if(pattern_city.test(value3)){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert_city").innerHTML = "Valid City"
         }
         if(!pattern_city.test(value3)){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert_city").innerHTML = "Invalid City"
         }
 
         // If zipcode is correct or incorrect
         if(pattern_zipcode.test(value4)){
-            document.querySelector("#submit0").style.display = "none";
+            // document.querySelector("#submit0").style.display = "none";
             qs("#alert_zipcode").innerHTML = "Valid ZipCode";
         }
         if(!pattern_zipcode.test(value4)){
-            document.querySelector("#submit0").style.display = "none";
+            document.querySelector("#submit").style.display = "none";
             qs("#alert_zipcode").innerHTML = "Please Enter Zip Code";
         }
 
