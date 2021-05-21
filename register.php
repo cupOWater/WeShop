@@ -161,6 +161,7 @@
                   <div class="submit0" id="submit0"><input type="submit" name="submit" value="Submit"></div>
                   <input type="button" value="Verify" id="test" onclick="validation();return false;">
                   <input type="reset" value="Reset">
+                  <p>Already a user? <a href="my_account.php">Login</a></p>
                   <p class="success" id="success"></p>
 
                 </div>
