@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,24 +66,24 @@
 
         <main>
           <div class="content register">
-            <form action="#">
+            <form action="server.php" method="post">
               <div class="row">
                 <div class="column">
                   <h2> Profile Info </h2>
                   <p>
                   <label for="uemail">Email</label> <br>
-                  <input type="email" id="uemail" name="uemail"></p>
+                  <input type="email" id="uemail" name="email"></p>
                   <p class="alert_email" id="alert_email"></p>
                   <p>
                   <label for="uphone">Phone number</label> <br>
-                  <input type="number" id="uphone" name="uphone"></p>
+                  <input type="number" id="uphone" name="phone"></p>
                   <p class="alert_phone" id="alert_phone"></p>
                   <p>
                   <label for="upassword">Password</label> <br>
-                  <input type="password" id="upassword" name="upassword"></p>
+                  <input type="password" id="upassword" name="password"></p>
                   <p>
                   <label for="reupassword">Re-type password</label> <br>
-                  <input type="password" id="reupassword" name="reupassword"></p>
+                  <input type="password" id="reupassword" name="repassword"></p>
                   <p class="alert" id="alert"></p>
                   <p>
                   <label>Profile picture</label> <br>
@@ -158,8 +159,8 @@
                 </p>
               </div>
                 <div class="row">
-                  <div class="submit0" id="submit0"><input type="submit" name="submit" value="Submit"></div>
-                  <input type="button" value="Verify" id="test" onclick="validation();return false;">
+                  <div class="submit" id="submit"><input type="submit" name="submit" value="Submit"></div>
+                  <input type="button" value="Verify" id="test" onclick="validation(); return fales;">
                   <input type="reset" value="Reset">
                   <p>Already a user? <a href="my_account.php">Login</a></p>
                   <p class="success" id="success"></p>
