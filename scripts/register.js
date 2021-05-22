@@ -33,22 +33,7 @@ function validation(){
 
         // Condition
 
-        // If everything is correct, display a submit button
-        if(
-            pass_pattern.test(value_pass)&&email_pattern.test(value_email)
-            &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
-            &&pattern_name.test(value)&&pattern_address.test(value2)
-            &&pattern_city.test(value3)&&pattern_zipcode.test(value4)
-            &&pass==rePass
-        ){
-            document.querySelector("#submit0").style.display = "block";
-            qs("#alert_email").innerHTML = "Valid Email"
-            qs("#alert_phone").innerHTML = "Valid Phone"
-            qs("#alert").innerHTML = "Valid Password"
-            qs("#alert_name").innerHTML = "Valid Name"
-            qs("#alert_address").innerHTML = "Valid Address"
-            qs("#alert_city").innerHTML = "Valid City"
-        }
+
 
         // If password is correct or incorrect
         if(pass_pattern.test(value_pass)){
@@ -63,7 +48,7 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Valid Password";
         }
-        if(pass!=rePass){
+        if(pass!=rePass|| pass==0){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert").innerHTML = "Invalid Password"
         }
@@ -89,7 +74,7 @@ function validation(){
         }
 
         // If name is correct or incorrect
-        if(pattern_name.test(value1)&&!pattern_name.test(value)){
+        if(pattern_name.test(value1)&&pattern_name.test(value)){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_name").innerHTML = "Valid Name"
         }
@@ -127,6 +112,23 @@ function validation(){
             document.querySelector("#submit0").style.display = "none";
             qs("#alert_zipcode").innerHTML = "Please Enter Zip Code";
         }
+                // If everything is correct, display a submit button
+        if(
+            pass_pattern.test(value_pass)&&email_pattern.test(value_email)
+            &&phone_pattern.test(value_phone)&&pattern_name.test(value1)
+            &&pattern_name.test(value)&&pattern_address.test(value2)
+            &&pattern_city.test(value3)&&pattern_zipcode.test(value4)
+            &&pass==rePass
+        ){
+            document.querySelector("#submit0").style.display = "block";
+            qs("#alert_email").innerHTML = "Valid Email"
+            qs("#alert_phone").innerHTML = "Valid Phone"
+            qs("#alert").innerHTML = "Valid Password"
+            qs("#alert_name").innerHTML = "Valid Name"
+            qs("#alert_address").innerHTML = "Valid Address"
+            qs("#alert_city").innerHTML = "Valid City"
+        }
+
 
 }
 
