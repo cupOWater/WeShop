@@ -147,7 +147,7 @@
 
     <div id="cookie">
       <h2>I use cookie</h2>
-      <p>My website uses cookies necessary for its basic 
+      <p>My website uses cookies necessary for its basic
         functioning. By continuing browsing, you consent
         to my use of cookies and other technologies
       </p>

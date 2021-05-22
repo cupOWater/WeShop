@@ -1,5 +1,8 @@
 <?php
   require "global_function.php";
+  require "read_data.php";
+  $products = read_csv_data("data/products.csv");
+  $stores = read_csv_data("data/stores.csv");
 ?>
 
 <!DOCTYPE html>
@@ -69,219 +72,108 @@
           <div class="content">
             <h2>New Stores</h2>
             <div class="row scroll">
-              <a href="./store_page/store.html" target="_blank">
-                <div class="column4">
-                  <img src="./Pics/interitor.png" alt="yellow house on blue background">
-                  <h3>Interitor</h3>
-                </div>
-              </a>
-              <a href="./store_page/store.html" target="_blank">
-                <div class="column4">
-                  <img src="./Pics/aquarium.png" alt="wave and fish on blue background">
-                  <h3>Aquarius</h3>
-                </div>
-              </a>
-              <a href="./store_page/store.html" target="_blank">
-                <div class="column4">
-                  <img src="./Pics/camping.png" alt="leaves, water, fire surrounding an X with Camping at the bottom">
-                  <h3>Camper X</h3>
-                </div>
-              </a>
-              <a href="./store_page/store.html" target="_blank">
-                <div class="column4">
-                  <img src="./Pics/nhatobanson.PNG" alt="Title nhatobanson with a lipstick at the end">
-                  <h3>Nha To Ban Son</h3>
-                </div>
-              </a>
-
+              <?php
+                $new_stores = $stores;
+                usort($new_stores, "compare_date");
+                $i = 0;
+                foreach($new_stores as $s){
+                  if($i < 10){
+                    echo ("<a href='./store_page/store.php?id=".$s["id"]."' target='_blank'>");
+                    echo("<div class='column4'>");
+                    echo("<h2>".$s["name"]."</h2>");
+                    echo("</div>");
+                    echo("</a>");
+                    $i++;
+                  }
+                  else{
+                    break;
+                  }
+                }
+              ?>
             </div>
           </div>
 
-          <div class="content" id="auto_scroll">
+          <div class="content">
             <h2>New Products</h2>
             <div class="row scroll" >
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/manny-moreno-tent-unsplash.jpg" alt="red tent">
-                  <h3>Red Tent</h3>
-                  <h4>1.250.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Camper X</h4>
-                </a>
-
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/andrew-neel-bp-unsplash.jpg" alt="brown canvas backpack">
-                  <h3>Canvas Backpack</h3>
-                  <h4>1.500.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Camper X</h4>
-                </a>
-              </div>
-
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/deconovo-bed-unsplash.jpg" alt="White bed with 4 pillows on top and 2 beside">
-                  <h3>Queen size white bed</h3>
-                  <h4>15.450.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Interitor</h4>
-                </a>
-              </div>
-
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/mitch-nielsen-drone-unsplash.jpg" alt="white drone on sky">
-                  <h3>Camera Drone</h3>
-                  <h4>20.145.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Aquarius</h4>
-                </a>
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/joshua-bartell-lan-unsplash.jpg" alt="old school lantern">
-                  <h3>Camping Lantern</h3>
-                  <h4>450.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Camper X</h4>
-                </a>
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/nathan-oakley-book-unsplash.jpg" alt="">
-                  <h3>Bookshelf</h3>
-                  <h4>850.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Interitor</h4>
-                </a>
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="">
-                  <h3>Pillow</h3>
-                  <h4>300.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Interitor</h4>
-                </a>
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/IMG_2521.JPG" alt="">
-                  <h3>MAC</h3>
-                  <h4>600.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Nha To Ban Son</h4>
-                </a>
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/IMG_2535.JPG" alt="">
-                  <h3>YSL</h3>
-                  <h4>820.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Nha To Ban Son</h4>
-                </a>
-              </div>
-              <div class="column4">
-                <a href="./store_page/single_products.html">
-                  <img src="./Pics/products/nathan-oakley-table-unsplash.jpg" alt="">
-                  <h3>Wood Table</h3>
-                  <h4>500.000 VND</h4>
-                </a>
-                <a href="./store_page/store.html">
-                  <h4>Interitor</h4>
-                </a>
-              </div>
-              </div>
+              <?php
+                $new_products = $products;
+                usort($new_products, "compare_date");
+                $i = 0;
+                foreach($new_products as $p){
+                  if($i < 10){
+                    echo('<div class="column4">');
+                    echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+                    echo('<h3>'.$p["name"].'</h3>');
+                    echo('<h4>'.$p["price"].' VND</h4>');
+                    echo('</a>');
+                    echo('<a href="./store_page/store.php?id='.$p["store_id"].'">');
+                    echo('<h4>'.$stores[$p["store_id"]-1]["name"].'</h4>');
+                    echo('</a>');
+                    echo('</div>');
+                    $i++;
+                  }
+                  else{
+                    break;
+                  }
+                }
+              ?>
             </div>
+          </div>
 
             <div class="content">
               <h2>Store Features</h2>
               <div class="row scroll">
-                <a href="./store_page/store.html" target="_blank">
-                  <div class="column2">
-                    <img src="./Pics/interitor.png" alt="yellow house on blue background">
-                    <h3>Interitor</h3>
-                  </div>
-                </a>
-                <a href="./store_page/store.html" target="_blank">
-                  <div class="column2">
-                    <img src="./Pics/camping.png" alt="leaves, water, fire surrounding an X with Camping at the bottom">
-                    <h3>Camper X</h3>
-                </a>
+                <?php
+                $featured_stores = get_featured($stores, "featured");
+                $i = 0;
+                foreach($featured_stores as $s){
+                  if($i < 10){
+                    echo ("<a href='./store_page/store.php?id=".$s["id"]."' target='_blank'>");
+                    echo("<div class='column4'>");
+                    echo("<h2>".$s["name"]."</h2>");
+                    echo("</div>");
+                    echo("</a>");
+                    $i++;
+                  }
+                  else{
+                    break;
+                  }
+                }
+              ?>
               </div>
             </div>
-          </div>
+
             <div class="content">
               <h2>Featured Products</h2>
               <div class="row scroll">
-                <div class="column4">
-                  <a href="./store_page/single_products.html">
-                    <img src="./Pics/products/manny-moreno-tent-unsplash.jpg" alt="">
-                    <h3>Red Tent</h3>
-                    <h4>1.250.000 VND</h4>
-                  </a>
-                  <a href="./store_page/store.html">
-                    <h4>Camper X</h4>
-                  </a>
-                </div>
-                <div class="column4">
-                  <a href="./store_page/single_products.html">
-                    <img src="./Pics/products/joshua-bartell-lan-unsplash.jpg" alt="">
-                    <h3>Camping Lantern</h3>
-                    <h4>450.000 VND</h4>
-                  </a>
-                  <a href="./store_page/store.html">
-                    <h4>Camper X</h4>
-                  </a>
-                </div>
-                <div class="column4">
-                  <a href="./store_page/single_products.html">
-                    <img src="./Pics/products/andrew-neel-bp-unsplash.jpg" alt="">
-                    <h3>Canvas Backpack</h3>
-                    <h4>1.500.000 VND</h4>
-                  </a>
-                  <a href="./store_page/store.html">
-                    <h4>Camper X</h4>
-                  </a>
-                </div>
-                <div class="column4">
-                  <a href="./store_page/single_products.html">
-                    <img src="./Pics/products/deconovo-bed-unsplash.jpg" alt="">
-                    <h3>Queen size white bed</h3>
-                    <h4>15.450.000 VND</h4>
-                  </a>
-                  <a href="./store_page/store.html">
-                    <h4>Interitor</h4>
-                  </a>
-                </div>
-                <div class="column4">
-                  <a href="./store_page/single_products.html">
-                    <img src="./Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="">
-                    <h3>Pillow</h3>
-                    <h4>300.000 VND</h4>
-                  </a>
-                  <a href="./store_page/store.html">
-                    <h4>Interitor</h4>
-                  </a>
-                </div>
+                <?php
+                  $featured_products = get_featured($products, "featured_in_mall");
+                  $i = 0;
+                  foreach($featured_products as $p){
+                    if($i < 10){
+                      echo('<div class="column4">');
+                      echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+                      echo('<h3>'.$p["name"].'</h3>');
+                      echo('<h4>'.$p["price"].' VND</h4>');
+                      echo('</a>');
+                      echo('<a href="./store_page/store.php?id='.$p["store_id"].'">');
+                      echo('<h4>'.$stores[$p["store_id"]-1]["name"].'</h4>');
+                      echo('</a>');
+                      echo('</div>');
+                      $i++;
+                    }
+                    else{
+                      break;
+                    }
+                  }
+                ?>
               </div>
             </div>
 
             <div id="cookie">
               <h2>I use cookie</h2>
-              <p>My website uses cookies necessary for its basic 
+              <p>My website uses cookies necessary for its basic
                 functioning. By continuing browsing, you consent
                 to my use of cookies and other technologies
               </p>
