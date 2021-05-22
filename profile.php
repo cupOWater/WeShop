@@ -1,3 +1,12 @@
+<?php
+  require "global_function.php";
+  session_start();
+  if(!isset($_SESSION["loggedIn"])){
+    header("Location: my_account.php");
+  }
+  $user = $_SESSION["userData"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,17 +79,18 @@
                 <img id="pf" src="./Pics/profile-picture.png" alt="Generic person profile">
               </p>
               <h2>Full Name</h2>
-              <p>John Doe</p>
+              <p><?php echo $user["fname"]." ".$user["lname"] ?></p>
               <h2>Email</h2>
-              <p id="display_email"></p>
+              <p><?php echo $user["email"] ?></p>
             </div>
             <div class="column">
               <h2>Country</h2>
-              <p>Vietnam</p>
+              <p><?php echo $user["country"] ?></p>
               <h2>City</h2>
-              <p>Ho Chi Minh</p>
+              <p><?php echo $user["city"] ?></p>
               <h2>Address</h2>
-              <p>123 Long Street</p>
+              <p><?php echo $user["address"] ?></p>
+              <a href="logout.php">Logout</a>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@
   // Create a user.csv if none is found
   if(!file_exists("../user.csv")){
     $file = fopen("../user.csv", "w");
-    fwrite($file, "email,password,phone,fname,lname,address,city,zipcode\n");
+    fwrite($file, "email,password,phone,fname,lname,address,country,city,zipcode\n");
     fclose($file);
   }
 
@@ -56,7 +56,7 @@
     if($valid){
       $hash_pw = password_hash($_POST["upassword"],1);
       $file = fopen("../user.csv", "a");
-      fwrite($file, "{$_POST['uemail']},{$hash_pw},{$_POST['uphone']},{$_POST['fname']},{$_POST['lname']},{$_POST['address']},{$_POST['city']},{$_POST['zipcode']}\n");
+      fwrite($file, "{$_POST['uemail']},{$hash_pw},{$_POST['uphone']},{$_POST['fname']},{$_POST['lname']},{$_POST['address']},{$_POST['country']},{$_POST['city']},{$_POST['zipcode']}\n");
       fclose($file);
       header("Location: my_account.php");
     }

@@ -1,5 +1,6 @@
 <?php
     function read_csv_data($path) {
+        // Read data and store in associative array. Use first line of csv as keys.
         if (!file_exists($path)){
             return false;
         }
@@ -19,12 +20,14 @@
     }
     
     function compare_date($i1, $i2){
+        // Compare using created_time key of an element
         $date1 = strtotime($i1["created_time"]);
         $date2 = strtotime($i2["created_time"]);
         return $date2 - $date1;
     }
 
     function get_featured($stores_list, $col_name){
+        // Return an array of items which are featured, name of feature column needs to be inputted
         $featured = [];
         foreach ($stores_list as $s){
             if ($s[$col_name] == "TRUE"){

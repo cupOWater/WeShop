@@ -1,3 +1,24 @@
+<?php
+  session_start();
+  if(isset($_SESSION["loggedIn"])){
+    header("Location: profile.php");
+  }
+  require "global_function.php";
+  require "read_data.php";
+  $users = read_csv_data("../user.csv");
+  if(isset($_POST["login"])){
+    foreach($users as $u){
+      if($_POST["user_email"] == $u["email"]){
+        if(password_verify($_POST["user_password"], $u["password"])){
+          $_SESSION["loggedIn"] = true;
+          $_SESSION["userData"] = $u;
+          header("Location: profile.php");
+        }
+      }
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,17 +86,20 @@
 
           <div class="content login">
             <h2>Sign-In</h2>
-            <form action="#" method="post">
+            <form action="my_account.php" method="post">
               <label for="u_email">Email</label> <br>
               <input type="email" id="u_email" name="user_email">
               <br>
               <label for="u_password">Password</label> <br>
               <input type="password" id="u_password" name="user_password"></br>
-              <input type="button" value="Login" id="login_button" onclick="validate_user()" name="login">
-              <!-- <p>Invalid user</p> -->
+              <input type="submit" value="Login" id="login_button" name="login">
               <br>
             </form>
-            <p id="error_msg">Invalid User</p>
+            <?php
+              if(isset($_POST["login"])){
+                echo('<p id="error_msg">Invalid User</p>');
+              }
+            ?>
             <p><a href="register.php">Register Here!</a></p>
             <p><a href="forgot_password.html">Forgot Password?</a></p>
           </div>
