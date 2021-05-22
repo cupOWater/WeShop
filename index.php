@@ -80,7 +80,7 @@
                   if($i < 10){
                     echo ("<a href='./store_page/store.php?id=".$s["id"]."' target='_blank'>");
                     echo("<div class='column4'>");
-                    echo("<h2>".$s["name"]."</h2>");
+                    echo("<h3>".$s["name"]."</h3>");
                     echo("</div>");
                     echo("</a>");
                     $i++;
@@ -131,7 +131,7 @@
                   if($i < 10){
                     echo ("<a href='./store_page/store.php?id=".$s["id"]."' target='_blank'>");
                     echo("<div class='column4'>");
-                    echo("<h2>".$s["name"]."</h2>");
+                    echo("<h3>".$s["name"]."</h3>");
                     echo("</div>");
                     echo("</a>");
                     $i++;
