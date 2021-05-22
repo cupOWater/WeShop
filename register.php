@@ -1,5 +1,12 @@
 <?php
+  session_start();
+  require "read_data.php";
   require "global_function.php";
+  //Check if user is logged in or not
+  if(isset($_SESSION["loggedIn"])){
+    header("Location: profile.php");
+  }
+
   // profile patterns
   $pass_pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/";
   $email_pattern = "/^([A-Za-z0-9]+\.?){2,}[^.]\@(\w\.?)*[^\.]\.[A-Za-z]{2,5}$/";
@@ -17,7 +24,7 @@
     fwrite($file, "email,password,phone,fname,lname,address,country,city,zipcode\n");
     fclose($file);
   }
-
+  $users = read_csv_data("../user.csv");
   // error messages variables
   $mailAlert = $passAlert = $phoneAlert = $nameAlert = $addressAlert = $cityAlert = $zipAlert = "";
 
@@ -36,6 +43,18 @@
       $valid = false;
       $phoneAlert = "Invalid phone";
     }
+    // Check for repeated email or phone number
+    foreach($users as $u){
+      if($_POST["uemail"] == $u["email"]){
+        $valid = false;
+        $mailAlert = "Email already exist";
+      }
+      if($_POST["uphone"] == $u["phone"]){
+        $valid = false;
+        $phoneAlert = "Phone number already registered";
+      }
+    }
+
     if(!preg_match($pattern_name, $_POST["fname"]) || !preg_match($pattern_name, $_POST["lname"])){
       $valid = false;
       $nameAlert = "Invalid name";
@@ -80,44 +99,44 @@
         <div class="row">
           <!-- Logo (154 x 112) -->
           <div class="column">
-            <a href="index.html"><img id="logo" src="./Pics/logo1.png"></a>
+            <a href="index.php"><img id="logo" src="./Pics/logo1.png"></a>
           </div>
           <div class="column">
             <nav class="navbar">
               <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about_us.html">About</a></li>
-                <li><a href="fees.html">Fees</a></li>
-                <li><a href="my_account.html" class="account_href">Account</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about_us.php">About</a></li>
+                <li><a href="fees.php">Fees</a></li>
+                <li><a href="my_account.php" class="account_href">Account</a></li>
 
                 <li>
                   <label for="browse_sub_top">Browse</label>
                   <input type="checkbox" id="browse_sub_top">
                   <div class="sub-menu">
-                    <a href="browse_name.html">Name</a>
-                    <a href="browse_cat.html">Category</a>
+                    <a href="browse_name.php">Name</a>
+                    <a href="browse_cat.php">Category</a>
                   </div>
                 </li>
 
-                <li><a href="faqs.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.php">FAQ</a></li>
+                <li><a href="contact.php">Contact</a></li>
 
                 <li class="sub-container">
                   <label for="menu-top">Menu &equiv;</label>
                   <input type="checkbox" id="menu-top">
                   <div class="sub-menu">
-                    <a href="index.html">Home</a>
-                    <a href="about_us.html">About</a>
-                    <a href="fees.html">Fees</a>
-                    <a href="my_account.html" class="account_href">Account</a>
+                    <a href="index.php">Home</a>
+                    <a href="about_us.php">About</a>
+                    <a href="fees.php">Fees</a>
+                    <a href="my_account.php" class="account_href">Account</a>
                     <label for="browse_top_small">Browse</label>
                     <input type="checkbox" id="browse_top_small">
                     <div class="sub-menu">
-                      <a href="browse_name.html">Name</a>
-                      <a href="browse_cat.html">Category</a>
+                      <a href="browse_name.php">Name</a>
+                      <a href="browse_cat.php">Category</a>
                     </div>
-                    <a href="faqs.html">FAQ</a>
-                    <a href="contact.html">Contact</a>
+                    <a href="faqs.php">FAQ</a>
+                    <a href="contact.php">Contact</a>
                   </div>
                 </li>
 
@@ -139,7 +158,7 @@
                 <p class="alert"> <?php echo $mailAlert; ?> </p>
                 <p>
                 <label for="uphone">Phone number</label> <br>
-                <input type="number" id="uphone" name="uphone"></p>
+                <input type="text" id="uphone" name="uphone"></p>
                 <p class="alert"> <?php echo $phoneAlert; ?> </p>
                 <p>
                 <label for="upassword">Password</label> <br>
@@ -174,7 +193,7 @@
                 <p>
                 <label for="city">City</label> <br>
                 <input type="text" id="city" name="city"></p>
-                <?php echo $cityAlert; ?>
+                <p class="alert"><?php echo $cityAlert; ?></p>
                 <p>
                 <label for="zipcode">Zip code</label> <br>
                 <input type="number" min="1000" max="999999" id="zipcode" name="zipcode"></p>
@@ -252,50 +271,9 @@
               </form>
             </div>
           </div>
-          <div class="column">
-            <nav class="navbar">
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about_us.html">About</a></li>
-                <li><a href="fees.html">Fees</a></li>
-                <li><a href="my_account.html" class="account_href">Account</a></li>
-                <li>
-                  <label for="browse_sub_bot">Browse</label>
-                  <input type="checkbox" id="browse_sub_bot">
-                  <div class="sub-menu">
-                    <a href="browse_name.html">Name</a>
-                    <a href="browse_cat.html">Category</a>
-                  </div>
-                </li>
-
-                <li><a href="faqs.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
-                <li class="sub-container">
-                  <label for="menu-bot">Menu &equiv;</label>
-                  <input type="checkbox" id="menu-bot">
-                  <div class="sub-menu">
-                    <a href="index.html">Home</a>
-                    <a href="about_us.html">About</a>
-                    <a href="fees.html">Fees</a>
-                    <a href="my_account.html" class="account_href">Account</a>
-                    <label for="browse_bot_small">Browse</label>
-                    <input type="checkbox" id="browse_bot_small">
-                    <div class="sub-menu">
-                      <a href="browse.html">Name</a>
-                      <a href="browse.html">Category</a>
-                    </div>
-                    <a href="browse_name.html">Name</a>
-                    <a href="browse_cat.html">Category</a>
-                  </div>
-                </li>
-
-              </ul>
-            </nav>
-          </div>
         </div>
         <div class="copyright">
-          <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="./others_file/tos_copyright.html" target="_blank">Term of Service</a> </p>
+          <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="./others_file/tos_copyright.php" target="_blank">Term of Service</a> </p>
         </div>
       </footer>
 
