@@ -18,29 +18,39 @@ $stores = read_csv_data("../data/stores.csv");
       <div class="column">
         <h1>
           <?php
-          $store_data = get_single_item($stores, $_GET["id"]);
+          $id = $_GET["id"];
+          $store_data = get_single_item($stores, $id);
+          echo "<a href='store.php?id=$id'>";
           echo $store_data['name'];
+          echo "</a>";
           ?>
-        
         </h1>
 
       </div>
       <div class="column">
         <div class="navbar">
           <ul>
-            <li><a href="store.php">Home</a></li>
+            <li>
+              <?php
+              $id = $_GET["id"];
+              $store_data = get_single_item($stores, $id);
+              echo "<a href='store.php?id=$id'>";
+              echo "Home";
+              echo "</a>";
+              ?>
+            </li>
 
             <li>
               <label for="product_sub">Product</label>
               <input type="checkbox" id="product_sub">
               <div class="menu_box">
-                <a href="products_cat.html">Category</a>
-                <a href="products_date.html">Date</a>
+                <a href="products_cat.php">Category</a>
+                <a href="products_date.php">Date</a>
               </div>
             </li>
 
-            <li><a href="abt_us.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="abt_us.php">About Us</a></li>
+            <li><a href="contact.php">Contact</a></li>
 
             <li class="hidden_menu">
                 <label for="menu_top">
@@ -48,15 +58,21 @@ $stores = read_csv_data("../data/stores.csv");
                 </label>
                 <input type="checkbox" id="menu_top">
                 <div class="menu_box">
-                  <a href="store.html">Home</a>
+                  <?php
+                    $id = $_GET["id"];
+                    $store_data = get_single_item($stores, $id);
+                    echo "<a href='store.php?id=$id'>";
+                    echo "Home";
+                    echo "</a>";
+                  ?>
                   <label for="product_sub">Product</label>
                   <input type="checkbox" id="product_sub">
                   <div class="menu_box">
-                    <a href="products_cat.html">By Category</a>
-                    <a href="products_date.html">By Date</a>
+                    <a href="products_cat.php">By Category</a>
+                    <a href="products_date.php">By Date</a>
                   </div>
-                  <a href="abt_us.html">About Us</a>
-                  <a href="contact.html">Contact</a>
+                  <a href="abt_us.php">About Us</a>
+                  <a href="contact.php">Contact</a>
                 </div>
             </li>
           </ul>
