@@ -36,11 +36,12 @@
         }
         return $featured;
     }
-    function get_stores($stores_id){
-        $store_name = read_csv_data("data/stores.csv");
-        foreach ($store_name as $p){
-            if($p['id'] == $stores_id){
-                return $p;
+    function get_single_item($array, $item_id){
+        // Associative array of items $array
+        // Each item has id $item_id
+        foreach ($array as $i){
+            if($i['id'] == $item_id){
+                return $i;
             }
         }
         return false;

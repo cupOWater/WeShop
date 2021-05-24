@@ -1,7 +1,7 @@
 <?php
 require "../read_data.php";
 $products = read_csv_data("../data/products.csv");
-$stores = read_csv_data("..data/stores.csv");
+$stores = read_csv_data("../data/stores.csv");
 ?>
 
 <html lang="en">
@@ -18,7 +18,7 @@ $stores = read_csv_data("..data/stores.csv");
       <div class="column">
         <h1>
           <?php
-          $store_data = get_stores($_GET["id"]);
+          $store_data = get_single_item($stores, $_GET["id"]);
           echo $store_data['name'];
           ?>
         
