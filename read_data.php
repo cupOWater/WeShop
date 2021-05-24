@@ -36,4 +36,14 @@
         }
         return $featured;
     }
+    function get_stores($stores_id){
+        $store_name = read_csv_data("data/stores.csv");
+        foreach ($store_name as $p){
+            if($p['id'] == $stores_id){
+                return $p;
+            }
+        }
+        return false;
+    }
+
 ?>

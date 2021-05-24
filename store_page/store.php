@@ -1,3 +1,9 @@
+<?php
+require "../read_data.php";
+$products = read_csv_data("../data/products.csv");
+$stores = read_csv_data("..data/stores.csv");
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,14 +16,19 @@
   <header>
     <div class="row">
       <div class="column">
-        <h1><a href="store.html">
-          <img src="../Pics/interitor.png" alt="logo" width="150" height="150" class="img_logo">
-        </a></h1>
+        <h1>
+          <?php
+          $store_data = get_stores($_GET["id"]);
+          echo $store_data['name'];
+          ?>
+        
+        </h1>
+
       </div>
       <div class="column">
         <div class="navbar">
           <ul>
-            <li><a href="store.html">Home</a></li>
+            <li><a href="store.php">Home</a></li>
 
             <li>
               <label for="product_sub">Product</label>
