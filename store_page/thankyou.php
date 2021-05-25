@@ -154,39 +154,7 @@ $stores = read_csv_data("../data/stores.csv");
 
   <footer>
     <hr>
-    <div class="navbar">
-      <ul>
-        <li><a href="store.html">Home</a></li>
-        <li>
-          <label for="product_sub_bot">Product</label>
-          <input type="checkbox" id="product_sub_bot">
-          <div class="menu_box">
-            <a href="products_cat.html">Category</a>
-            <a href="products_date.html">Date</a>
-          </div>
-        </li>
-        <li><a href="abt_us.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="hidden_menu">
-            <label for="menu_bot">
-              <img src="../Pics/menu.png" alt="3 stripes &equiv;" height="40px">
-            </label>
-            <input type="checkbox" id="menu_bot">
-            <div class="menu_box">
-              <a href="store.html">Home</a>
-              <label for="product_sub_bot">Product</label>
-              <input type="checkbox" id="product_sub_bot">
-              <div class="menu_box">
-                <a href="products_cat.html">Category</a>
-                <a href="products_date.html">Date</a>
-              </div>
-              <a href="abt_us.html">About Us</a>
-              <a href="contact.html">Contact</a>
-            </div>
-          </li>
-      </ul>
-    </div>
-    <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="../others_file/tos_copyright.html" target="_blank">Term of Service</a> </p>
+    <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="../others_file/tos_copyright.php" target="_blank">Term of Service</a> </p>
   </footer>
   <script src="../scripts/main.js" type="text/javascript"></script>
 </body>
