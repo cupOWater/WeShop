@@ -14,6 +14,7 @@ $stores = read_csv_data("../data/stores.csv");
     $store_data = get_single_item($stores, $id);
     echo "<title>";
     echo $store_data['name'];
+    echo " || Home Page";
     echo "</title>";
     ?>
     <!-- <title>Interitor | Home Page</title> -->
