@@ -77,8 +77,8 @@
               <li>Hobbies: Basketball || Games || Travel || Party</li>
             </ul>
           </div>
-        </div>
-        <div class="profile"><img src="../profile_pics/Profile1.png" alt="Picture of Tin" onclick="on()"></div>
+        </div>1
+        <div class="profile"><img src="../profile_pics/ltt.JPG" alt="Picture of Tin" onclick="on()"></div>
       </div>
       <div class="as_content">
         <h2>Member 2:</h2>
@@ -99,7 +99,7 @@
             </ul>
           </div>
         </div>
-        <div class="profile"><img src="../profile_pics/huynhkythanh.JPG" alt="Picture of Thanh" onclick="on1()"></div>
+        <div class="profile"><img src="../profile_pics/hkt.jpg" alt="Picture of Thanh" onclick="on1()"></div>
       </div>
 
       <div class="as_content">
@@ -113,7 +113,7 @@
         <div class="overlay" id="overlay3" onclick="off()">
           <div class="text"><h1>Withdrawn from course</h1></div>
         </div>
-        <div class="profile"><img src="../profile_pics/minhanh.JPG" alt="Picture of MAnh" onclick="on2()"></div>
+        <div class="profile"><img src="../profile_pics/dma.JPG" alt="Picture of MAnh" onclick="on2()"></div>
       </div>
       <div class="as_content">
         <h2>Member 4:</h2>
@@ -133,7 +133,7 @@
             </ul>
           </div>
         </div>
-        <div class="profile"><img src="../profile_pics/thy_pic.jpg" alt="Picture of Thy" onclick="on3()"></div>
+        <div class="profile"><img src="../profile_pics/tht.jpg" alt="Picture of Thy" onclick="on3()"></div>
       </div>
     </div>
     <div id="cookie">
