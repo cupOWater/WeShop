@@ -1,4 +1,12 @@
 <?php
+  require "../global_function.php";
+  session_start();
+  if(!isset($_SESSION["loggedIn"])){
+    header("Location: ../my_account.php");
+  }
+  $user = $_SESSION["userData"];
+?>
+<?php
 require "../read_data.php";
 $products = read_csv_data("../data/products.csv");
 $stores = read_csv_data("../data/stores.csv");

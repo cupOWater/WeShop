@@ -148,19 +148,31 @@ $stores = read_csv_data("../data/stores.csv");
         <h2>Product List:</h2>
         <ul>
           <li>
-            <a href="single_products.html">
-            <img src="../Pics/products/deconovo-bed-unsplash.jpg" alt="White bed with 4 pillows on top and 2 beside">
+            <?php
+            $id = $_GET["id"];
+            $store_data = get_single_item($stores, $id);
+            echo "<a href='single_products.php?id=$id'>";
+            echo "<img src='../Pics/products/deconovo-bed-unsplash.jpg' alt='White bed with 4 pillows on top and 2 beside'>";
+            echo "<ul>";
+            echo "<li>Name: Queen Size White Bed</li>";
+            echo "<li>Description: A queen size bed with white sheet</li>";
+            echo "<li>Price: 15.450.000 VND</li>";
+            echo "<li>Created On: 16/04/2021</li>";
+            echo "</ul>";
+            echo "</a>";
+            ?>
+            <!-- <img src="../Pics/products/deconovo-bed-unsplash.jpg" alt="White bed with 4 pillows on top and 2 beside">
             <ul>
               <li>Name: Queen Size White Bed</li>
               <li>Description: A queen size bed with white sheet</li>
               <li>Price: 15.450.000 VND</li>
               <li>Created On: 16/04/2021</li>
             </ul>
-            </a>
+            </a> -->
           </li>
 
           <li>
-            <a href="single_products.html">
+            <a href="single_products.php">
             <img src="../Pics/products/nathan-oakley-chair-unsplash.jpg" alt="wooden chair">
             <ul>
               <li>Name: Wooden Chair</li>
@@ -172,7 +184,7 @@ $stores = read_csv_data("../data/stores.csv");
           </li>
 
           <li>
-            <a href="single_products.html">
+            <a href="single_products.php">
             <img src="../Pics/products/dmitry-mashkin-tab-unsplash.jpg" alt="a drawing tablet">
             <ul>
               <li>Name: Digital Tablet</li>
@@ -184,7 +196,7 @@ $stores = read_csv_data("../data/stores.csv");
           </li>
 
           <li>
-            <a href="single_products.html">
+            <a href="single_products.php">
             <img src="../Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="2 pillows on a bench">
             <ul>
               <li>Name: Pillow</li>
