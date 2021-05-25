@@ -44,13 +44,42 @@ $stores = read_csv_data("../data/stores.csv");
               <label for="product_sub">Product</label>
               <input type="checkbox" id="product_sub">
               <div class="menu_box">
-                <a href="products_cat.php">Category</a>
-                <a href="products_date.php">Date</a>
+              <?php
+              $id = $_GET["id"];
+              $store_data = get_single_item($stores, $id);
+              echo "<a href='products_cat.php?id=$id'>";
+              echo "Category";
+              echo "</a>";
+              ?>
+              <?php
+              $id = $_GET["id"];
+              $store_data = get_single_item($stores, $id);
+              echo "<a href='products_date.php?id=$id'>";
+              echo "Date";
+              echo "</a>";
+              ?>
+                
               </div>
             </li>
 
-            <li><a href="abt_us.php">About Us</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li>
+            <?php
+              $id = $_GET["id"];
+              $store_data = get_single_item($stores, $id);
+              echo "<a href='abt_us.php?id=$id'>";
+              echo "About Us";
+              echo "</a>";
+              ?>
+            </li>
+            <li>
+            <?php
+              $id = $_GET["id"];
+              $store_data = get_single_item($stores, $id);
+              echo "<a href='contact.php?id=$id'>";
+              echo "Contact";
+              echo "</a>";
+              ?>
+            </li>
 
             <li class="hidden_menu">
                 <label for="menu_top">
@@ -68,11 +97,37 @@ $stores = read_csv_data("../data/stores.csv");
                   <label for="product_sub">Product</label>
                   <input type="checkbox" id="product_sub">
                   <div class="menu_box">
-                    <a href="products_cat.php">By Category</a>
-                    <a href="products_date.php">By Date</a>
+                  <?php
+                  $id = $_GET["id"];
+                  $store_data = get_single_item($stores, $id);
+                  echo "<a href='products_cat.php?id=$id'>";
+                  echo "Category";
+                  echo "</a>";
+                  ?>
+                  <?php
+                  $id = $_GET["id"];
+                  $store_data = get_single_item($stores, $id);
+                  echo "<a href='products_date.php?id=$id'>";
+                  echo "Date";
+                  echo "</a>";
+                  ?>
+
                   </div>
-                  <a href="abt_us.php">About Us</a>
-                  <a href="contact.php">Contact</a>
+                  <?php
+                  $id = $_GET["id"];
+                  $store_data = get_single_item($stores, $id);
+                  echo "<a href='abt_us.php?id=$id'>";
+                  echo "About Us";
+                  echo "</a>";
+                  ?>
+                  <?php
+                  $id = $_GET["id"];
+                  $store_data = get_single_item($stores, $id);
+                  echo "<a href='contact.php?id=$id'>";
+                  echo "Contact";
+                  echo "</a>";
+                  ?>
+                  
                 </div>
             </li>
           </ul>

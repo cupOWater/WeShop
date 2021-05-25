@@ -1,3 +1,8 @@
+<?php
+require "../read_data.php";
+$products = read_csv_data("../data/products.csv");
+$stores = read_csv_data("../data/stores.csv");
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,51 +14,127 @@
 </head>
 <body>
   <header>
-    <div class="row">
-      <div class="column">
-        <h1><a href="store.html">
-          <img src="../Pics/interitor.png" alt="logo" width="150" height="150" class="img_logo">
-        </a></h1>
-      </div>
-      <div class="column">
-        <div class="navbar">
-          <ul>
-            <li><a href="store.html">Home</a></li>
+      <div class="row">
+        <div class="column">
+          <h1>
+            <?php
+            $id = $_GET["id"];
+            $store_data = get_single_item($stores, $id);
+            echo "<a href='store.php?id=$id'>";
+            echo $store_data['name'];
+            echo "</a>";
+            ?>
+          </h1>
 
-            <li>
-              <label for="product_sub">Product</label>
-              <input type="checkbox" id="product_sub">
-              <div class="menu_box">
-                <a href="products_cat.html">Category</a>
-                <a href="products_date.html">Date</a>
-              </div>
-            </li>
+        </div>
+        <div class="column">
+          <div class="navbar">
+            <ul>
+              <li>
+                <?php
+                $id = $_GET["id"];
+                $store_data = get_single_item($stores, $id);
+                echo "<a href='store.php?id=$id'>";
+                echo "Home";
+                echo "</a>";
+                ?>
+              </li>
 
-            <li><a href="abt_us.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
-
-            <li class="hidden_menu">
-                <label for="menu_top">
-                  <img src="../Pics/menu.png" alt="3 stripes" height="40px">
-                </label>
-                <input type="checkbox" id="menu_top">
+              <li>
+                <label for="product_sub">Product</label>
+                <input type="checkbox" id="product_sub">
                 <div class="menu_box">
-                  <a href="store.html">Home</a>
-                  <label for="product_sub">Product</label>
-                  <input type="checkbox" id="product_sub">
-                  <div class="menu_box">
-                    <a href="products_cat.html">By Category</a>
-                    <a href="products_date.html">By Date</a>
-                  </div>
-                  <a href="abt_us.html">About Us</a>
-                  <a href="contact.html">Contact</a>
+                <?php
+                $id = $_GET["id"];
+                $store_data = get_single_item($stores, $id);
+                echo "<a href='products_cat.php?id=$id'>";
+                echo "Category";
+                echo "</a>";
+                ?>
+                <?php
+                $id = $_GET["id"];
+                $store_data = get_single_item($stores, $id);
+                echo "<a href='products_date.php?id=$id'>";
+                echo "Date";
+                echo "</a>";
+                ?>
+                  
                 </div>
-            </li>
-          </ul>
+              </li>
+
+              <li>
+              <?php
+                $id = $_GET["id"];
+                $store_data = get_single_item($stores, $id);
+                echo "<a href='abt_us.php?id=$id'>";
+                echo "About Us";
+                echo "</a>";
+                ?>
+              </li>
+              <li>
+              <?php
+                $id = $_GET["id"];
+                $store_data = get_single_item($stores, $id);
+                echo "<a href='contact.php?id=$id'>";
+                echo "Contact";
+                echo "</a>";
+                ?>
+              </li>
+
+              <li class="hidden_menu">
+                  <label for="menu_top">
+                    <img src="../Pics/menu.png" alt="3 stripes" height="40px">
+                  </label>
+                  <input type="checkbox" id="menu_top">
+                  <div class="menu_box">
+                    <?php
+                      $id = $_GET["id"];
+                      $store_data = get_single_item($stores, $id);
+                      echo "<a href='store.php?id=$id'>";
+                      echo "Home";
+                      echo "</a>";
+                    ?>
+                    <label for="product_sub">Product</label>
+                    <input type="checkbox" id="product_sub">
+                    <div class="menu_box">
+                    <?php
+                    $id = $_GET["id"];
+                    $store_data = get_single_item($stores, $id);
+                    echo "<a href='products_cat.php?id=$id'>";
+                    echo "Category";
+                    echo "</a>";
+                    ?>
+                    <?php
+                    $id = $_GET["id"];
+                    $store_data = get_single_item($stores, $id);
+                    echo "<a href='products_date.php?id=$id'>";
+                    echo "Date";
+                    echo "</a>";
+                    ?>
+
+                    </div>
+                    <?php
+                    $id = $_GET["id"];
+                    $store_data = get_single_item($stores, $id);
+                    echo "<a href='abt_us.php?id=$id'>";
+                    echo "About Us";
+                    echo "</a>";
+                    ?>
+                    <?php
+                    $id = $_GET["id"];
+                    $store_data = get_single_item($stores, $id);
+                    echo "<a href='contact.php?id=$id'>";
+                    echo "Contact";
+                    echo "</a>";
+                    ?>
+                    
+                  </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
   <main>
     <div class="subsec">
