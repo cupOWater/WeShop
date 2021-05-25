@@ -9,7 +9,14 @@ $stores = read_csv_data("../data/stores.csv");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interitor | Home Page</title>
+    <?php
+    $id = $_GET["id"];
+    $store_data = get_single_item($stores, $id);
+    echo "<title>";
+    echo $store_data['name'];
+    echo "</title>";
+    ?>
+    <!-- <title>Interitor | Home Page</title> -->
     <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
 </head>
 <body>
@@ -137,93 +144,64 @@ $stores = read_csv_data("../data/stores.csv");
   </header>
 
   <main>
-    <div class="subsec">
-      <h1>New Products</h1>
-      <hr>
-      <div class="row scroll">
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/deconovo-bed-unsplash.jpg" alt="White bed with 4 pillows on top and 2 beside">
-            <h3>Queen size white bed</h3>
-            <h4>15.450.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="2 pillows on a bench">
-            <h3>Pillow</h3>
-            <h4>300.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-table-unsplash.jpg" alt="wooden table with 3 chairs and vases on top">
-            <h3>Wood Tabel</h3>
-            <h4>500.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-book-unsplash.jpg" alt="wooden bookshelf">
-            <h3>Bookshelf</h3>
-            <h4>850.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-chair-unsplash.jpg" alt="wooden chair">
-            <h3>Wood Chair</h3>
-            <h4>250.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/dmitry-mashkin-tab-unsplash.jpg" alt="a drawing tablet">
-            <h3>Tablet</h3>
-            <h4>13.500.000 VND</h4>
-          </a>
-        </div>
-      </div>
+  <div class="subsec">
+    <h1>New Products</h1>
+    <hr>
+    <div class="row scroll">
+    <?php
+      $id = $_GET["id"];
+      $new_products = $products;
+      usort($new_products, "compare_date");
+      $i = 0;
+      foreach($new_products as $p){
+        if($id == $p["store_id"]){
+          if($i < 10){
+            echo('<div class="column4">');
+            echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+            echo('<h3>'.$p["name"].'</h3>');
+            echo('<h4>'.$p["price"].' VND</h4>');
+            echo('</a>');
+            echo('</div>');
+            $i++;
+          }else{
+            break;
+          }
+
+        }
+      }
+    ?>
+
     </div>
-    <div class="subsec">
-      <h1>Featured Products</h1>
-      <hr>
-      <div class="row scroll">
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/deconovo-bed-unsplash.jpg" alt="White bed with 4 pillows on top and 2 beside">
-            <h3>Queen size white bed</h3>
-            <h4>15.450.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-book-unsplash.jpg" alt="wooden bookshelf">
-            <h3>Bookshelf</h3>
-            <h4>850.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-chair-unsplash.jpg" alt="wooden chair">
-            <h3>Wood Chair</h3>
-            <h4>250.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="2 pillows on a bench">
-            <h3>Pillow</h3>
-            <h4>300.000 VND</h4>
-          </a>
-        </div>
-        <div class="column4">
-          <a href="single_products.html">
-            <img src="../Pics/products/nathan-oakley-table-unsplash.jpg" alt="wooden table with 3 chairs and vases on top">
-            <h3>Wood Table</h3>
-            <h4>500.000 VND</h4>
-          </a>
-        </div>
+  </div>
+
+
+
+  <div class="subsec">
+    <h1>Featured Products</h1>
+    <hr>
+    <div class="row scroll">
+    <?php
+    $id = $_GET["id"];
+    $featured_products = get_featured($products, "featured_in_store");
+    $i = 0;
+    foreach($featured_products as $p){
+      if($id == $p["store_id"]){
+        if($i < 10){
+          echo('<div class="column4">');
+          echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+          echo('<h3>'.$p["name"].'</h3>');
+          echo('<h4>'.$p["price"].' VND</h4>');
+          echo('</a>');
+          echo('</div>');
+          $i++;
+        }
+        else{
+          break;
+        }
+      }
+    }
+    ?>
+        
       </div>
     </div>
 
