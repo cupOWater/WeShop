@@ -157,8 +157,15 @@ $stores = read_csv_data("../data/stores.csv");
       </span>
       <p id="coupon_msg"></p>
       <p><b>Total:</b> <span id="total">0 VND</span></p>
-      <a href="products_cat.php" class="order">Continue Shopping</a>
+      <!-- <a href="products_cat.php" class="order">Continue Shopping</a> -->
       <!-- <a href="thankyou.php" class="order">Order</a> -->
+      <?php
+      $id = $_GET["id"];
+      $store_data = get_single_item($stores, $id);
+      echo "<a href='products_cat.php?id=$id' class = 'order'>";
+      echo "Continue Shopping";
+      echo "</a>";
+      ?>
       <?php
       $id = $_GET["id"];
       $store_data = get_single_item($stores, $id);
