@@ -9,7 +9,14 @@ $stores = read_csv_data("../data/stores.csv");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interitor | About</title>
+    <?php
+    $id = $_GET["id"];
+    $store_data = get_single_item($stores, $id);
+    echo "<title>";
+    echo $store_data['name'];
+    echo " || About Us";
+    echo "</title>";
+    ?>
     <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
     <link rel="stylesheet" href="../css_file/about_us.css">
     <script src="../scripts/overlay.js"></script>

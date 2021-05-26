@@ -17,7 +17,6 @@ $stores = read_csv_data("../data/stores.csv");
     echo " || Home Page";
     echo "</title>";
     ?>
-    <!-- <title>Interitor | Home Page</title> -->
     <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
 </head>
 <body>
