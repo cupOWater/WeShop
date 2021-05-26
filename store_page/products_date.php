@@ -157,26 +157,29 @@ $stores = read_csv_data("../data/stores.csv");
           <li>
           <?php
             $id = $_GET["id"];
-            $featured_products = get_featured($products,"featured_in_store");
+            $display_products = $products;
             $i =0;
-            foreach($featured_products as $p){
-              if($i<10){
-                echo('<a href="./single_products.php?id='.$_GET["id"].'">');
-                echo('<img alt='.$p["name"].'>');
-                echo('<ul>');
-                echo('<li>Name:'.$p["name"].'</li>');
-                echo('<li>'.$p["price"].' VND</li>');
-                echo('<li>Created On:'.$p["created_time"].'</li>');
-                echo('</ul>');
-                echo('</a>');
-                echo('<br>');
-                echo('<br>');
-                echo('<hr>');
-                echo('<br>');
-                $i++;
-              }else{
-                break;
+            foreach($display_products as $p){
+              if($id == $p['store_id']){
+                if($i<20){
+                  echo('<a href="./single_products.php?id='.$_GET["id"].'">');
+                  echo('<img alt='.$p["name"].'>');
+                  echo('<ul>');
+                  echo('<li>Name:'.$p["name"].'</li>');
+                  echo('<li>'.$p["price"].' VND</li>');
+                  echo('<li>Created On:'.$p["created_time"].'</li>');
+                  echo('</ul>');
+                  echo('</a>');
+                  echo('<br>');
+                  echo('<br>');
+                  echo('<hr>');
+                  echo('<br>');
+                  $i++;
+                }else{
+                  break;
+                }
               }
+
             }
             ?>
           </li>
