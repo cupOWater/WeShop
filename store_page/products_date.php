@@ -148,63 +148,30 @@ $stores = read_csv_data("../data/stores.csv");
         <h2>Product List:</h2>
         <ul>
           <li>
-            <?php
+          <?php
             $id = $_GET["id"];
-            $store_data = get_single_item($stores, $id);
-            echo "<a href='single_products.php?id=$id'>";
-            echo "<img src='../Pics/products/deconovo-bed-unsplash.jpg' alt='White bed with 4 pillows on top and 2 beside'>";
-            echo "<ul>";
-            echo "<li>Name: Queen Size White Bed</li>";
-            echo "<li>Description: A queen size bed with white sheet</li>";
-            echo "<li>Price: 15.450.000 VND</li>";
-            echo "<li>Created On: 16/04/2021</li>";
-            echo "</ul>";
-            echo "</a>";
+            $featured_products = get_featured($products,"featured_in_store");
+            $i =0;
+            foreach($featured_products as $p){
+              if($i<10){
+                echo('<a href="./single_products.php?id='.$_GET["id"].'">');
+                echo('<img alt='.$p["name"].'>');
+                echo('<ul>');
+                echo('<li>Name:'.$p["name"].'</li>');
+                echo('<li>'.$p["price"].' VND</li>');
+                echo('<li>Created On:'.$p["created_time"].'</li>');
+                echo('</ul>');
+                echo('</a>');
+                echo('<br>');
+                echo('<br>');
+                echo('<hr>');
+                echo('<br>');
+                $i++;
+              }else{
+                break;
+              }
+            }
             ?>
-            <!-- <img src="../Pics/products/deconovo-bed-unsplash.jpg" alt="White bed with 4 pillows on top and 2 beside">
-            <ul>
-              <li>Name: Queen Size White Bed</li>
-              <li>Description: A queen size bed with white sheet</li>
-              <li>Price: 15.450.000 VND</li>
-              <li>Created On: 16/04/2021</li>
-            </ul>
-            </a> -->
-          </li>
-
-          <li>
-            <a href="single_products.php">
-            <img src="../Pics/products/nathan-oakley-chair-unsplash.jpg" alt="wooden chair">
-            <ul>
-              <li>Name: Wooden Chair</li>
-              <li>Description: Wood chair made of oak</li>
-              <li>Price: 250.000 VND</li>
-              <li>Created On: 15/03/2021</li>
-            </ul>
-            </a>
-          </li>
-
-          <li>
-            <a href="single_products.php">
-            <img src="../Pics/products/dmitry-mashkin-tab-unsplash.jpg" alt="a drawing tablet">
-            <ul>
-              <li>Name: Digital Tablet</li>
-              <li>Description: A white drawing tablet for digital art</li>
-              <li>Price: 13.500.000 VND</li>
-              <li>Created On: 04/03/2021</li>
-            </ul>
-            </a>
-          </li>
-
-          <li>
-            <a href="single_products.php">
-            <img src="../Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="2 pillows on a bench">
-            <ul>
-              <li>Name: Pillow</li>
-              <li>Description: Cotton filled pillow for decoration</li>
-              <li>Price: 300.000 VND</li>
-              <li>Created On: 27/02/2021</li>
-            </ul>
-            </a>
           </li>
         </ul>
       </div>
