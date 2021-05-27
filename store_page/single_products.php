@@ -168,41 +168,27 @@ $stores = read_csv_data("../data/stores.csv");
       <div class="recomended_products">
         <h2>Recommended Products:</h2>
         <div class="row scroll">
-          <div class="column4">
-            <a href="single_product_book.html">
-              <img src="../Pics/products/nathan-oakley-book-unsplash.jpg" alt="wooden bookshelf">
-              <h3>Bookshelf</h3>
-              <h4>850.000 VND</h4>
-            </a>
-          </div>
-          <div class="column4">
-            <a href="single_product_book.html">
-              <img src="../Pics/products/nathan-oakley-pillow-unsplash.jpg" alt="2 pillows on a bench">
-              <h3>Pillow</h3>
-              <h4>300.000 VND</h4>
-            </a>
-          </div>
-          <div class="column4">
-            <a href="single_product_book.html">
-              <img src="../Pics/products/Pd1.jpg" alt="Fountain-like chandelier">
-              <h3>Fountain Chandelier</h3>
-              <h4>3.250.000 VND</h4>
-            </a>
-          </div>
-          <div class="column4">
-            <a href="single_product_book.html">
-              <img src="../Pics/products/Pd2.jpg" alt="Blue and gold chandelier">
-              <h3>Ornament Chandelier</h3>
-              <h4>2.845.000 VND</h4>
-            </a>
-          </div>
-          <div class="column4">
-            <a href="single_product_book.html">
-              <img src="../Pics/products/dmitry-mashkin-tab-unsplash.jpg" alt="a drawing tablet">
-              <h3>Tablet</h3>
-              <h4>13.500.000 VND</h4>
-            </a>
-          </div>
+          <?php
+          $id = $_GET["id"];
+          $new_products = $products;
+          usort($new_products, "compare_date");
+          $i = 0;
+          foreach($new_products as $p){
+            if($id == $p["store_id"]){
+              if($i < 10){
+                echo('<div class="column4">');
+                echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+                echo('<h3>'.$p["name"].'</h3>');
+                echo('<h4>'.$p["price"].' VND</h4>');
+                echo('</a>');
+                echo('</div>');
+                $i++;
+              }else{
+                break;
+              }
+            }
+          }
+          ?>
         </div>
       </div>
 
