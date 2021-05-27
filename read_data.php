@@ -21,9 +21,17 @@
     
     function compare_date($i1, $i2){
         // Compare using created_time key of an element
+        // Newest to oldest
         $date1 = strtotime($i1["created_time"]);
         $date2 = strtotime($i2["created_time"]);
         return $date2 - $date1;
+    }
+    function compare_date1($i1, $i2){
+        // Compare using created_time key of an element
+        // Oldest to newest
+        $date1 = strtotime($i1["created_time"]);
+        $date2 = strtotime($i2["created_time"]);
+        return -($date2 - $date1);
     }
 
     function get_featured($stores_list, $col_name){
