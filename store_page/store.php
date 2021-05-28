@@ -157,7 +157,7 @@ $stores = read_csv_data("../data/stores.csv");
         if($id == $p["store_id"]){
           if($i < 10){
             echo('<div class="column4">');
-            echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+            echo('<a href="./products.php?id='.$id.'&id_product='.$p["id"].'"  target="_blank">');
             echo('<h3>'.$p["name"].'</h3>');
             echo('<h4>'.$p["price"].' VND</h4>');
             echo('</a>');
@@ -188,7 +188,7 @@ $stores = read_csv_data("../data/stores.csv");
       if($id == $p["store_id"]){
         if($i < 10){
           echo('<div class="column4">');
-          echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+          echo('<a href="./products.php?id='.$id.'&id_product='.$p["id"].'"  target="_blank">');
           echo('<h3>'.$p["name"].'</h3>');
           echo('<h4>'.$p["price"].' VND</h4>');
           echo('</a>');

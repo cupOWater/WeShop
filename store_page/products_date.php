@@ -162,7 +162,7 @@ $stores = read_csv_data("../data/stores.csv");
             foreach($display_products as $p){
               if($id == $p['store_id']){
                 if($i<20){
-                  echo('<a href="./single_products.php?id='.$_GET["id"].'">');
+                  echo('<a href="./products.php?id='.$_GET["id"].'&id_product='.$p["id"].'">');
                   echo('<img alt='.$p["name"].'>');
                   echo('<ul>');
                   echo('<li>Name:'.$p["name"].'</li>');

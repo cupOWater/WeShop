@@ -147,16 +147,34 @@ $stores = read_csv_data("../data/stores.csv");
 
   <main>
     <div class="product_content">
-        <h1 id="product_name">Oak Wood Table</h1>
+        <?php
+        $product_id = $_GET["id_product"];
+        $product_data = get_single_product($products,$product_id);
+        echo ('<h1>');
+        echo $product_data["name"];
+        echo('</h1>');
+        ?>
         <div class="product_pic">
-            <img src="../Pics/products/nathan-oakley-table-unsplash.jpg" alt="Wooden table with 4 chairs">
+            <?php
+            $product_id = $_GET["id_product"];
+            $product_data = get_single_product($products,$product_id);
+            echo('<img src="" alt= '.$product_data["name"].'>');
+            ?>
         </div>
         <ul class="description">
-            <li><b>Description:</b><span> A wooden table set made from oak wood</span></li>
-            <li>Manufacture: WoodWork Ltd.</li>
+            <li><b>Description:</b><span> Unknown</span></li>
+            <li>Manufacture: Unknown</li>
             <li>Status: Available</li>
-            <li>Warranty: 2 years</li>
-            <li class="price">Price: <span id="product_price">500.000</span> VND</li>
+            <li>Warranty: Unknown</li>
+            <li class="price">Price:
+              <?php
+              $product_id = $_GET["id_product"];
+              $product_data = get_single_product($products,$product_id);
+              echo ('<span id="product_price">');
+              echo $product_data["price"];
+              echo('</span>');
+              ?> 
+            VND</li>
         </ul>
         <a href="./order_placement.html" class="order" id="buy_now">Buy Now</a>
         <input type="button" value="Add" class="order" id="add_cart">
@@ -177,7 +195,7 @@ $stores = read_csv_data("../data/stores.csv");
             if($id == $p["store_id"]){
               if($i < 10){
                 echo('<div class="column4">');
-                echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+                echo('<a href="./products.php?id='.$id.'&id_product='.$p["id"].'"  target="_blank">');
                 echo('<h3>'.$p["name"].'</h3>');
                 echo('<h4>'.$p["price"].' VND</h4>');
                 echo('</a>');
