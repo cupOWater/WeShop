@@ -103,11 +103,11 @@
                 foreach($new_products as $p){
                   if($i < 10){
                     echo('<div class="column4">');
-                    echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+                    echo('<a href="./store_page/products.php?id='.$p["store_id"].'&id_product='.$p["id"].'"  target="_blank">');
                     echo('<h3>'.$p["name"].'</h3>');
                     echo('<h4>'.$p["price"].' VND</h4>');
                     echo('</a>');
-                    echo('<a href="./store_page/store.php?id='.$p["store_id"].'">');
+                    echo('<a href="./store_page/store.php?id='.$p["store_id"].'" target="_blank">');
                     echo('<h4>'.$stores[$p["store_id"]-1]["name"].'</h4>');
                     echo('</a>');
                     echo('</div>');
@@ -153,11 +153,11 @@
                   foreach($featured_products as $p){
                     if($i < 10){
                       echo('<div class="column4">');
-                      echo('<a href="./store_page/products.php?id='.$p["id"].'"  target="_blank">');
+                      echo('<a href="./store_page/products.php?id='.$p["store_id"].'&id_product='.$p["id"].'"  target="_blank">');
                       echo('<h3>'.$p["name"].'</h3>');
                       echo('<h4>'.$p["price"].' VND</h4>');
                       echo('</a>');
-                      echo('<a href="./store_page/store.php?id='.$p["store_id"].'">');
+                      echo('<a href="./store_page/store.php?id='.$p["store_id"].'"target="_blank">');
                       echo('<h4>'.$stores[$p["store_id"]-1]["name"].'</h4>');
                       echo('</a>');
                       echo('</div>');

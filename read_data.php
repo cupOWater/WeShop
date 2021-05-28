@@ -55,7 +55,7 @@
         return false;
     }
     function get_single_product($array, $product_id){
-        // Associative array of items $array
+        // Associative array of products $array
         // Each item has id $product_id
         foreach ($array as $i){
             if($i['id'] == $product_id){
