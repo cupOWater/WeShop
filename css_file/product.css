@@ -25,7 +25,7 @@
   }
 
 #add_msg{
-  display: none;
+  /* display: none; */
   vertical-align: middle;
   padding: 5px;
   color: #c94b4b;

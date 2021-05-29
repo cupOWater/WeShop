@@ -1,5 +1,6 @@
 <?php
   require "store_function.php";
+  session_start();
 ?>
 
 <html lang="en">
@@ -85,6 +86,21 @@
             <th>Quantity</th>
             <th>Price</th>
           </thead>
+          <?php 
+          $total = 0;
+          if(isset($_SESSION["cart"])){
+
+            foreach($_SESSION["cart"] as $i){
+              $item = get_single_item($products, $i["id"]);
+              echo "<tr>";
+              echo "<td>".$i['id']." - ".$item['name']."</td>";
+              echo "<td>".$i['quant']."</td>";
+              echo "<td>".$item["price"] * $i['quant']." VND</td>";
+              echo "</tr>";
+              $total += $item["price"] * $i['quant'];
+            }
+          }
+          ?>
         </table>
       </div><br>
       <label for="coupon"><b>Coupon Code</b></label>
@@ -94,11 +110,11 @@
         <input type="button" value="Reset" onclick="reset_coupon()">
       </span>
       <p id="coupon_msg"></p>
-      <p><b>Total:</b> <span id="total">0 VND</span></p>
+      <p><b>Total:</b> <span id="total"><?php echo $total;?> VND</span></p>
       <?php echo "<a href='store.php?id=$id' class ='order'>";?>Continue Shopping</a>
       
       <?php
-        if (!isset($_SESSION["loggedIn"])){
+        if (isset($_SESSION["loggedIn"])){
           echo "<a href='thankyou.php?id=$id' class='order'>";
         }else{
           echo "<a href='../register.php' class='order'>";
@@ -123,7 +139,7 @@
     <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="../others_file/tos_copyright.php" target="_blank">Term of Service</a> </p>
   </footer>
   <script src="../scripts/main.js" type="text/javascript"></script>
-  <script src="../scripts/ordering.js" type="text/javascript"></script>
+  <!-- <script src="../scripts/ordering.js" type="text/javascript"></script> -->
 </body>
 
 </html>

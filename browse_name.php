@@ -1,24 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["loggedIn"])) {
-  header("Location: profile.php");
-}
-require "global_function.php";
-require "read_data.php";
-$users = read_csv_data("../user.csv");
-if (isset($_POST["login"])) {
-  foreach ($users as $u) {
-    if ($_POST["user_email"] == $u["email"]) {
-      if (password_verify($_POST["user_password"], $u["password"])) {
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["userData"] = $u;
-        header("Location: profile.php");
-      }
-    }
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +5,10 @@ if (isset($_POST["login"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./css_file/style.css" type="text/css">
-  <link rel="stylesheet" href="./css_file/login_page.css" type="text/css">
+  <title>Browse</title>
+  <link rel="stylesheet" href="./css_file/style.css">
+  <link rel="stylesheet" href="./css_file/browse.css">
+  <link rel="stylesheet" href="./css_file/home.css">
 </head>
 
 <body>
@@ -85,25 +65,41 @@ if (isset($_POST["login"])) {
     </header>
 
     <main>
+      <div class="content">
+        <h1>Browse By Name</h1>
+        <div class="namebrowsing">
+          <label for="search"> A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z </label>
+        </div>
+        <input type="checkbox" id="search">
 
-      <div class="content login">
-        <h2>Sign-In</h2>
-        <form action="my_account.php" method="post">
-          <label for="u_email">Email</label> <br>
-          <input type="email" id="u_email" name="user_email">
-          <br>
-          <label for="u_password">Password</label> <br>
-          <input type="password" id="u_password" name="user_password"></br>
-          <input type="submit" value="Login" id="login_button" name="login">
-          <br>
-        </form>
-        <?php
-        if (isset($_POST["login"])) {
-          echo ('<p id="error_msg">Invalid User</p>');
-        }
-        ?>
-        <p><a href="register.php">Register Here!</a></p>
-        <p><a href="forgot_password.php">Forgot Password?</a></p>
+        <div class="store_list">
+          <h2>Store List:</h2>
+          <ul>
+            <li><a href="./store_page/store.html">
+                <img src="./Pics/aquarium.png" alt="fish and wave on blue background">
+                Aquarius
+              </a></li>
+            <li><a href="./store_page/store.html">
+                <img src="./Pics/babyboo.png" alt="pink circle, green triangle, blue square and title baby boo">
+                Baby boo
+              </a></li>
+            <li><a href="./store_page/store.html">
+                <img src="./Pics/camping.png" alt="leaves, water, fire surrounding an X with Camping at the bottom">
+                Camper X
+              </a></li>
+            <li><a href="./store_page/store.html">
+                <img src="./Pics/interitor.png" alt="wave and fish on blue background">
+                Interitor
+              </a></li>
+            <li><a href="./store_page/store.html">
+                <img src="./Pics/nhatobanson.PNG" alt="Title nhatobanson with a lipstick at the end">
+                Nhatobanson</a></li>
+            <li><a href="./store_page/store.html">
+                <img src="./Pics/sweetcandy.png" alt="Pink heart with baby boo written on top">
+                Sweet Candy
+              </a></li>
+          </ul>
+        </div>
       </div>
 
       <div id="cookie">
@@ -115,7 +111,6 @@ if (isset($_POST["login"])) {
         <input id="cookie_accept" type="button" value="I understand">
       </div>
     </main>
-
     <footer>
       <hr>
       <div class="row">
@@ -136,7 +131,6 @@ if (isset($_POST["login"])) {
     </footer>
 
   </div>
-  <script src="./scripts/account.js" type="text/javascript"></script>
   <script src="./scripts/main.js" type="text/javascript"></script>
 </body>
 

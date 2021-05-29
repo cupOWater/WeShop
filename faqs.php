@@ -1,24 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["loggedIn"])) {
-  header("Location: profile.php");
-}
-require "global_function.php";
-require "read_data.php";
-$users = read_csv_data("../user.csv");
-if (isset($_POST["login"])) {
-  foreach ($users as $u) {
-    if ($_POST["user_email"] == $u["email"]) {
-      if (password_verify($_POST["user_password"], $u["password"])) {
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["userData"] = $u;
-        header("Location: profile.php");
-      }
-    }
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +5,10 @@ if (isset($_POST["login"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./css_file/style.css" type="text/css">
-  <link rel="stylesheet" href="./css_file/login_page.css" type="text/css">
+  <title>FAQ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./css_file/style.css">
+  <link rel="stylesheet" href="./css_file/faqs.css">
 </head>
 
 <body>
@@ -83,27 +63,81 @@ if (isset($_POST["login"])) {
         </div>
       </div>
     </header>
-
     <main>
+      <div class="faq_header"><a href="./faqs.html">
+          <h2>Frequently Asked Questions</h2>
+        </a></div>
 
-      <div class="content login">
-        <h2>Sign-In</h2>
-        <form action="my_account.php" method="post">
-          <label for="u_email">Email</label> <br>
-          <input type="email" id="u_email" name="user_email">
-          <br>
-          <label for="u_password">Password</label> <br>
-          <input type="password" id="u_password" name="user_password"></br>
-          <input type="submit" value="Login" id="login_button" name="login">
-          <br>
-        </form>
-        <?php
-        if (isset($_POST["login"])) {
-          echo ('<p id="error_msg">Invalid User</p>');
-        }
-        ?>
-        <p><a href="register.php">Register Here!</a></p>
-        <p><a href="forgot_password.php">Forgot Password?</a></p>
+      <div class="faq_content">
+        <div class="faq_container">
+          <div class="question" id="Q1">
+            <a class="item_link" href="#Q1">
+              How can I purchase products online?
+              <i class="fa fa-plus"></i>
+              <i class="fa fa-minus"></i>
+            </a>
+            <div class="answer">
+              <p>
+              <ul class="ans">Steps:
+                <li>Access to our <a href="./index.html" target="_blank">website.</a></li>
+                <li>Select any store you want to access.</li>
+                <li>Choose a product and add it to cart.</li>
+                <li>Press purchase button any fill in your information, if you have not become our membership.</li>
+              </ul>
+              </p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_container">
+          <div class="question" id="Q2">
+            <a class="item_link" href="#Q2">
+              How can I become a member?
+              <i class="fa fa-plus"></i>
+              <i class="fa fa-minus"></i>
+            </a>
+            <div class="answer">
+              <p>First, you have to register an account on our <a href="./register.html" target="_blank">website.</a><br> After that, you have to shop up to 200$ to gain points and receive
+                our <a href="./fees.html" target="_blank">incentives.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_container">
+          <div class="question" id="Q3">
+            <a class="item_link" href="#Q3">
+              Refund policy.
+              <i class="fa fa-plus"></i>
+              <i class="fa fa-minus"></i>
+            </a>
+            <div class="answer">
+              <p>1. Your products can be refunded in 7 days from buying date.<br>
+                2. You must keep the receipt when refund. <br>
+                3. We only accept refunded products that have technical issues. <br>
+                4. Clothes that does not fit your size. </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq_container">
+          <div class="question" id="Q4">
+            <a class="item_link" href="#Q4">
+              Payment Methods.
+              <i class="fa fa-plus"></i>
+              <i class="fa fa-minus"></i>
+            </a>
+            <div class="answer">
+              <p>
+                1. Credit Cards (Visa, Mastercard, Napas are allowed). <br>
+                2. Pay by cash. <br>
+                3. Internet Banking for online shoppers. <br>
+                4. Instalment Payment for 0%. <br>
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div id="cookie">
@@ -136,7 +170,6 @@ if (isset($_POST["login"])) {
     </footer>
 
   </div>
-  <script src="./scripts/account.js" type="text/javascript"></script>
   <script src="./scripts/main.js" type="text/javascript"></script>
 </body>
 

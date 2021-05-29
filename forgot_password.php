@@ -1,24 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["loggedIn"])) {
-  header("Location: profile.php");
-}
-require "global_function.php";
-require "read_data.php";
-$users = read_csv_data("../user.csv");
-if (isset($_POST["login"])) {
-  foreach ($users as $u) {
-    if ($_POST["user_email"] == $u["email"]) {
-      if (password_verify($_POST["user_password"], $u["password"])) {
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["userData"] = $u;
-        header("Location: profile.php");
-      }
-    }
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +5,7 @@ if (isset($_POST["login"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Forgot Password?</title>
   <link rel="stylesheet" href="./css_file/style.css" type="text/css">
   <link rel="stylesheet" href="./css_file/login_page.css" type="text/css">
 </head>
@@ -84,27 +63,14 @@ if (isset($_POST["login"])) {
       </div>
     </header>
 
-    <main>
 
-      <div class="content login">
-        <h2>Sign-In</h2>
-        <form action="my_account.php" method="post">
-          <label for="u_email">Email</label> <br>
-          <input type="email" id="u_email" name="user_email">
-          <br>
-          <label for="u_password">Password</label> <br>
-          <input type="password" id="u_password" name="user_password"></br>
-          <input type="submit" value="Login" id="login_button" name="login">
-          <br>
-        </form>
-        <?php
-        if (isset($_POST["login"])) {
-          echo ('<p id="error_msg">Invalid User</p>');
-        }
-        ?>
-        <p><a href="register.php">Register Here!</a></p>
-        <p><a href="forgot_password.php">Forgot Password?</a></p>
-      </div>
+    <main class="content login">
+      <form action="#">
+        <h2> Forgot Password </h2>
+        <label for="emailforgot">Enter your email:</label><br>
+        <input type="email" name="emailforgot" id="emailforgot"> <br>
+        <input type="submit">
+      </form>
 
       <div id="cookie">
         <h2>I use cookie</h2>
@@ -136,7 +102,6 @@ if (isset($_POST["login"])) {
     </footer>
 
   </div>
-  <script src="./scripts/account.js" type="text/javascript"></script>
   <script src="./scripts/main.js" type="text/javascript"></script>
 </body>
 

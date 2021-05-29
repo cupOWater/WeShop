@@ -1,24 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["loggedIn"])) {
-  header("Location: profile.php");
-}
-require "global_function.php";
-require "read_data.php";
-$users = read_csv_data("../user.csv");
-if (isset($_POST["login"])) {
-  foreach ($users as $u) {
-    if ($_POST["user_email"] == $u["email"]) {
-      if (password_verify($_POST["user_password"], $u["password"])) {
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["userData"] = $u;
-        header("Location: profile.php");
-      }
-    }
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +5,9 @@ if (isset($_POST["login"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./css_file/style.css" type="text/css">
-  <link rel="stylesheet" href="./css_file/login_page.css" type="text/css">
+  <title>Contact</title>
+  <link rel="stylesheet" href="./css_file/style.css">
+  <link rel="stylesheet" href="./css_file/contact.css">
 </head>
 
 <body>
@@ -83,27 +62,58 @@ if (isset($_POST["login"])) {
         </div>
       </div>
     </header>
-
     <main>
-
-      <div class="content login">
-        <h2>Sign-In</h2>
-        <form action="my_account.php" method="post">
-          <label for="u_email">Email</label> <br>
-          <input type="email" id="u_email" name="user_email">
-          <br>
-          <label for="u_password">Password</label> <br>
-          <input type="password" id="u_password" name="user_password"></br>
-          <input type="submit" value="Login" id="login_button" name="login">
-          <br>
-        </form>
-        <?php
-        if (isset($_POST["login"])) {
-          echo ('<p id="error_msg">Invalid User</p>');
-        }
-        ?>
-        <p><a href="register.php">Register Here!</a></p>
-        <p><a href="forgot_password.php">Forgot Password?</a></p>
+      <div class="contact_header">
+        <h1>Contact Us</h1>
+        <h2>How can we help you?</h2>
+        <p>Fill out this form to request support</p>
+        <div class="contact_box">
+          <form action="#" onsubmit="return validation()">
+            <label for="contact">Contact Purpose:</label>
+            <select name="Contact_purpose" id="contact">
+              <option value="b">Business</option>
+              <option value="p">Personal</option>
+            </select><br>
+            <fieldset class="aboutyou">
+              <legend><label>About You</label></legend>
+              <p>Fullname: <br>
+                <input type="text" maxlength="50" id="fullName">
+              </p>
+              <p>Email: <br>
+                <input type="email" id="userEmail">
+              </p>
+              <p>Phone: <br>
+                <input type="text" id="userPhone">
+              </p>
+              <label for="contacttype">Choose contact type:</label>
+              <input type="radio" name="contact_method" value="email"> Email
+              <input type="radio" name="contact_method" value="phone"> Phone
+            </fieldset><br>
+            <fieldset class="day">
+              <legend><label for="day">Select contact day</label></legend>
+              <p><br>
+                <input type="checkbox" name="contact_day" value="1">Monday
+                <input type="checkbox" name="contact_day" value="2">Tuesday
+                <input type="checkbox" name="contact_day" value="3">Wednesday
+                <input type="checkbox" name="contact_day" value="4">Thursday
+                <input type="checkbox" name="contact_day" value="5">Friday
+                <input type="checkbox" name="contact_day" value="6">Saturday
+                <input type="checkbox" name="contact_day" value="7">Sunday
+              </p>
+            </fieldset><br>
+            <label for="box">
+              <p>Write your questions</p>
+            </label>
+            <textarea name="textbox" id="box" cols="101" rows="10">Delete and Enter your message here...</textarea><br>
+            <p id="text_box_msg"></p>
+            <div class="submit">
+              <div class="submit">
+                <input type="submit" value="Submit" class="submit_button">
+                <input type="reset" value="Reset" class="reset_button">
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
 
       <div id="cookie">
@@ -134,10 +144,9 @@ if (isset($_POST["login"])) {
         <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="./others_file/tos_copyright.php" target="_blank">Term of Service</a> </p>
       </div>
     </footer>
-
   </div>
-  <script src="./scripts/account.js" type="text/javascript"></script>
   <script src="./scripts/main.js" type="text/javascript"></script>
+  <script src="./scripts/contact.js" type="text/javascript"></script>
 </body>
 
 </html>

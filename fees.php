@@ -1,24 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["loggedIn"])) {
-  header("Location: profile.php");
-}
-require "global_function.php";
-require "read_data.php";
-$users = read_csv_data("../user.csv");
-if (isset($_POST["login"])) {
-  foreach ($users as $u) {
-    if ($_POST["user_email"] == $u["email"]) {
-      if (password_verify($_POST["user_password"], $u["password"])) {
-        $_SESSION["loggedIn"] = true;
-        $_SESSION["userData"] = $u;
-        header("Location: profile.php");
-      }
-    }
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,9 +5,9 @@ if (isset($_POST["login"])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="./css_file/style.css" type="text/css">
-  <link rel="stylesheet" href="./css_file/login_page.css" type="text/css">
+  <title>Fees</title>
+  <link rel="stylesheet" href="./css_file/style.css">
+  <link rel="stylesheet" href="./css_file/fees.css">
 </head>
 
 <body>
@@ -85,25 +64,88 @@ if (isset($_POST["login"])) {
     </header>
 
     <main>
+      <div class="header">
+        <h2>Monthly Fees:</h2>
+        <div class="monthly_fee">
+          <table class="table1">
+            <tr>
+              <th>Name</th>
+              <th>Area</th>
+              <th>Location</th>
+              <th>Status</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <td>Store A</td>
+              <td>40m2</td>
+              <td>Section B</td>
+              <td>Rented</td>
+              <td>46.136.000 VND/month</td>
+            </tr>
+            <tr>
+              <td>Store B</td>
+              <td>56m2</td>
+              <td>Section A</td>
+              <td>Rented</td>
+              <td>50.750.000 VND/month</td>
+            </tr>
+            <tr>
+              <td>Store Name</td>
+              <td>60m2</td>
+              <td>Near exit door at section A</td>
+              <td>Available</td>
+              <td>36.910.000 VND/month</td>
+            </tr>
+            <tr>
+              <td>Store Name</td>
+              <td>30m2</td>
+              <td>Section B</td>
+              <td>Available</td>
+              <td>39.215.000 VND/month</td>
+            </tr>
+          </table>
+        </div>
+      </div><br><br><br>
 
-      <div class="content login">
-        <h2>Sign-In</h2>
-        <form action="my_account.php" method="post">
-          <label for="u_email">Email</label> <br>
-          <input type="email" id="u_email" name="user_email">
-          <br>
-          <label for="u_password">Password</label> <br>
-          <input type="password" id="u_password" name="user_password"></br>
-          <input type="submit" value="Login" id="login_button" name="login">
-          <br>
-        </form>
-        <?php
-        if (isset($_POST["login"])) {
-          echo ('<p id="error_msg">Invalid User</p>');
-        }
-        ?>
-        <p><a href="register.php">Register Here!</a></p>
-        <p><a href="forgot_password.php">Forgot Password?</a></p>
+
+      <div class="header">
+        <h2>Member Fees:</h2><br>
+        <li class="note">1 point (pts) = 1 VND</li>
+        <div class="member_fee">
+          <table class="table2">
+            <tr>
+              <th>Levels</th>
+              <th class="level">Bronze</th>
+              <th class="level">Silver</th>
+              <th class="level">Gold</th>
+              <th class="level">Plantinum</th>
+            </tr>
+            <tr>
+              <th>Conditions(Points)</th>
+              <td>4.000.000 pts to 40.000.000 pts </td>
+              <td>40.000.001 pts to 60.000.000 pts</td>
+              <td>60.000.001pts to 200.000.000 pts</td>
+              <td>More than 200.000.000pts </td>
+            </tr>
+            <tr>
+              <th>Incentives</th>
+              <td>1% Discount</td>
+              <td>3% Discount</td>
+              <td>5% Discount</td>
+              <td>10% Discount</td>
+            </tr>
+            <tr>
+              <th>Birthday Incentives</th>
+              <td>100.000 VND Cash Voucher</td>
+              <td>200.000 VND Cash Voucher</td>
+              <td>500.000 VND Cash Voucher</td>
+              <td>1.000.000 VND Cash Voucher</td>
+            </tr>
+
+
+          </table>
+
+        </div>
       </div>
 
       <div id="cookie">
@@ -136,7 +178,6 @@ if (isset($_POST["login"])) {
     </footer>
 
   </div>
-  <script src="./scripts/account.js" type="text/javascript"></script>
   <script src="./scripts/main.js" type="text/javascript"></script>
 </body>
 

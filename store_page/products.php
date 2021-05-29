@@ -1,10 +1,21 @@
 <?php
-require "store_function.php";
-$product_id = $_GET["id_product"];
-$product_data = get_single_product($products, $product_id);
+  session_start();
+  require "store_function.php";
+  $product_id = $_GET["id_product"];
+  $product_data = get_single_product($products, $product_id);
+  $add_msg = "";
+  
+  if(isset($_POST["buy_now"])){
+    add_item($product_id);
+    header("Location: order_placement.php?id=$id");
+  }
+  if(isset($_POST["add_cart"])){
+    add_item($product_id);
+    $add_msg = "Item has been added to cart";
+  }
+        
 ?>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,18 +113,19 @@ $product_data = get_single_product($products, $product_id);
         </li>
       </ul>
 
-      <a href="./order_placement.php?id=<?php echo ($id); ?>" class="order" id="buy_now">Buy Now</a>
-      <input type="button" value="Add" class="order" id="add_cart">
+      <form action="<?php echo "products.php?id=$id&id_product=$product_id";?>" method="post">
+        <input type="submit" value="Buy Now" class="order" id="buy_now" name="buy_now">
+        <input type="submit" value="Add" class="order" id="add_cart" name="add_cart">
+      </form>
       <a href="./order_placement.php?id=<?php echo ($id); ?>" class="order" id="cart_icon"><i class="fa fa-shopping-cart"></i></a>
-      <br>
-      <span id="add_msg"></span>
+      <span id='add_msg'><?php echo $add_msg;?></span>
+      
     </div>
 
-    <div class="recomended_products">
+    <div class="recommended_products">
       <h2>Recommended Products:</h2>
       <div class="row scroll">
         <?php
-        $id = $_GET["id"];
         $new_products = $products;
         usort($new_products, "compare_date");
         $i = 0;
@@ -151,7 +163,7 @@ $product_data = get_single_product($products, $product_id);
     <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="../others_file/tos_copyright.php" target="_blank">Term of Service</a> </p>
   </footer>
 
-  <script src="../scripts/ordering.js" type="text/javascript"></script>
+  <!-- <script src="../scripts/ordering.js" type="text/javascript"></script> -->
   <script src="../scripts/main.js" type="text/javascript"></script>
 </body>
 
