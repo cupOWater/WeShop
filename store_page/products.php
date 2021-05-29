@@ -1,7 +1,7 @@
 <?php
-  require "store_function.php";
-  $product_id = $_GET["id_product"];
-  $product_data = get_single_product($products, $product_id);
+require "store_function.php";
+$product_id = $_GET["id_product"];
+$product_data = get_single_product($products, $product_id);
 ?>
 <html lang="en">
 
@@ -41,6 +41,7 @@
               <?php
               echo "<a href='store.php?id=$id'>"; ?>Home</a>
             </li>
+
             <li>
               <label for="product_sub">Product</label>
               <input type="checkbox" id="product_sub">
@@ -85,24 +86,25 @@
     <div class="product_content">
       <?php
       echo ('<h1 id="product_name">');
-      echo  $product_data["id"].' - '.$product_data["name"];
+      echo  $product_data["id"] . ' - ' . $product_data["name"];
       echo ('</h1>');
       ?>
       <div class="product_pic">
-        <?php echo ('<img src="../Pics/products/box.jpg" alt= ' . $product_data["name"] . '>');?>
+        <?php echo ('<img src="../Pics/products/box.jpg" alt= ' . $product_data["name"] . '>'); ?>
       </div>
       <ul class="description">
         <li><b>Description:</b><span> To be added</span></li>
-        <li>Manufacture: <?php echo($store_data["name"]);?></li>
+        <li>Manufacture: <?php echo ($store_data["name"]); ?></li>
         <li>Status: Available</li>
         <li>Warranty: 2 years</li>
         <li class="price">Price:
-          <span id="product_price"><?php echo $product_data["price"];?></span>VND</li>
+          <span id="product_price"><?php echo $product_data["price"]; ?></span>VND
+        </li>
       </ul>
-      
-      <a href="./order_placement.php?id=<?php echo($id);?>" class="order" id="buy_now">Buy Now</a>
+
+      <a href="./order_placement.php?id=<?php echo ($id); ?>" class="order" id="buy_now">Buy Now</a>
       <input type="button" value="Add" class="order" id="add_cart">
-      <a href="./order_placement.php?id=<?php echo($id);?>" class="order" id="cart_icon"><i class="fa fa-shopping-cart"></i></a>
+      <a href="./order_placement.php?id=<?php echo ($id); ?>" class="order" id="cart_icon"><i class="fa fa-shopping-cart"></i></a>
       <br>
       <span id="add_msg"></span>
     </div>
@@ -119,7 +121,7 @@
           if ($id == $p["store_id"]) {
             if ($i < 10) {
               echo ('<div class="column4">');
-              echo ('<a href="./products.php?id=' . $id . '&id_product=' . $p["id"] . '"  target="_blank">');
+              echo ('<a href="./products.php?id=' . $id . '&id_product=' . $p["id"] . '">');
               echo ('<h3>' . $p["name"] . '</h3>');
               echo ('<h4>' . $p["price"] . ' VND</h4>');
               echo ('</a>');

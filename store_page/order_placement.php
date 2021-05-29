@@ -1,5 +1,5 @@
 <?php
-require "store_function.php";
+  require "store_function.php";
 ?>
 
 <html lang="en">
@@ -95,22 +95,17 @@ require "store_function.php";
       </span>
       <p id="coupon_msg"></p>
       <p><b>Total:</b> <span id="total">0 VND</span></p>
-      <!-- <a href="products_cat.php" class="order">Continue Shopping</a> -->
-      <!-- <a href="thankyou.php" class="order">Order</a> -->
+      <?php echo "<a href='store.php?id=$id' class ='order'>";?>Continue Shopping</a>
+      
       <?php
-      $id = $_GET["id"];
-      $store_data = get_single_item($stores, $id);
-      echo "<a href='products_cat.php?id=$id' class = 'order'>";
-      echo "Continue Shopping";
-      echo "</a>";
-      ?>
-      <?php
-      $id = $_GET["id"];
-      $store_data = get_single_item($stores, $id);
-      echo "<a href='thankyou.php?id=$id' class = 'order'>";
-      echo "Order";
-      echo "</a>";
-      ?>
+        if (!isset($_SESSION["loggedIn"])){
+          echo "<a href='thankyou.php?id=$id' class='order'>";
+        }else{
+          echo "<a href='../register.php' class='order'>";
+        }
+
+      ?>Order</a>
+      
     </div>
 
     <div id="cookie">

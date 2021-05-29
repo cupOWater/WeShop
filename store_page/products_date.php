@@ -1,32 +1,31 @@
 <?php
-require "../read_data.php";
-$products = read_csv_data("../data/products.csv");
-$stores = read_csv_data("../data/stores.csv");
+require "store_function.php";
 ?>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-    $id = $_GET["id"];
-    $store_data = get_single_item($stores, $id);
-    echo "<title>";
-    echo $store_data['name'];
-    echo " || Products";
-    echo "</title>";
-    ?>
-    <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
-    <link rel="stylesheet" href="../css_file/browse.css" type="text/css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php
+  $id = $_GET["id"];
+  $store_data = get_single_item($stores, $id);
+  echo "<title>";
+  echo $store_data['name'];
+  echo " || Products";
+  echo "</title>";
+  ?>
+  <link rel="stylesheet" href="../css_file/store_style.css" type="text/css">
+  <link rel="stylesheet" href="../css_file/browse.css" type="text/css">
 </head>
+
 <body>
   <header>
     <div class="row">
       <div class="column">
         <h1>
           <?php
-          $id = $_GET["id"];
-          $store_data = get_single_item($stores, $id);
           echo "<a href='store.php?id=$id'>";
           echo $store_data['name'];
           echo "</a>";
@@ -39,103 +38,43 @@ $stores = read_csv_data("../data/stores.csv");
           <ul>
             <li>
               <?php
-              $id = $_GET["id"];
-              $store_data = get_single_item($stores, $id);
-              echo "<a href='store.php?id=$id'>";
-              echo "Home";
-              echo "</a>";
-              ?>
+              echo "<a href='store.php?id=$id'>"; ?>Home</a>
             </li>
 
             <li>
               <label for="product_sub">Product</label>
               <input type="checkbox" id="product_sub">
               <div class="menu_box">
-              <?php
-              $id = $_GET["id"];
-              $store_data = get_single_item($stores, $id);
-              echo "<a href='products_cat.php?id=$id'>";
-              echo "Category";
-              echo "</a>";
-              ?>
-              <?php
-              $id = $_GET["id"];
-              $store_data = get_single_item($stores, $id);
-              echo "<a href='products_date.php?id=$id'>";
-              echo "Date";
-              echo "</a>";
-              ?>
-                
+                <?php
+                echo "<a href='products_cat.php?id=$id'>"; ?>Category</a>
+                <?php echo "<a href='products_date.php?id=$id'>"; ?>Date</a>
               </div>
             </li>
 
             <li>
-            <?php
-              $id = $_GET["id"];
-              $store_data = get_single_item($stores, $id);
-              echo "<a href='abt_us.php?id=$id'>";
-              echo "About Us";
-              echo "</a>";
-              ?>
+              <?php echo "<a href='abt_us.php?id=$id'>"; ?>About Us</a>
             </li>
             <li>
-            <?php
-              $id = $_GET["id"];
-              $store_data = get_single_item($stores, $id);
-              echo "<a href='contact.php?id=$id'>";
-              echo "Contact";
-              echo "</a>";
-              ?>
+              <?php echo "<a href='contact.php?id=$id'>"; ?>Contact</a>
             </li>
 
             <li class="hidden_menu">
-                <label for="menu_top">
-                  <img src="../Pics/menu.png" alt="3 stripes" height="40px">
-                </label>
-                <input type="checkbox" id="menu_top">
+              <label for="menu_top">
+                <img src="../Pics/menu.png" alt="3 stripes" height="40px">
+              </label>
+              <input type="checkbox" id="menu_top">
+              <div class="menu_box">
+                <?php echo "<a href='store.php?id=$id'>"; ?>Home</a>
+                <label for="product_sub">Product</label>
+                <input type="checkbox" id="product_sub">
                 <div class="menu_box">
-                  <?php
-                    $id = $_GET["id"];
-                    $store_data = get_single_item($stores, $id);
-                    echo "<a href='store.php?id=$id'>";
-                    echo "Home";
-                    echo "</a>";
-                  ?>
-                  <label for="product_sub">Product</label>
-                  <input type="checkbox" id="product_sub">
-                  <div class="menu_box">
-                  <?php
-                  $id = $_GET["id"];
-                  $store_data = get_single_item($stores, $id);
-                  echo "<a href='products_cat.php?id=$id'>";
-                  echo "Category";
-                  echo "</a>";
-                  ?>
-                  <?php
-                  $id = $_GET["id"];
-                  $store_data = get_single_item($stores, $id);
-                  echo "<a href='products_date.php?id=$id'>";
-                  echo "Date";
-                  echo "</a>";
-                  ?>
-
-                  </div>
-                  <?php
-                  $id = $_GET["id"];
-                  $store_data = get_single_item($stores, $id);
-                  echo "<a href='abt_us.php?id=$id'>";
-                  echo "About Us";
-                  echo "</a>";
-                  ?>
-                  <?php
-                  $id = $_GET["id"];
-                  $store_data = get_single_item($stores, $id);
-                  echo "<a href='contact.php?id=$id'>";
-                  echo "Contact";
-                  echo "</a>";
-                  ?>
-                  
+                  <?php echo "<a href='products_cat.php?id=$id'>"; ?>Category</a>
+                  <?php echo "<a href='products_date.php?id=$id'>"; ?>Date</a>
                 </div>
+                <?php echo "<a href='abt_us.php?id=$id'>"; ?>About Us</a>
+                <?php echo "<a href='contact.php?id=$id'>"; ?>Contact</a>
+
+              </div>
             </li>
           </ul>
         </div>
@@ -155,31 +94,30 @@ $stores = read_csv_data("../data/stores.csv");
         <h2>Product List:</h2>
         <ul>
           <li>
-          <?php
+            <?php
             $id = $_GET["id"];
             $display_products = $products;
-            $i =0;
-            foreach($display_products as $p){
-              if($id == $p['store_id']){
-                if($i<20){
-                  echo('<a href="./products.php?id='.$_GET["id"].'&id_product='.$p["id"].'">');
-                  echo('<img alt='.$p["name"].'>');
-                  echo('<ul>');
-                  echo('<li>Name:'.$p["name"].'</li>');
-                  echo('<li>'.$p["price"].' VND</li>');
-                  echo('<li>Created On:'.$p["created_time"].'</li>');
-                  echo('</ul>');
-                  echo('</a>');
-                  echo('<br>');
-                  echo('<br>');
-                  echo('<hr>');
-                  echo('<br>');
+            $i = 0;
+            foreach ($display_products as $p) {
+              if ($id == $p['store_id']) {
+                if ($i < 20) {
+                  echo ('<a href="./products.php?id=' . $_GET["id"] . '&id_product=' . $p["id"] . '">');
+                  echo ('<img alt=' . $p["name"] . '>');
+                  echo ('<ul>');
+                  echo ('<li>Name:' . $p["name"] . '</li>');
+                  echo ('<li>' . $p["price"] . ' VND</li>');
+                  echo ('<li>Created On:' . $p["created_time"] . '</li>');
+                  echo ('</ul>');
+                  echo ('</a>');
+                  echo ('<br>');
+                  echo ('<br>');
+                  echo ('<hr>');
+                  echo ('<br>');
                   $i++;
-                }else{
+                } else {
                   break;
                 }
               }
-
             }
             ?>
           </li>
@@ -189,7 +127,7 @@ $stores = read_csv_data("../data/stores.csv");
 
     <div id="cookie">
       <h2>I use cookie</h2>
-      <p>My website uses cookies necessary for its basic 
+      <p>My website uses cookies necessary for its basic
         functioning. By continuing browsing, you consent
         to my use of cookies and other technologies
       </p>
@@ -203,4 +141,5 @@ $stores = read_csv_data("../data/stores.csv");
   </footer>
   <script src="../scripts/main.js" type="text/javascript"></script>
 </body>
+
 </html>

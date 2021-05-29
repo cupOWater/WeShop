@@ -1,4 +1,5 @@
 <?php
+    require "../global_function.php";
     require "../read_data.php";
     $products = read_csv_data("../data/products.csv");
     $stores = read_csv_data("../data/stores.csv");
