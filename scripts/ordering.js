@@ -7,19 +7,6 @@ var buy_now = qs("#buy_now");
 var cart_icon = qs("#cart_icon")
 var add_msg = qs("#add_msg");
 
-if (add_button != null){
-  if(localStorage.loginStat != "true"){
-    buy_now.href = "./thankyou.html";
-    cart_icon.style.display = "none";
-    add_button.style.display = "none";
-
-  } else{
-    buy_now.href = "./order_placement.html";
-    add_button.style.display = "";
-    cart_icon.style.display = ""
-  }
-}
-
 // code snippet by Elias Zamaria
 // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript/2901298#2901298
 function numberWithCommas(num) {
@@ -119,13 +106,13 @@ function fill_table(){
   }
   update_products();
   let total = get_total()
-  total_field.innerHTML = numberWithCommas(total) + " VND";
+  total_field.innerHTML = total.toFixed(2) + " VND";
 
   for(let i = 0; i <= products.length - 1; i++){
     if (products[i].quantity > 0){
       let name = products[i].name;
       let quant = products[i].quantity;
-      let price = numberWithCommas(products[i].price * quant) + " VND";
+      let price = (products[i].price * quant).toFixed(2) + " VND";
       let row = cart_table.insertRow(-1);
 
       row.innerHTML = `<tr>
@@ -159,6 +146,7 @@ function update_quant(){
     }
   }
   localStorage.product = JSON.stringify(items);
+  clear_table()
   fill_table();
 }
 
@@ -169,7 +157,7 @@ if(cart_table != null) {
 if(add_button != null) {
   buy_now.addEventListener("click", function buy_one(){
     let prod_name = qs("#product_name").innerHTML;
-    let prod_price = qs("#product_price").innerHTML.replaceAll(".", "");
+    let prod_price = qs("#product_price").innerHTML;
     if (localStorage.product) {
       let items = JSON.parse(localStorage.product);
       let contain = false;
@@ -204,7 +192,7 @@ if(add_button != null) {
   var blink;
   add_button.addEventListener("click", function add_cart(){
       let prod_name = qs("#product_name").innerHTML;
-      let prod_price = qs("#product_price").innerHTML.replaceAll(".", "");
+      let prod_price = qs("#product_price").innerHTML;
       if (localStorage.product) {
         let items = JSON.parse(localStorage.product);
         let contain = false;

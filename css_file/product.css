@@ -64,3 +64,7 @@
   background-color: #b5362d;
   cursor: pointer;
 }
+
+form{
+  display: inline-block;
+}
