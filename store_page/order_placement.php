@@ -1,18 +1,23 @@
 <?php
 require "store_function.php";
 session_start();
+$total = 0;
+
+// Change value of "cart" when + or - is clicked
 if (isset($_SESSION["cart"])) {
   foreach ($_SESSION["cart"] as $k => $v) {
     $tempid = $_SESSION["cart"][$k]["id"];
+    if($_SESSION["cart"][$k]["quant"] <= 0){
+      unset($_SESSION["cart"][$k]);
+    }
     if (isset($_GET["edit"])) {
       if ($_GET["edit"] == "$tempid-dec") {
-        $_SESSION["cart"][$k]["quant"]--;
-        header("Location: order_placement.php?id=$id");
+        $_SESSION["cart"][$k]["quant"]--; 
       }
       if ($_GET["edit"] == "$tempid-inc") {
         $_SESSION["cart"][$k]["quant"]++;
-        header("Location: order_placement.php?id=$id");
       }
+      header("Location: order_placement.php?id=$id");
     }
   }
 }
@@ -102,9 +107,7 @@ if (isset($_SESSION["cart"])) {
             <th>Price</th>
           </thead>
           <?php
-          $total = 0;
           if (isset($_SESSION["cart"])) {
-
             foreach ($_SESSION["cart"] as $i) {
               $item = get_single_item($products, $i["id"]);
               echo "<tr>";
@@ -120,13 +123,16 @@ if (isset($_SESSION["cart"])) {
           ?>
         </table>
       </div><br>
-      <label for="coupon"><b>Coupon Code</b></label>
-      <input type="text" id="coupon">
-      <span id="coupon_setting">
-        <input type="button" value="Apply">
-        <input type="button" value="Reset">
-      </span>
-      <p id="coupon_msg"></p>
+      <form action="order_placement.php?id=<?php echo $id;?>" method="post">
+        <label for="coupon"><b>Coupon Code</b></label>
+        <input type="text" id="coupon" name="coupon">
+        <span id="coupon_setting">
+          <input type="submit" value="Apply" name="apply">
+          <input type="submit" value="Reset" name="reset">
+        </span>
+      </form>
+      <p id="coupon_msg"><?php echo $coupon_msg; ?></p>
+
       <p><b>Total:</b> <span id="total"><?php echo $total; ?> VND</span></p>
       <?php echo "<a href='store.php?id=$id' class ='order'>"; ?>Continue Shopping</a>
 
@@ -156,7 +162,6 @@ if (isset($_SESSION["cart"])) {
     <p id="copyright">Copyright © 2021 by group 4. All Rights Reserved | <a href="../others_file/tos_copyright.php" target="_blank">Term of Service</a> </p>
   </footer>
   <script src="../scripts/main.js" type="text/javascript"></script>
-  <!-- <script src="../scripts/ordering.js" type="text/javascript"></script> -->
 </body>
 
 </html>
