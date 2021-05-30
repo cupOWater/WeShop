@@ -123,16 +123,7 @@ if (isset($_SESSION["cart"])) {
           ?>
         </table>
       </div><br>
-      <form action="order_placement.php?id=<?php echo $id;?>" method="post">
-        <label for="coupon"><b>Coupon Code</b></label>
-        <input type="text" id="coupon" name="coupon">
-        <span id="coupon_setting">
-          <input type="submit" value="Apply" name="apply">
-          <input type="submit" value="Reset" name="reset">
-        </span>
-      </form>
-      <p id="coupon_msg"><?php echo $coupon_msg; ?></p>
-
+      
       <p><b>Total:</b> <span id="total"><?php echo $total; ?> VND</span></p>
       <?php echo "<a href='store.php?id=$id' class ='order'>"; ?>Continue Shopping</a>
 
