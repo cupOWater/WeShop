@@ -1,3 +1,11 @@
+<?php
+require "global_function.php";
+require "read_data.php";
+$categories = read_csv_data("data/categories.csv");
+$stores = read_csv_data("data/stores.csv");
+$letters = str_split("#ABCDEFGHIJKLMNOPQRSTUVWXYZ", 1);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,36 +76,43 @@
       <div class="content">
         <h1>Browse By Name</h1>
         <div class="namebrowsing">
-          <label for="search"> A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z </label>
+          <form action="browse_name.php" method="post">
+            <?php
+            foreach ($letters as $l) {
+              echo "<a href='browse_name.php?letter=$l'>$l</a>";
+            }
+            ?>
+          </form>
         </div>
-        <input type="checkbox" id="search">
 
         <div class="store_list">
           <h2>Store List:</h2>
           <ul>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/aquarium.png" alt="fish and wave on blue background">
-                Aquarius
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/babyboo.png" alt="pink circle, green triangle, blue square and title baby boo">
-                Baby boo
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/camping.png" alt="leaves, water, fire surrounding an X with Camping at the bottom">
-                Camper X
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/interitor.png" alt="wave and fish on blue background">
-                Interitor
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/nhatobanson.PNG" alt="Title nhatobanson with a lipstick at the end">
-                Nhatobanson</a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/sweetcandy.png" alt="Pink heart with baby boo written on top">
-                Sweet Candy
-              </a></li>
+            <?php
+            if (isset($_GET["letter"])) {
+              foreach ($stores as $s) {
+                if (ctype_alpha($_GET["letter"])) {
+                  if (strtoupper($s["name"][0]) == $_GET["letter"]) {
+                    echo "<li>";
+                    echo "<a href='store_page/store.php?id=" . $s['id'] . "'>";
+                    echo "<img src='Pics/profile-picture.png'>";
+                    echo $s["name"];
+                    echo "</a>";
+                    echo "</li>";
+                  }
+                } else {
+                  if (!ctype_alpha($s["name"][0])){
+                    echo "<li>";
+                    echo "<a href='store_page/store.php?id=" . $s['id'] . "'>";
+                    echo "<img src='Pics/profile-picture.png'>";
+                    echo $s["name"];
+                    echo "</a>";
+                    echo "</li>";
+                  }
+                }
+              }
+            }
+            ?>
           </ul>
         </div>
       </div>

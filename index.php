@@ -80,11 +80,12 @@ $stores = read_csv_data("data/stores.csv");
           $i = 0;
           foreach ($new_stores as $s) {
             if ($i < 10) {
-              echo ("<a href='./store_page/store.php?id=" . $s["id"] . "' target='_blank'>");
               echo ("<div class='column4'>");
+              echo ("<a href='./store_page/store.php?id=" . $s["id"] . "' target='_blank'>");
+              echo ("<img src='Pics/profile-picture.png'>");
               echo ("<h3>" . $s["name"] . "</h3>");
-              echo ("</div>");
               echo ("</a>");
+              echo ("</div>");
               $i++;
             } else {
               break;
@@ -105,6 +106,7 @@ $stores = read_csv_data("data/stores.csv");
             if ($i < 10) {
               echo ('<div class="column4">');
               echo ('<a href="./store_page/products.php?id=' . $p["store_id"] . '&id_product=' . $p["id"] . '"  target="_blank">');
+              echo ('<img src="Pics/products/box.jpg">');
               echo ('<h3>' . $p["name"] . '</h3>');
               echo ('<h4>' . $p["price"] . ' VND</h4>');
               echo ('</a>');
@@ -129,11 +131,12 @@ $stores = read_csv_data("data/stores.csv");
           $i = 0;
           foreach ($featured_stores as $s) {
             if ($i < 10) {
-              echo ("<a href='./store_page/store.php?id=" . $s["id"] . "' target='_blank'>");
               echo ("<div class='column4'>");
+              echo ("<a href='./store_page/store.php?id=" . $s["id"] . "' target='_blank'>");
+              echo ("<img src='Pics/profile-picture.png'>");
               echo ("<h3>" . $s["name"] . "</h3>");
-              echo ("</div>");
               echo ("</a>");
+              echo ("</div>");
               $i++;
             } else {
               break;
@@ -153,6 +156,7 @@ $stores = read_csv_data("data/stores.csv");
             if ($i < 10) {
               echo ('<div class="column4">');
               echo ('<a href="./store_page/products.php?id=' . $p["store_id"] . '&id_product=' . $p["id"] . '"  target="_blank">');
+              echo ('<img src="Pics/products/box.jpg">');
               echo ('<h3>' . $p["name"] . '</h3>');
               echo ('<h4>' . $p["price"] . ' VND</h4>');
               echo ('</a>');

@@ -1,3 +1,10 @@
+<?php
+require "global_function.php";
+require "read_data.php";
+$categories = read_csv_data("data/categories.csv");
+$stores = read_csv_data("data/stores.csv");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -69,51 +76,38 @@
         <h1>Browse By Category</h1>
 
         <div class="catbrowsing">
-
-          <select id="store_type" name="store_type">
-            <option value="dep">Department</option>
-            <option value="groc">Grocery</option>
-            <option value="rest">Restaurant</option>
-            <option value="acces">Accessory</option>
-            <option value="pharm">Pharmacy</option>
-            <option value="tech">Technology</option>
-            <option value="pet">Pet</option>
-            <option value="toy">Toy</option>
-            <option value="special">Specialty</option>
-            <option value="thrift">Thrift</option>
-            <option value="serv">Services</option>
-            <option value="kio">Kiosk</option>
-            <option value="clothe">Clothing</option>
-          </select>
-          <label for="search">Search</label>
+          <form action="browse_cat.php" method="post">
+            <select id="store_type" name="store_type">
+              <?php
+              foreach ($categories as $c) {
+                echo ("<option value='" . $c['id'] . "'>");
+                echo ($c['name']);
+                echo ("</option>");
+              }
+              ?>
+            </select>
+            <input type="submit" value="Search" name="search">
+          </form>
         </div>
-        <input type="checkbox" id="search">
+
         <div class="store_list">
           <h2>Store List:</h2>
           <ul>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/aquarium.png" alt="fish and wave on blue background">
-                Aquarius
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/babyboo.png" alt="pink circle, green triangle, blue square and title baby boo">
-                Baby boo
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/camping.png" alt="leaves, water, fire surrounding an X with Camping at the bottom">
-                Camper X
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/interitor.png" alt="wave and fish on blue background">
-                Interitor
-              </a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/nhatobanson.PNG" alt="Title nhatobanson with a lipstick at the end">
-                Nhatobanson</a></li>
-            <li><a href="./store_page/store.html">
-                <img src="./Pics/sweetcandy.png" alt="Pink heart with baby boo written on top">
-                Sweet Candy
-              </a></li>
+              <?php 
+              if(isset($_POST["search"])){
+                $cat_id = $_POST["store_type"];
+                foreach($stores as $s){
+                  if($s["category_id"] == $cat_id){
+                    echo "<li>";
+                    echo "<a href='store_page/store.php?id=".$s['id']."'>";
+                    echo "<img src='Pics/profile-picture.png'>";
+                    echo $s["name"];
+                    echo "</a>";
+                    echo "</li>";
+                  }
+                }
+              }
+              ?>
           </ul>
         </div>
       </div>

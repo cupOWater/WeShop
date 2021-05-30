@@ -91,7 +91,7 @@ require "store_function.php";
         $i = 0;
         foreach ($new_products as $p) {
           if ($id == $p["store_id"]) {
-            if ($i < 10) {
+            if ($i < 5) {
               echo ('<div class="column4">');
               echo ('<a href="./products.php?id=' . $id . '&id_product=' . $p["id"] . '">');
               echo ('<h3>' . $p["name"] . '</h3>');
@@ -108,8 +108,6 @@ require "store_function.php";
 
       </div>
     </div>
-
-
 
     <div class="subsec">
       <h1>Featured Products</h1>
