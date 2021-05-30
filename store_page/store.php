@@ -94,6 +94,7 @@ require "store_function.php";
             if ($i < 5) {
               echo ('<div class="column4">');
               echo ('<a href="./products.php?id=' . $id . '&id_product=' . $p["id"] . '">');
+              echo ('<img src="../Pics/products/box.jpg">');
               echo ('<h3>' . $p["name"] . '</h3>');
               echo ('<h4>' . $p["price"] . ' VND</h4>');
               echo ('</a>');
@@ -122,6 +123,7 @@ require "store_function.php";
             if ($i < 10) {
               echo ('<div class="column4">');
               echo ('<a href="./products.php?id=' . $id . '&id_product=' . $p["id"] . '">');
+              echo ('<img src="../Pics/products/box.jpg">');
               echo ('<h3>' . $p["name"] . '</h3>');
               echo ('<h4>' . $p["price"] . ' VND</h4>');
               echo ('</a>');

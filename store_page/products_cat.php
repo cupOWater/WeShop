@@ -117,7 +117,7 @@ require "store_function.php";
               if ($_GET['id'] == $p['store_id']) {
                 if ($i < 20) {
                   echo ('<a href="./products.php?id=' . $_GET["id"] . '&id_product=' . $p["id"] . '">');
-                  echo ('<img alt=' . $p["name"] . '>');
+                  echo ('<img src="../Pics/products/box.jpg">');
                   echo ('<ul>');
                   echo ('<li>Name:' . $p["name"] . '</li>');
                   echo ('<li>' . $p["price"] . ' VND</li>');
