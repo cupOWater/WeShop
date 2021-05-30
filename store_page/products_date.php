@@ -86,36 +86,54 @@ require "store_function.php";
     <div class="subsec">
       <h1>Browse Products by Date</h1>
       <div class="namebrowsing">
-        <label for="search">Newest First</label> ||
-        <label for="search">Oldest First</label>
+        <form action="products_date.php" method="post">
+          <?php
+          echo ('<a href="products_date.php?id='.$_GET["id"].'&sort='.$string_one.'">');
+          echo $string_one;
+          echo ('</a>');
+          echo ('<a href="products_date.php?id='.$_GET["id"].'&sort='.$string_two.'">');
+          echo $string_two;
+          echo ('</a>');
+          ?>
+        </form>
       </div>
-      <input type="checkbox" id="search">
       <div class="product_list">
         <h2>Product List:</h2>
         <ul>
           <li>
             <?php
             $id = $_GET["id"];
-            $display_products = $products;
+            if (isset($_GET["sort"])){
+              if (strcmp($_GET["sort"],$string_one)){
+                $display_products = $products;
+                usort($display_products,"compare_date1");
+              }
+              if (strcmp($_GET["sort"],$string_two)){
+                $display_products = $products;
+                usort($display_products,"compare_date");
+              }
+            }
             $i = 0;
-            foreach ($display_products as $p) {
-              if ($id == $p['store_id']) {
-                if ($i < 20) {
-                  echo ('<a href="./products.php?id=' . $_GET["id"] . '&id_product=' . $p["id"] . '">');
-                  echo ('<img alt=' . $p["name"] . '>');
-                  echo ('<ul>');
-                  echo ('<li>Name:' . $p["name"] . '</li>');
-                  echo ('<li>' . $p["price"] . ' VND</li>');
-                  echo ('<li>Created On:' . $p["created_time"] . '</li>');
-                  echo ('</ul>');
-                  echo ('</a>');
-                  echo ('<br>');
-                  echo ('<br>');
-                  echo ('<hr>');
-                  echo ('<br>');
-                  $i++;
-                } else {
-                  break;
+            if (isset($_GET["sort"])){
+              foreach ($display_products as $p){
+                if ($id == $p['store_id']) {
+                  if ($i < 20) {
+                    echo ('<a href="./products.php?id=' . $_GET["id"] . '&id_product=' . $p["id"] . '">');
+                    echo ('<img src="../Pics/products/box.jpg">');
+                    echo ('<ul>');
+                    echo ('<li>Name:' . $p["name"] . '</li>');
+                    echo ('<li>' . $p["price"] . ' VND</li>');
+                    echo ('<li>Created On:' . $p["created_time"] . '</li>');
+                    echo ('</ul>');
+                    echo ('</a>');
+                    echo ('<br>');
+                    echo ('<br>');
+                    echo ('<hr>');
+                    echo ('<br>');
+                    $i++;
+                  } else {
+                    break;
+                  }
                 }
               }
             }

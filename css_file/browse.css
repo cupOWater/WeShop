@@ -89,7 +89,8 @@ h2{
 
 .product_list{
   margin-left: 10px;
-  display: none;
+  /* display: none; */
+  text-align: left;
   font-size: 20px;
 }
 

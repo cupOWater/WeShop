@@ -3,6 +3,8 @@ require "../global_function.php";
 require "../read_data.php";
 $products = read_csv_data("../data/products.csv");
 $stores = read_csv_data("../data/stores.csv");
+$string_one = "Newest First";
+$string_two = "Oldest First";
 if (!isset($_GET["id"])) {
     header("Location: ../index.php");
 }
