@@ -62,6 +62,10 @@
     font-size: 20px;
 }
 
+.cart_table a{
+  text-decoration: none;
+}
+
 #coupon_msg{
   font-size: 18px;
   color: rgb(80, 80, 80);

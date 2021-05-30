@@ -1,6 +1,21 @@
 <?php
-  require "store_function.php";
-  session_start();
+require "store_function.php";
+session_start();
+if (isset($_SESSION["cart"])) {
+  foreach ($_SESSION["cart"] as $k => $v) {
+    $tempid = $_SESSION["cart"][$k]["id"];
+    if (isset($_GET["edit"])) {
+      if ($_GET["edit"] == "$tempid-dec") {
+        $_SESSION["cart"][$k]["quant"]--;
+        header("Location: order_placement.php?id=$id");
+      }
+      if ($_GET["edit"] == "$tempid-inc") {
+        $_SESSION["cart"][$k]["quant"]++;
+        header("Location: order_placement.php?id=$id");
+      }
+    }
+  }
+}
 ?>
 
 <html lang="en">
@@ -86,16 +101,18 @@
             <th>Quantity</th>
             <th>Price</th>
           </thead>
-          <?php 
+          <?php
           $total = 0;
-          if(isset($_SESSION["cart"])){
+          if (isset($_SESSION["cart"])) {
 
-            foreach($_SESSION["cart"] as $i){
+            foreach ($_SESSION["cart"] as $i) {
               $item = get_single_item($products, $i["id"]);
               echo "<tr>";
-              echo "<td>".$i['id']." - ".$item['name']."</td>";
-              echo "<td>".$i['quant']."</td>";
-              echo "<td>".$item["price"] * $i['quant']." VND</td>";
+              echo "<td>" . $i['id'] . " - " . $item['name'] . "</td>";
+              echo "<td> <a href='order_placement.php?id=$id&edit=" . $i['id'] . "-dec'>-</a>";
+              echo $i['quant'];
+              echo "<a href='order_placement.php?id=$id&edit=" . $i['id'] . "-inc'>+</a></td>";
+              echo "<td>" . $item["price"] * $i['quant'] . " VND</td>";
               echo "</tr>";
               $total += $item["price"] * $i['quant'];
             }
@@ -106,22 +123,22 @@
       <label for="coupon"><b>Coupon Code</b></label>
       <input type="text" id="coupon">
       <span id="coupon_setting">
-        <input type="button" value="Apply" onclick="apply_coupon()">
-        <input type="button" value="Reset" onclick="reset_coupon()">
+        <input type="button" value="Apply">
+        <input type="button" value="Reset">
       </span>
       <p id="coupon_msg"></p>
-      <p><b>Total:</b> <span id="total"><?php echo $total;?> VND</span></p>
-      <?php echo "<a href='store.php?id=$id' class ='order'>";?>Continue Shopping</a>
-      
+      <p><b>Total:</b> <span id="total"><?php echo $total; ?> VND</span></p>
+      <?php echo "<a href='store.php?id=$id' class ='order'>"; ?>Continue Shopping</a>
+
       <?php
-        if (isset($_SESSION["loggedIn"])){
-          echo "<a href='thankyou.php?id=$id' class='order'>";
-        }else{
-          echo "<a href='../register.php' class='order'>";
-        }
+      if (isset($_SESSION["loggedIn"])) {
+        echo "<a href='thankyou.php?id=$id' class='order'>";
+      } else {
+        echo "<a href='../register.php' class='order'>";
+      }
 
       ?>Order</a>
-      
+
     </div>
 
     <div id="cookie">
