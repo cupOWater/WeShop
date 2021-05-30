@@ -102,7 +102,7 @@ require "store_function.php";
         <ul>
           <li>
             <?php
-            $id = $_GET["id"];
+            $i = 0;
             if (isset($_GET["sort"])){
               if (strcmp($_GET["sort"],$string_one)){
                 $display_products = $products;
@@ -112,9 +112,6 @@ require "store_function.php";
                 $display_products = $products;
                 usort($display_products,"compare_date");
               }
-            }
-            $i = 0;
-            if (isset($_GET["sort"])){
               foreach ($display_products as $p){
                 if ($id == $p['store_id']) {
                   if ($i < 20) {
