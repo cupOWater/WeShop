@@ -64,7 +64,7 @@
       </div>
     </header>
     <main>
-      <div class="faq_header"><a href="./faqs.html">
+      <div class="faq_header"><a href="./faqs.php">
           <h2>Frequently Asked Questions</h2>
         </a></div>
 
@@ -79,7 +79,7 @@
             <div class="answer">
               <p>
               <ul class="ans">Steps:
-                <li>Access to our <a href="./index.html" target="_blank">website.</a></li>
+                <li>Access to our <a href="./index.php" target="_blank">website.</a></li>
                 <li>Select any store you want to access.</li>
                 <li>Choose a product and add it to cart.</li>
                 <li>Press purchase button any fill in your information, if you have not become our membership.</li>
@@ -98,8 +98,8 @@
               <i class="fa fa-minus"></i>
             </a>
             <div class="answer">
-              <p>First, you have to register an account on our <a href="./register.html" target="_blank">website.</a><br> After that, you have to shop up to 200$ to gain points and receive
-                our <a href="./fees.html" target="_blank">incentives.</p>
+              <p>First, you have to register an account on our <a href="./register.php" target="_blank">website.</a><br> After that, you have to shop up to 200$ to gain points and receive
+                our <a href="./fees.php" target="_blank">incentives.</p>
             </div>
           </div>
         </div>
