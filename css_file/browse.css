@@ -27,7 +27,13 @@ h2{
   margin-right: 10px;
 }
 
-
+.page_select{
+  text-align: center;
+}
+.page_select a{
+  margin: 20px;
+  font-size: 20px;
+}
 
 /* BROWSE BY Category */
 .catbrowsing{

@@ -1,5 +1,11 @@
 <?php
 require "store_function.php";
+$store_prod = [];
+foreach ($products as $p) {
+  if ($p["store_id"] == $id) {
+    $store_prod[] = $p;
+  }
+}
 ?>
 
 <html lang="en">
@@ -88,10 +94,10 @@ require "store_function.php";
       <div class="namebrowsing">
         <form action="products_date.php" method="post">
           <?php
-          echo ('<a href="products_date.php?id='.$_GET["id"].'&sort='.$string_one.'">');
+          echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $string_one . '&page=1">');
           echo $string_one;
           echo ('</a>');
-          echo ('<a href="products_date.php?id='.$_GET["id"].'&sort='.$string_two.'">');
+          echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $string_two . '&page=1">');
           echo $string_two;
           echo ('</a>');
           ?>
@@ -102,41 +108,56 @@ require "store_function.php";
         <ul>
           <li>
             <?php
-            $i = 0;
-            if (isset($_GET["sort"])){
-              if (strcmp($_GET["sort"],$string_one)){
-                $display_products = $products;
-                usort($display_products,"compare_date1");
+            if (isset($_GET["sort"]) && isset($_GET["page"])) {
+              if (strcmp($_GET["sort"], $string_one)) {
+                $display_products = $store_prod;
+                usort($display_products, "compare_date1");
               }
-              if (strcmp($_GET["sort"],$string_two)){
-                $display_products = $products;
-                usort($display_products,"compare_date");
+              if (strcmp($_GET["sort"], $string_two)) {
+                $display_products = $store_prod;
+                usort($display_products, "compare_date");
               }
-              foreach ($display_products as $p){
-                if ($id == $p['store_id']) {
-                  if ($i < 20) {
-                    echo ('<a href="./products.php?id=' . $_GET["id"] . '&id_product=' . $p["id"] . '">');
-                    echo ('<img src="../Pics/products/box.jpg">');
-                    echo ('<ul>');
-                    echo ('<li><b>Name</b>: ' . $p["name"] . '</li>');
-                    echo ('<li><b>Price</b>: ' . $p["price"] . ' VND</li>');
-                    echo ('<li><b>Created On</b>: ' . $p["created_time"] . '</li>');
-                    echo ('</ul>');
-                    echo ('</a>');
-                    echo ('<br>');
-                    echo ('<br>');
-                    echo ('<hr>');
-                    echo ('<br>');
-                    $i++;
-                  } else {
-                    break;
-                  }
-                }
+
+              $max_prod = count($display_products);
+              $index = 2 * $_GET["page"] - 2;
+              // Only display 1 if there's only 1 item left
+              if ($_GET["page"] >= $max_prod / 2 && $max_prod % 2 != 0) {
+                $prod = [$display_products[$index]];
+              } else {
+                $prod = [$display_products[$index], $display_products[$index + 1]];
               }
-            }
+              foreach ($prod as $p) {
+                echo ('<a href="./products.php?id=' . $_GET["id"] . '&id_product=' . $p["id"] . '">');
+                echo ('<img src="../Pics/products/box.jpg">');
+                echo ('<ul>');
+                echo ('<li><b>Name</b>: ' . $p["name"] . '</li>');
+                echo ('<li><b>Price</b>: ' . $p["price"] . ' VND</li>');
+                echo ('<li><b>Created On</b>: ' . $p["created_time"] . '</li>');
+                echo ('</ul>');
+                echo ('</a>');
+                echo ('<hr>');
+                echo ('<br>');
+              }
+
             ?>
           </li>
         </ul>
+      </div>
+      <div class="page_select">
+      <?php
+              // This is still inside the if statement above
+              $next = "Next";
+              $prev = "Previous";
+              if ($_GET["page"] <= 1) {
+                $prev = "";
+              }
+              if ($_GET["page"] >= $max_prod / 2) {
+                $next = "";
+              }
+              echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $_GET["sort"] . '&page=' . $_GET["page"] - 1 . '">' . $prev . '</a>');
+              echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $_GET["sort"] . '&page=' . $_GET["page"] + 1 . '">' . $next . '</a>');
+            }
+      ?>
       </div>
     </div>
 

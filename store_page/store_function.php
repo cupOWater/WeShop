@@ -1,5 +1,7 @@
 <?php
-require "../global_function.php";
+if (file_exists("../install.php")){
+    header("Location: ../install.php?error=true");
+  }
 require "../read_data.php";
 $products = read_csv_data("../data/products.csv");
 $stores = read_csv_data("../data/stores.csv");
