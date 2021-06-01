@@ -154,8 +154,8 @@ foreach ($products as $p) {
               if ($_GET["page"] >= $max_prod / 2) {
                 $next = "";
               }
-              echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $_GET["sort"] . '&page=' . $_GET["page"] - 1 . '">' . $prev . '</a>');
-              echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $_GET["sort"] . '&page=' . $_GET["page"] + 1 . '">' . $next . '</a>');
+              echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $_GET["sort"] . '&page=' . ($_GET["page"] - 1) . '">' . $prev . '</a>');
+              echo ('<a href="products_date.php?id=' . $_GET["id"] . '&sort=' . $_GET["sort"] . '&page=' . ($_GET["page"] + 1) . '">' . $next . '</a>');
             }
       ?>
       </div>
